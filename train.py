@@ -90,6 +90,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--checkpoint-every", type=int, default=1_000)
+    parser.add_argument(
+        "--schedule-steps",
+        type=int,
+        help="Total steps for the learning-rate schedule; defaults to --steps.",
+    )
     parser.add_argument("--resume-from", type=Path)
     parser.add_argument("--device", choices=("auto", "cpu", "mps", "cuda"), default="auto")
     parser.add_argument("--checkpoint-dir", type=Path, default=Path("checkpoints"))
@@ -98,6 +103,8 @@ def parse_args() -> argparse.Namespace:
         parser.error("provide exactly one of --width or --train-widths")
     if args.checkpoint_every < 1:
         parser.error("--checkpoint-every must be positive")
+    if args.schedule_steps is not None and args.schedule_steps < 1:
+        parser.error("--schedule-steps must be positive")
     return args
 
 
@@ -149,15 +156,17 @@ def main() -> None:
         )
     model = build_model(model_config, device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.learning_rate, betas=(0.9, 0.95), weight_decay=0.01)
+    schedule_steps = args.schedule_steps or args.steps
+    warmup_steps = min(500, schedule_steps)
     scheduler = torch.optim.lr_scheduler.SequentialLR(
         optimizer,
         schedulers=[
-            torch.optim.lr_scheduler.LinearLR(optimizer, start_factor=0.1, total_iters=min(500, args.steps)),
+            torch.optim.lr_scheduler.LinearLR(optimizer, start_factor=0.1, total_iters=warmup_steps),
             torch.optim.lr_scheduler.CosineAnnealingLR(
-                optimizer, T_max=max(1, args.steps - min(500, args.steps)), eta_min=1e-4
+                optimizer, T_max=max(1, schedule_steps - warmup_steps), eta_min=1e-4
             ),
         ],
-        milestones=[min(500, args.steps)],
+        milestones=[warmup_steps],
     )
     args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
     width_label = "-".join(str(width) for width in train_widths)
