@@ -70,6 +70,27 @@ evidence against exhaustive pair memorization—not proof that the model has
 learned a fully general algorithm. The structured carry-chain holdout below is
 the stronger compositional test.
 
+## Structured carry-chain holdout
+
+The training set excluded every problem where the units column produces a carry
+and the raw tens digits sum to nine. In those cases the incoming units carry is
+necessary to trigger a second, tens carry. The pattern occurs in 4.5% of uniform
+three-digit problems. A matched control rejected 4.5% of examples uniformly at
+random instead, so it has the same expected amount of training data.
+
+| Model, 1,000 CPU steps | IID exact accuracy | Held-out carry-chain exact accuracy |
+| --- | ---: | ---: |
+| Unrestricted baseline | 99.70% | 99.99% |
+| Carry-chain-excluded | 97.22% | 36.86% |
+| 4.5% random-drop control | 100.00% | 100.00% |
+
+All metrics are greedy exact-answer accuracy on independently seeded 10,000
+example streams. This is a strong single-seed indication of compositional
+generalization failure: removing a small, structured combination of familiar
+local rules causes a 63-point accuracy collapse, while discarding an equal
+amount of random data does not. Repeat the three conditions with additional
+seeds before treating the effect size as final.
+
 ## Mixed-width CPU baseline
 
 This matched the prior baseline's model, batch size, seed, CPU device, and

@@ -78,3 +78,21 @@ uv run python patch_carries.py \
   --checkpoint checkpoints/widths-3-seed-1-step-1000.pt \
   --width 3 --layer 0 --examples 1000 --blends 0,0.5,0.75,1 --device cpu
 ```
+
+## Structured carry-chain holdout
+
+Hold out the composition in which a units carry triggers a tens carry because
+the raw tens digits sum to nine. Compare it against a 4.5% random-drop control;
+the structured pattern occurs with probability 4.5% under uniform operands.
+
+```bash
+uv run python train.py --width 3 --steps 1000 --batch-size 256 \
+  --exclude-units-carry-chain --device cpu \
+  --checkpoint-dir checkpoints/carry-chain-holdout
+uv run python evaluate.py --checkpoint checkpoints/carry-chain-holdout/widths-3-seed-1.pt \
+  --width 3 --split carry-chain --examples 10000 --device cpu
+
+uv run python train.py --width 3 --steps 1000 --batch-size 256 \
+  --drop-probability 0.045 --device cpu \
+  --checkpoint-dir checkpoints/carry-chain-random-control
+```
