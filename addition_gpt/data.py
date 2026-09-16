@@ -122,6 +122,7 @@ class AdditionBatchGenerator:
         require_carry: bool = False,
         exclude_units_carry_chain: bool = False,
         require_units_carry_chain: bool = False,
+        units_carry_chain_exposure: float = 1.0,
         drop_probability: float = 0.0,
         min_operand: int = 0,
         max_operand: int | None = None,
@@ -134,8 +135,18 @@ class AdditionBatchGenerator:
             raise ValueError(f"operand range must be within [0, {limit})")
         if exclude_units_carry_chain and require_units_carry_chain:
             raise ValueError("a carry chain cannot be both excluded and required")
+        if not 0 <= units_carry_chain_exposure <= 1:
+            raise ValueError("units carry-chain exposure must be in [0, 1]")
+        if exclude_units_carry_chain and units_carry_chain_exposure != 1.0:
+            raise ValueError(
+                "use either exclude_units_carry_chain or units_carry_chain_exposure, not both"
+            )
+        if require_units_carry_chain and units_carry_chain_exposure != 1.0:
+            raise ValueError("cannot subsample required carry-chain examples")
         if not 0 <= drop_probability < 1:
             raise ValueError("drop probability must be in [0, 1)")
+        if exclude_units_carry_chain:
+            units_carry_chain_exposure = 0.0
         left = torch.randint(min_operand, upper, (batch_size,), generator=self.generator)
         right = torch.randint(min_operand, upper, (batch_size,), generator=self.generator)
         carries = torch.tensor(
@@ -148,11 +159,14 @@ class AdditionBatchGenerator:
             if drop_probability
             else torch.zeros(batch_size, dtype=torch.bool)
         )
+        chain_rejected = chains & (
+            torch.rand(batch_size, generator=self.generator) >= units_carry_chain_exposure
+        )
         invalid = (
             (require_carry & ~carries)
-            | (exclude_units_carry_chain & chains)
             | (require_units_carry_chain & ~chains)
             | random_drop
+            | chain_rejected
         )
         while bool(invalid.any()):
             count = int(invalid.sum())
@@ -163,10 +177,16 @@ class AdditionBatchGenerator:
                 dtype=torch.bool,
             )
             chains = has_units_carry_chain(left, right)
+            # Unlike random_drop, carry-chain exposure is a property of every
+            # newly drawn candidate, so rejected chain candidates are retried.
+            chain_rejected = torch.zeros(batch_size, dtype=torch.bool)
+            chain_rejected[invalid] = chains[invalid] & (
+                torch.rand(count, generator=self.generator) >= units_carry_chain_exposure
+            )
             invalid = (
                 (require_carry & ~carries)
-                | (exclude_units_carry_chain & chains)
                 | (require_units_carry_chain & ~chains)
+                | chain_rejected
             )
         rows = [encode_addition(int(a), int(b), self.width) for a, b in zip(left, right)]
         return AdditionBatch(torch.tensor(rows, dtype=torch.long), left, right, carries)

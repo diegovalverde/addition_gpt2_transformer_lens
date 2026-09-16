@@ -112,6 +112,21 @@ result means extra examples under the current optimization setup are not a
 reliable fix; it warrants a more stable multi-seed learning-curve study before
 spending compute on 5,000- or 10,000-step runs.
 
+### Next: stabilized fractional-exposure curve
+
+The next study will retain only a controlled fraction of the carry-chain cases:
+`0`, `0.001`, `0.01`, `0.05`, or `1.0`. Here an exposure is the probability of
+keeping a naturally sampled chain example, while all non-chain examples remain.
+Because chains arise in roughly 4.5% of uniform operand pairs, these settings
+produce approximately 0%, 0.0045%, 0.045%, 0.24%, and 4.5% chain examples in
+the training stream.
+
+Each condition will use seeds 1--3, CPU, a 3,000-step schedule, learning rate
+`3e-4`, and checkpoints every 500 steps. We will select a checkpoint by IID
+accuracy before reading its carry-chain score. This separates a genuine
+sample-complexity threshold from the unstable training dynamics seen in the
+earlier 3,000-step run.
+
 ## Mixed-width CPU baseline
 
 This matched the prior baseline's model, batch size, seed, CPU device, and

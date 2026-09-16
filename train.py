@@ -86,6 +86,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-operand", type=int, default=0)
     parser.add_argument("--max-operand", type=int)
     parser.add_argument("--exclude-units-carry-chain", action="store_true")
+    parser.add_argument(
+        "--units-carry-chain-exposure",
+        type=float,
+        default=1.0,
+        help=(
+            "Probability of retaining a sampled units-to-tens carry-chain example. "
+            "Non-chain examples are always retained."
+        ),
+    )
     parser.add_argument("--drop-probability", type=float, default=0.0)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=1)
@@ -105,6 +114,12 @@ def parse_args() -> argparse.Namespace:
         parser.error("--checkpoint-every must be positive")
     if args.schedule_steps is not None and args.schedule_steps < 1:
         parser.error("--schedule-steps must be positive")
+    if not 0 <= args.units_carry_chain_exposure <= 1:
+        parser.error("--units-carry-chain-exposure must be in [0, 1]")
+    if args.exclude_units_carry_chain and args.units_carry_chain_exposure != 1.0:
+        parser.error(
+            "use either --exclude-units-carry-chain or --units-carry-chain-exposure, not both"
+        )
     return args
 
 
@@ -204,6 +219,7 @@ def main() -> None:
             min_operand=args.min_operand,
             max_operand=args.max_operand,
             exclude_units_carry_chain=args.exclude_units_carry_chain,
+            units_carry_chain_exposure=args.units_carry_chain_exposure,
             drop_probability=args.drop_probability,
         )
         tokens = batch.tokens.to(device)

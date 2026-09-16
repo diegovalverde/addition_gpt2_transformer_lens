@@ -101,3 +101,31 @@ uv run python train.py --width 3 --steps 3000 --schedule-steps 3000 \
   --batch-size 256 --exclude-units-carry-chain --checkpoint-every 1000 \
   --device cpu --checkpoint-dir checkpoints/carry-chain-holdout-3k
 ```
+
+## Fractional carry-chain exposure curve
+
+`--units-carry-chain-exposure p` retains each naturally sampled units-to-tens
+carry-chain example independently with probability `p`; all non-chain examples
+are retained. Chains occur about 4.5% of uniform three-digit operand pairs, so
+`p=0.05` produces roughly 0.24% chains in the final training stream (not 5%).
+
+Run exposures `0, 0.001, 0.01, 0.05, 1` across seeds `1, 2, 3` with CPU, a
+lower learning rate, and a coherent schedule. Record checkpoints every 500
+steps, select a checkpoint on IID accuracy only, then measure carry-chain
+accuracy at that step.
+
+```bash
+for exposure in 0 0.001 0.01 0.05 1; do
+  for seed in 1 2 3; do
+    uv run python -u train.py --width 3 --steps 3000 --schedule-steps 3000 \
+      --batch-size 256 --learning-rate 0.0003 --seed "$seed" \
+      --units-carry-chain-exposure "$exposure" --checkpoint-every 500 --device cpu \
+      --checkpoint-dir "checkpoints/carry-chain-exposure-$exposure-seed-$seed"
+  done
+done
+```
+
+A sharp recovery between `0.001` and `0.05` would mean the model needs examples
+of the composition but learns it sample-efficiently. Weak accuracy through
+`0.05` would instead point to a stronger compositional limitation of this
+architecture and objective.

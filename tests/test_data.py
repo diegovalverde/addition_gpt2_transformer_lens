@@ -72,6 +72,21 @@ def test_generator_can_exclude_or_require_units_carry_chains() -> None:
     assert bool(has_units_carry_chain(required.left, required.right).all())
 
 
+def test_zero_carry_chain_exposure_excludes_carry_chains() -> None:
+    batch = AdditionBatchGenerator(width=3, seed=1).batch(
+        128, units_carry_chain_exposure=0.0
+    )
+    assert not bool(has_units_carry_chain(batch.left, batch.right).any())
+
+
+def test_partial_carry_chain_exposure_retains_some_but_not_all_chains() -> None:
+    batch = AdditionBatchGenerator(width=3, seed=9).batch(
+        4_000, units_carry_chain_exposure=0.05
+    )
+    chain_rate = has_units_carry_chain(batch.left, batch.right).float().mean().item()
+    assert 0.001 < chain_rate < 0.005
+
+
 def test_seeded_generators_match() -> None:
     first = AdditionBatchGenerator(width=3, seed=42).batch(8)
     second = AdditionBatchGenerator(width=3, seed=42).batch(8)
