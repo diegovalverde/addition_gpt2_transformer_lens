@@ -61,6 +61,34 @@ three-digit addition, including carries, but does not extrapolate to a fourth
 digit. The next experiment is mixed-width training on widths 1--3 and the same
 four-digit evaluation.
 
+## Mixed-width CPU baseline
+
+This matched the prior baseline's model, batch size, seed, CPU device, and
+step-1,000 checkpoint. Instead of seeing only three-digit operands, training
+cycled evenly between widths 1, 2, and 3.
+
+| Property | Value |
+| --- | --- |
+| Training operand widths | 1, 2, and 3, evenly cycled |
+| Evaluated checkpoint | step 1,000 |
+| Batch size | 256 |
+| Seed | 1 |
+| Training and evaluation device | CPU |
+| Checkpoint | `checkpoints/widths-1-2-3-seed-1-step-1000.pt` (gitignored) |
+
+| Split | Examples | Teacher-forced digit accuracy | Teacher-forced exact answer | Greedy exact answer |
+| --- | ---: | ---: | ---: | ---: |
+| IID width 1 | 10,000 | 100.0000% | 100.0000% | 100.0000% |
+| IID width 2 | 10,000 | 100.0000% | 100.0000% | 100.0000% |
+| IID width 3 | 10,000 | 99.9460% | 99.7300% | 99.7300% |
+| Width 3, at least one carry | 10,000 | 99.9400% | 99.7000% | 99.7000% |
+| Unseen width 4 | 10,000 | 18.6567% | 0.0000% | 0.0000% |
+
+Mixed-width training improves width-4 digit accuracy compared with the
+fixed-width model (18.6567% versus 9.7817%), but it still never generates an
+entire correct four-digit answer. At this scale and training duration, seeing
+multiple lengths is not sufficient for exact length extrapolation.
+
 ## Commands
 
 ```bash
@@ -72,4 +100,7 @@ uv run python -u train.py --width 3 --steps 20000 --batch-size 256 --seed 1 --ch
 uv run python evaluate.py --checkpoint checkpoints/widths-3-seed-1-step-1000.pt --width 3 --split iid --examples 10000 --batch-size 256 --seed 2 --device cpu
 uv run python evaluate.py --checkpoint checkpoints/widths-3-seed-1-step-1000.pt --width 3 --split carry --examples 10000 --batch-size 256 --seed 3 --device cpu
 uv run python evaluate.py --checkpoint checkpoints/widths-3-seed-1-step-1000.pt --width 4 --split iid --examples 10000 --batch-size 256 --seed 4 --device cpu
+
+uv run python -u train.py --train-widths 1,2,3 --steps 20000 --batch-size 256 --seed 1 --checkpoint-every 1000 --device cpu
+uv run python evaluate.py --checkpoint checkpoints/widths-1-2-3-seed-1-step-1000.pt --width 4 --split iid --examples 10000 --batch-size 256 --seed 14 --device cpu
 ```
