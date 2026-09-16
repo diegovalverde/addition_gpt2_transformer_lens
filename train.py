@@ -41,6 +41,7 @@ def save_checkpoint(
     device: str,
     train_widths: tuple[int, ...],
     step: int,
+    generators: dict[int, AdditionBatchGenerator],
 ) -> None:
     """Save a resumable training state and the information needed to reproduce it."""
     torch.save(
@@ -48,6 +49,9 @@ def save_checkpoint(
             "model_state_dict": model.state_dict(),
             "optimizer_state_dict": optimizer.state_dict(),
             "scheduler_state_dict": scheduler.state_dict(),
+            "generator_states": {
+                str(width): generator.generator.get_state() for width, generator in generators.items()
+            },
             "model_config": model_config.to_dict(),
             "training": vars(args) | {"device": device, "train_widths": train_widths, "step": step},
             "metadata": {
@@ -84,6 +88,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--checkpoint-every", type=int, default=1_000)
+    parser.add_argument("--resume-from", type=Path)
     parser.add_argument("--device", choices=("auto", "cpu", "mps", "cuda"), default="auto")
     parser.add_argument("--checkpoint-dir", type=Path, default=Path("checkpoints"))
     args = parser.parse_args()
@@ -102,6 +107,27 @@ def resolve_train_widths(args: argparse.Namespace) -> tuple[int, ...]:
     if not widths or min(widths) < 1:
         raise ValueError("train widths must be positive integers")
     return widths
+
+
+def restore_generator_states(
+    checkpoint: dict[str, object],
+    generators: dict[int, AdditionBatchGenerator],
+    train_widths: tuple[int, ...],
+    batch_size: int,
+    completed_steps: int,
+) -> None:
+    """Restore generator state, or deterministically replay old batches for legacy checkpoints."""
+    saved_states = checkpoint.get("generator_states")
+    if isinstance(saved_states, dict):
+        for width, generator in generators.items():
+            state = saved_states.get(str(width))
+            if not isinstance(state, torch.Tensor):
+                raise ValueError(f"checkpoint has no generator state for width {width}")
+            generator.generator.set_state(state)
+        return
+    for step in range(1, completed_steps + 1):
+        width = train_widths[(step - 1) % len(train_widths)]
+        generators[width].batch(batch_size)
 
 
 def main() -> None:
@@ -133,9 +159,34 @@ def main() -> None:
     )
     args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
     width_label = "-".join(str(width) for width in train_widths)
+    completed_steps = 0
+    if args.resume_from is not None:
+        loaded = torch.load(args.resume_from, map_location=device, weights_only=False)
+        if not isinstance(loaded, dict):
+            raise ValueError("resume checkpoint is invalid")
+        saved_config = loaded.get("model_config")
+        if not isinstance(saved_config, dict):
+            raise ValueError("resume checkpoint has no model configuration")
+        saved_model_config = ModelConfig(**saved_config)
+        if saved_model_config != model_config:
+            raise ValueError("resume checkpoint model configuration does not match this run")
+        saved_training = loaded.get("training")
+        if not isinstance(saved_training, dict):
+            raise ValueError("resume checkpoint has no training metadata")
+        saved_widths = tuple(int(width) for width in saved_training["train_widths"])
+        if saved_widths != train_widths:
+            raise ValueError("resume checkpoint train widths do not match this run")
+        completed_steps = int(saved_training["step"])
+        if completed_steps >= args.steps:
+            raise ValueError("--steps must be greater than the resumed step")
+        model.load_state_dict(loaded["model_state_dict"])
+        optimizer.load_state_dict(loaded["optimizer_state_dict"])
+        scheduler.load_state_dict(loaded["scheduler_state_dict"])
+        restore_generator_states(loaded, generators, train_widths, args.batch_size, completed_steps)
+        print(f"resumed from {args.resume_from} at step {completed_steps}")
 
     model.train()
-    for step in range(1, args.steps + 1):
+    for step in range(completed_steps + 1, args.steps + 1):
         width = train_widths[(step - 1) % len(train_widths)]
         batch = generators[width].batch(
             args.batch_size,
@@ -166,6 +217,7 @@ def main() -> None:
                 device,
                 train_widths,
                 step,
+                generators,
             )
             print(f"saved intermediate checkpoint to {checkpoint}")
 
@@ -180,6 +232,7 @@ def main() -> None:
         device,
         train_widths,
         args.steps,
+        generators,
     )
     print(f"saved checkpoint to {checkpoint}")
 
