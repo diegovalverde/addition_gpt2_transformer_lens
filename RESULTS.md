@@ -89,6 +89,33 @@ fixed-width model (18.6567% versus 9.7817%), but it still never generates an
 entire correct four-digit answer. At this scale and training duration, seeing
 multiple lengths is not sufficient for exact length extrapolation.
 
+### Mixed-width learning curve
+
+The mixed-width step-1,000 checkpoint was resumed with its optimizer, scheduler,
+and data-generator state intact. Increasing training duration did not yield
+exact width-4 answers.
+
+| Checkpoint step | Width-4 digit accuracy | Width-4 greedy exact answer |
+| ---: | ---: | ---: |
+| 1,000 | 18.6567% | 0.0000% |
+| 2,000 | 18.8667% | 0.0000% |
+| 3,000 | 18.9867% | 0.0000% |
+
+## Four-digit capacity control
+
+To distinguish an extrapolation failure from insufficient model capacity, the
+same architecture was trained directly on four-digit addition. Both training and
+evaluation used CPU; the checkpoint was saved at step 1,000.
+
+| Split | Examples | Teacher-forced digit accuracy | Teacher-forced exact answer | Greedy exact answer |
+| --- | ---: | ---: | ---: | ---: |
+| IID width 4 | 10,000 | 99.9867% | 99.9200% | 99.9200% |
+| Width 4, at least one carry | 10,000 | 99.9917% | 99.9500% | 99.9500% |
+
+The architecture therefore has ample capacity for four-digit addition. The
+mixed-width model's zero exact accuracy on width 4 is a genuine
+length-generalization failure, not underfitting of the task.
+
 ## Commands
 
 ```bash
@@ -103,4 +130,11 @@ uv run python evaluate.py --checkpoint checkpoints/widths-3-seed-1-step-1000.pt 
 
 uv run python -u train.py --train-widths 1,2,3 --steps 20000 --batch-size 256 --seed 1 --checkpoint-every 1000 --device cpu
 uv run python evaluate.py --checkpoint checkpoints/widths-1-2-3-seed-1-step-1000.pt --width 4 --split iid --examples 10000 --batch-size 256 --seed 14 --device cpu
+uv run python train.py --train-widths 1,2,3 --steps 3000 --batch-size 256 --seed 1 --checkpoint-every 1000 --device cpu --resume-from checkpoints/widths-1-2-3-seed-1-step-1000.pt
+uv run python evaluate.py --checkpoint checkpoints/widths-1-2-3-seed-1-step-2000.pt --width 4 --split iid --examples 10000 --batch-size 256 --seed 14 --device cpu
+uv run python evaluate.py --checkpoint checkpoints/widths-1-2-3-seed-1.pt --width 4 --split iid --examples 10000 --batch-size 256 --seed 14 --device cpu
+
+uv run python -u train.py --width 4 --steps 20000 --batch-size 256 --seed 1 --checkpoint-every 1000 --device cpu
+uv run python evaluate.py --checkpoint checkpoints/widths-4-seed-1-step-1000.pt --width 4 --split iid --examples 10000 --batch-size 256 --seed 21 --device cpu
+uv run python evaluate.py --checkpoint checkpoints/widths-4-seed-1-step-1000.pt --width 4 --split carry --examples 10000 --batch-size 256 --seed 22 --device cpu
 ```
