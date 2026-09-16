@@ -51,3 +51,17 @@ uv run python probe_carries.py \
   --model direct4 checkpoints/widths-4-seed-1-step-1000.pt 4 \
   --train-examples 10000 --test-examples 5000 --device cpu
 ```
+
+## Carry-direction interventions
+
+Use a saved pre-answer probe direction to patch the residual stream while
+greedily decoding. For a positive carry intervention, examples begin with that
+carry bit equal to zero and the counterfactual target is `sum + 10**column`.
+
+```bash
+uv run python intervene_carries.py \
+  --checkpoint checkpoints/widths-3-seed-1-step-1000.pt \
+  --probe-weights artifacts/carry_probes/pre_answer/carry_probe_weights.pt \
+  --probe-model fixed3 --width 3 --layer 2 --carry-column 1 \
+  --examples 200 --amplitudes 0,0.1,0.2,0.4,0.8,1.6 --device cpu
+```

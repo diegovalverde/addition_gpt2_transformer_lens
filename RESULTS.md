@@ -146,6 +146,28 @@ are **decodability** results, not evidence that a probe direction is causally
 used. The next experiment should intervene on a held-out carry direction and
 measure the change in generated answer digits.
 
+## Carry-direction intervention
+
+The fixed-width three-digit model was patched at layer 2, at the `=` position,
+using its normalized carry-1 probe direction. The 200 held-out source examples
+all had carry 1 equal to zero; a successful positive intervention would generate
+`sum + 10`. Amplitudes are fractions of the mean residual-stream norm (43.45).
+
+| Relative amplitude | Mean absolute first-logit change | Greedy answers changed | Exact `sum + 10` counterfactual |
+| ---: | ---: | ---: | ---: |
+| 0.0 | 0.000 | 0.0% | 0.0% |
+| 0.1 | 0.074 | 0.0% | 0.0% |
+| 0.2 | 0.146 | 0.0% | 0.0% |
+| 0.4 | 0.307 | 0.0% | 0.0% |
+| 0.8 | 0.728 | 0.0% | 0.0% |
+| 1.6 | 1.463 | 3.0% | 0.0% |
+
+The hook demonstrably changes logits, but this linear probe direction is not a
+clean causal carry-control direction: even the largest tested perturbation does
+not produce the intended counterfactual answer. The appropriate follow-up is
+activation patching between matched source and target prompts, rather than
+assuming a discriminative probe direction is generative.
+
 ## Commands
 
 ```bash

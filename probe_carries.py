@@ -94,7 +94,7 @@ def fit_probe(
     test_labels: torch.Tensor,
     epochs: int,
     learning_rate: float,
-) -> torch.Tensor:
+) -> tuple[torch.Tensor, dict[str, torch.Tensor]]:
     """Fit independent linear classifiers for each carry bit and return accuracy."""
     probe = torch.nn.Linear(train_features.shape[1], train_labels.shape[1])
     optimizer = torch.optim.AdamW(probe.parameters(), lr=learning_rate, weight_decay=1e-4)
@@ -105,7 +105,8 @@ def fit_probe(
         optimizer.step()
     with torch.no_grad():
         predictions = probe(test_features).sigmoid() >= 0.5
-        return (predictions == test_labels.bool()).float().mean(dim=0)
+        accuracy = (predictions == test_labels.bool()).float().mean(dim=0)
+    return accuracy, {key: value.detach().cpu() for key, value in probe.state_dict().items()}
 
 
 def load_model(run: ProbeRun, device: str) -> torch.nn.Module:
@@ -134,6 +135,7 @@ def main() -> None:
     device = resolve_device(args.device)
     runs = parse_runs(args.model)
     results = []
+    probe_weights: dict[str, dict[int, dict[str, torch.Tensor]]] = {}
     for index, run in enumerate(runs):
         model = load_model(run, device)
         train_activations, train_labels = collect_activations(
@@ -143,7 +145,7 @@ def main() -> None:
             model, run.width, args.test_examples, args.batch_size, args.seed + 2 * index + 1, device
         )
         for layer, train_features in train_activations.items():
-            accuracy = fit_probe(
+            accuracy, weights = fit_probe(
                 train_features,
                 train_labels,
                 test_activations[layer],
@@ -151,6 +153,7 @@ def main() -> None:
                 args.epochs,
                 args.learning_rate,
             )
+            probe_weights.setdefault(run.name, {})[layer] = weights
             for column, value in enumerate(accuracy.tolist(), start=1):
                 results.append(
                     {
@@ -163,6 +166,9 @@ def main() -> None:
                 )
         print(f"completed carry probes for {run.name}")
     write_results(results, args.output_dir)
+    weights_path = args.output_dir / "carry_probe_weights.pt"
+    torch.save(probe_weights, weights_path)
+    print(f"saved {weights_path}")
 
 
 if __name__ == "__main__":
