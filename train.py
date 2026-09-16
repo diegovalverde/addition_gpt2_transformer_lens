@@ -31,6 +31,35 @@ def git_revision() -> str | None:
     return result.stdout.strip() if result.returncode == 0 else None
 
 
+def save_checkpoint(
+    checkpoint: Path,
+    model: torch.nn.Module,
+    optimizer: torch.optim.Optimizer,
+    scheduler: torch.optim.lr_scheduler.LRScheduler,
+    model_config: ModelConfig,
+    args: argparse.Namespace,
+    device: str,
+    train_widths: tuple[int, ...],
+    step: int,
+) -> None:
+    """Save a resumable training state and the information needed to reproduce it."""
+    torch.save(
+        {
+            "model_state_dict": model.state_dict(),
+            "optimizer_state_dict": optimizer.state_dict(),
+            "scheduler_state_dict": scheduler.state_dict(),
+            "model_config": model_config.to_dict(),
+            "training": vars(args) | {"device": device, "train_widths": train_widths, "step": step},
+            "metadata": {
+                "torch": torch.__version__,
+                "python": platform.python_version(),
+                "git_revision": git_revision(),
+            },
+        },
+        checkpoint,
+    )
+
+
 def answer_loss(logits: torch.Tensor, tokens: torch.Tensor) -> torch.Tensor:
     """Compute next-token cross entropy only on answer targets."""
     target = tokens[:, 1:]
@@ -54,11 +83,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-operand", type=int)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=1)
+    parser.add_argument("--checkpoint-every", type=int, default=1_000)
     parser.add_argument("--device", choices=("auto", "cpu", "mps", "cuda"), default="auto")
     parser.add_argument("--checkpoint-dir", type=Path, default=Path("checkpoints"))
     args = parser.parse_args()
     if (args.width is None) == (args.train_widths is None):
         parser.error("provide exactly one of --width or --train-widths")
+    if args.checkpoint_every < 1:
+        parser.error("--checkpoint-every must be positive")
     return args
 
 
@@ -99,6 +131,8 @@ def main() -> None:
         ],
         milestones=[min(500, args.steps)],
     )
+    args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
+    width_label = "-".join(str(width) for width in train_widths)
 
     model.train()
     for step in range(1, args.steps + 1):
@@ -120,23 +154,32 @@ def main() -> None:
                 f"step={step:>6} width={width} loss={loss.item():.5f} "
                 f"lr={scheduler.get_last_lr()[0]:.2e}"
             )
+        if step % args.checkpoint_every == 0 and step != args.steps:
+            checkpoint = args.checkpoint_dir / f"widths-{width_label}-seed-{args.seed}-step-{step}.pt"
+            save_checkpoint(
+                checkpoint,
+                model,
+                optimizer,
+                scheduler,
+                model_config,
+                args,
+                device,
+                train_widths,
+                step,
+            )
+            print(f"saved intermediate checkpoint to {checkpoint}")
 
-    args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
-    width_label = "-".join(str(width) for width in train_widths)
     checkpoint = args.checkpoint_dir / f"widths-{width_label}-seed-{args.seed}.pt"
-    torch.save(
-        {
-            "model_state_dict": model.state_dict(),
-            "optimizer_state_dict": optimizer.state_dict(),
-            "model_config": model_config.to_dict(),
-            "training": vars(args) | {"device": device, "train_widths": train_widths},
-            "metadata": {
-                "torch": torch.__version__,
-                "python": platform.python_version(),
-                "git_revision": git_revision(),
-            },
-        },
+    save_checkpoint(
         checkpoint,
+        model,
+        optimizer,
+        scheduler,
+        model_config,
+        args,
+        device,
+        train_widths,
+        args.steps,
     )
     print(f"saved checkpoint to {checkpoint}")
 
