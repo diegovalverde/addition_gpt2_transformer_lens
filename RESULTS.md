@@ -61,6 +61,15 @@ three-digit addition, including carries, but does not extrapolate to a fourth
 digit. The next experiment is mixed-width training on widths 1--3 and the same
 four-digit evaluation.
 
+Although this model was trained for 1,000 steps of 256 independently sampled
+problems (256,000 draws), the three-digit input space contains 1,000,000 ordered
+operand pairs. Its 99.70% exact accuracy on a separately seeded stream of 10,000
+evaluation examples therefore rules out a literal table containing every input
+pair. Some evaluation pairs can still collide with training draws, so this is
+evidence against exhaustive pair memorization—not proof that the model has
+learned a fully general algorithm. The structured carry-chain holdout below is
+the stronger compositional test.
+
 ## Mixed-width CPU baseline
 
 This matched the prior baseline's model, batch size, seed, CPU device, and

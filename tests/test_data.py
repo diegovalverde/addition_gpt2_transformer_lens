@@ -9,6 +9,7 @@ from addition_gpt.data import (
     decode_answer,
     encode_addition,
     reverse_digits,
+    has_units_carry_chain,
 )
 from evaluate import greedy_answers
 from patch_carries import matched_units_carry_pairs
@@ -56,6 +57,19 @@ def test_carry_detection() -> None:
 def test_carry_targets_follow_each_decimal_column() -> None:
     targets = carry_targets(torch.tensor([7, 99]), torch.tensor([5, 1]), width=2)
     assert torch.equal(targets, torch.tensor([[1.0, 0.0], [1.0, 1.0]]))
+
+
+def test_units_carry_chain_requires_incoming_units_carry() -> None:
+    left = torch.tensor([19, 15, 18])
+    right = torch.tensor([81, 94, 81])
+    assert torch.equal(has_units_carry_chain(left, right), torch.tensor([True, False, False]))
+
+
+def test_generator_can_exclude_or_require_units_carry_chains() -> None:
+    excluded = AdditionBatchGenerator(width=3, seed=1).batch(128, exclude_units_carry_chain=True)
+    required = AdditionBatchGenerator(width=3, seed=2).batch(128, require_units_carry_chain=True)
+    assert not bool(has_units_carry_chain(excluded.left, excluded.right).any())
+    assert bool(has_units_carry_chain(required.left, required.right).all())
 
 
 def test_seeded_generators_match() -> None:

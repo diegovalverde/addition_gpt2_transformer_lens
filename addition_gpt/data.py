@@ -72,6 +72,15 @@ def carry_targets(left: torch.Tensor, right: torch.Tensor, width: int) -> torch.
     return targets
 
 
+def has_units_carry_chain(left: torch.Tensor, right: torch.Tensor) -> torch.Tensor:
+    """Identify cases where a units carry causes a tens carry because raw tens sum to nine."""
+    if left.shape != right.shape or left.ndim != 1:
+        raise ValueError("left and right must be matching one-dimensional tensors")
+    units_carry = (left % 10) + (right % 10) >= 10
+    raw_tens_sum = ((left // 10) % 10) + ((right // 10) % 10)
+    return units_carry & raw_tens_sum.eq(9)
+
+
 def answer_target_mask(tokens: torch.Tensor) -> torch.Tensor:
     """Mask shifted next-token labels to answer digits plus EOS only."""
     if tokens.ndim != 2:
@@ -111,6 +120,9 @@ class AdditionBatchGenerator:
         self,
         batch_size: int,
         require_carry: bool = False,
+        exclude_units_carry_chain: bool = False,
+        require_units_carry_chain: bool = False,
+        drop_probability: float = 0.0,
         min_operand: int = 0,
         max_operand: int | None = None,
     ) -> AdditionBatch:
@@ -120,20 +132,47 @@ class AdditionBatchGenerator:
         upper = limit if max_operand is None else max_operand
         if min_operand < 0 or upper > limit or min_operand >= upper:
             raise ValueError(f"operand range must be within [0, {limit})")
+        if exclude_units_carry_chain and require_units_carry_chain:
+            raise ValueError("a carry chain cannot be both excluded and required")
+        if not 0 <= drop_probability < 1:
+            raise ValueError("drop probability must be in [0, 1)")
         left = torch.randint(min_operand, upper, (batch_size,), generator=self.generator)
         right = torch.randint(min_operand, upper, (batch_size,), generator=self.generator)
         carries = torch.tensor(
             [contains_carry(int(a), int(b), self.width) for a, b in zip(left, right)],
             dtype=torch.bool,
         )
-        while require_carry and not bool(carries.all()):
-            missing = ~carries
-            count = int(missing.sum())
-            left[missing] = torch.randint(min_operand, upper, (count,), generator=self.generator)
-            right[missing] = torch.randint(min_operand, upper, (count,), generator=self.generator)
+        chains = has_units_carry_chain(left, right)
+        random_drop = (
+            torch.rand(batch_size, generator=self.generator) < drop_probability
+            if drop_probability
+            else torch.zeros(batch_size, dtype=torch.bool)
+        )
+        invalid = (
+            (require_carry & ~carries)
+            | (exclude_units_carry_chain & chains)
+            | (require_units_carry_chain & ~chains)
+            | random_drop
+        )
+        while bool(invalid.any()):
+            count = int(invalid.sum())
+            left[invalid] = torch.randint(min_operand, upper, (count,), generator=self.generator)
+            right[invalid] = torch.randint(min_operand, upper, (count,), generator=self.generator)
             carries = torch.tensor(
                 [contains_carry(int(a), int(b), self.width) for a, b in zip(left, right)],
                 dtype=torch.bool,
+            )
+            chains = has_units_carry_chain(left, right)
+            random_drop = (
+                torch.rand(batch_size, generator=self.generator) < drop_probability
+                if drop_probability
+                else torch.zeros(batch_size, dtype=torch.bool)
+            )
+            invalid = (
+                (require_carry & ~carries)
+                | (exclude_units_carry_chain & chains)
+                | (require_units_carry_chain & ~chains)
+                | random_drop
             )
         rows = [encode_addition(int(a), int(b), self.width) for a, b in zip(left, right)]
         return AdditionBatch(torch.tensor(rows, dtype=torch.long), left, right, carries)

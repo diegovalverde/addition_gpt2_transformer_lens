@@ -85,6 +85,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--min-operand", type=int, default=0)
     parser.add_argument("--max-operand", type=int)
+    parser.add_argument("--exclude-units-carry-chain", action="store_true")
+    parser.add_argument("--drop-probability", type=float, default=0.0)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--checkpoint-every", type=int, default=1_000)
@@ -192,6 +194,8 @@ def main() -> None:
             args.batch_size,
             min_operand=args.min_operand,
             max_operand=args.max_operand,
+            exclude_units_carry_chain=args.exclude_units_carry_chain,
+            drop_probability=args.drop_probability,
         )
         tokens = batch.tokens.to(device)
         optimizer.zero_grad(set_to_none=True)
