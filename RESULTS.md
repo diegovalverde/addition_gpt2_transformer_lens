@@ -127,6 +127,27 @@ accuracy before reading its carry-chain score. This separates a genuine
 sample-complexity threshold from the unstable training dynamics seen in the
 earlier 3,000-step run.
 
+#### Preliminary stabilized zero-exposure result
+
+The first replication used exposure 0, seed 1, CPU, batch size 256, and a
+3,000-step cosine schedule at learning rate `3e-4`. The process was interrupted
+after its step-1,500 checkpoint, so this is an interim result rather than the
+planned completed three-seed curve. Of the available checkpoints, step 1,500
+was selected using only the independent IID stream (seed 41).
+
+| Checkpoint | IID greedy exact accuracy | Carry-chain greedy exact accuracy |
+| ---: | ---: | ---: |
+| 500 | 98.74% | not evaluated |
+| 1,000 | 99.74% | not evaluated |
+| 1,500 | 99.86% | 97.14% |
+
+Despite seeing no training examples of this carry-chain pattern, the selected
+checkpoint reaches 97.14% exact accuracy on a fresh 10,000-example chain stream
+(seed 42). This is far above the earlier structured-holdout results and shows
+that the previous apparent omission failure was strongly sensitive to training
+dynamics. Do not infer a robust zero-shot algorithm yet: complete the scheduled
+replications and fractional-exposure curve before comparing mechanisms.
+
 ## Mixed-width CPU baseline
 
 This matched the prior baseline's model, batch size, seed, CPU device, and
