@@ -81,6 +81,28 @@ def has_units_carry_chain(left: torch.Tensor, right: torch.Tensor) -> torch.Tens
     return units_carry & raw_tens_sum.eq(9)
 
 
+def has_carry_dependency_chain(left: torch.Tensor, right: torch.Tensor, width: int) -> torch.Tensor:
+    """Identify additions where an incoming carry is necessary for a later carry.
+
+    A column has this dependency precisely when its incoming carry is one and
+    its raw digit sum is nine: without the incoming carry it would not carry,
+    but with it it does. This checks every adjacent pair of columns, rather
+    than only the units-to-tens case.
+    """
+    if left.shape != right.shape or left.ndim != 1:
+        raise ValueError("left and right must be matching one-dimensional tensors")
+    if width < 1:
+        raise ValueError("width must be positive")
+    dependent = torch.zeros_like(left, dtype=torch.bool)
+    carry = torch.zeros_like(left, dtype=torch.bool)
+    for column in range(width):
+        place = 10**column
+        raw_sum = ((left // place) % 10) + ((right // place) % 10)
+        dependent |= carry & raw_sum.eq(9)
+        carry = raw_sum + carry.long() >= 10
+    return dependent
+
+
 def answer_target_mask(tokens: torch.Tensor) -> torch.Tensor:
     """Mask shifted next-token labels to answer digits plus EOS only."""
     if tokens.ndim != 2:
@@ -122,6 +144,8 @@ class AdditionBatchGenerator:
         require_carry: bool = False,
         exclude_units_carry_chain: bool = False,
         require_units_carry_chain: bool = False,
+        exclude_carry_dependency_chain: bool = False,
+        require_carry_dependency_chain: bool = False,
         units_carry_chain_exposure: float = 1.0,
         drop_probability: float = 0.0,
         min_operand: int = 0,
@@ -135,6 +159,8 @@ class AdditionBatchGenerator:
             raise ValueError(f"operand range must be within [0, {limit})")
         if exclude_units_carry_chain and require_units_carry_chain:
             raise ValueError("a carry chain cannot be both excluded and required")
+        if exclude_carry_dependency_chain and require_carry_dependency_chain:
+            raise ValueError("a carry-dependency chain cannot be both excluded and required")
         if not 0 <= units_carry_chain_exposure <= 1:
             raise ValueError("units carry-chain exposure must be in [0, 1]")
         if exclude_units_carry_chain and units_carry_chain_exposure != 1.0:
@@ -154,6 +180,7 @@ class AdditionBatchGenerator:
             dtype=torch.bool,
         )
         chains = has_units_carry_chain(left, right)
+        dependency_chains = has_carry_dependency_chain(left, right, self.width)
         random_drop = (
             torch.rand(batch_size, generator=self.generator) < drop_probability
             if drop_probability
@@ -165,6 +192,8 @@ class AdditionBatchGenerator:
         invalid = (
             (require_carry & ~carries)
             | (require_units_carry_chain & ~chains)
+            | (exclude_carry_dependency_chain & dependency_chains)
+            | (require_carry_dependency_chain & ~dependency_chains)
             | random_drop
             | chain_rejected
         )
@@ -177,6 +206,7 @@ class AdditionBatchGenerator:
                 dtype=torch.bool,
             )
             chains = has_units_carry_chain(left, right)
+            dependency_chains = has_carry_dependency_chain(left, right, self.width)
             # Unlike random_drop, carry-chain exposure is a property of every
             # newly drawn candidate, so rejected chain candidates are retried.
             chain_rejected = torch.zeros(batch_size, dtype=torch.bool)
@@ -186,6 +216,8 @@ class AdditionBatchGenerator:
             invalid = (
                 (require_carry & ~carries)
                 | (require_units_carry_chain & ~chains)
+                | (exclude_carry_dependency_chain & dependency_chains)
+                | (require_carry_dependency_chain & ~dependency_chains)
                 | chain_rejected
             )
         rows = [encode_addition(int(a), int(b), self.width) for a, b in zip(left, right)]

@@ -9,6 +9,7 @@ from addition_gpt.data import (
     decode_answer,
     encode_addition,
     reverse_digits,
+    has_carry_dependency_chain,
     has_units_carry_chain,
 )
 from evaluate import greedy_answers
@@ -65,11 +66,33 @@ def test_units_carry_chain_requires_incoming_units_carry() -> None:
     assert torch.equal(has_units_carry_chain(left, right), torch.tensor([True, False, False]))
 
 
+def test_carry_dependency_chain_covers_each_adjacent_column() -> None:
+    # 19 + 81 depends on the units carry for the tens carry; 190 + 810
+    # depends on the tens carry for the hundreds carry.
+    left = torch.tensor([19, 190, 18, 100])
+    right = torch.tensor([81, 810, 81, 809])
+    assert torch.equal(
+        has_carry_dependency_chain(left, right, width=3),
+        torch.tensor([True, True, False, False]),
+    )
+
+
 def test_generator_can_exclude_or_require_units_carry_chains() -> None:
     excluded = AdditionBatchGenerator(width=3, seed=1).batch(128, exclude_units_carry_chain=True)
     required = AdditionBatchGenerator(width=3, seed=2).batch(128, require_units_carry_chain=True)
     assert not bool(has_units_carry_chain(excluded.left, excluded.right).any())
     assert bool(has_units_carry_chain(required.left, required.right).all())
+
+
+def test_generator_can_exclude_or_require_carry_dependency_chains() -> None:
+    excluded = AdditionBatchGenerator(width=3, seed=1).batch(
+        128, exclude_carry_dependency_chain=True
+    )
+    required = AdditionBatchGenerator(width=3, seed=2).batch(
+        128, require_carry_dependency_chain=True
+    )
+    assert not bool(has_carry_dependency_chain(excluded.left, excluded.right, width=3).any())
+    assert bool(has_carry_dependency_chain(required.left, required.right, width=3).all())
 
 
 def test_zero_carry_chain_exposure_excludes_carry_chains() -> None:

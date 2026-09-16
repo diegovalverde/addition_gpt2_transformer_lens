@@ -87,6 +87,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-operand", type=int)
     parser.add_argument("--exclude-units-carry-chain", action="store_true")
     parser.add_argument(
+        "--exclude-carry-dependency-chain",
+        action="store_true",
+        help="Exclude examples where an incoming carry is necessary for a later carry.",
+    )
+    parser.add_argument(
         "--units-carry-chain-exposure",
         type=float,
         default=1.0,
@@ -219,6 +224,7 @@ def main() -> None:
             min_operand=args.min_operand,
             max_operand=args.max_operand,
             exclude_units_carry_chain=args.exclude_units_carry_chain,
+            exclude_carry_dependency_chain=args.exclude_carry_dependency_chain,
             units_carry_chain_exposure=args.units_carry_chain_exposure,
             drop_probability=args.drop_probability,
         )

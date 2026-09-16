@@ -16,7 +16,11 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--width", type=int, required=True)
-    parser.add_argument("--split", choices=("iid", "carry", "range", "carry-chain"), default="iid")
+    parser.add_argument(
+        "--split",
+        choices=("iid", "carry", "range", "carry-chain", "carry-dependency-chain"),
+        default="iid",
+    )
     parser.add_argument("--min-operand", type=int, default=0)
     parser.add_argument("--max-operand", type=int)
     parser.add_argument("--examples", type=int, default=10_000)
@@ -67,6 +71,7 @@ def main() -> None:
             count,
             require_carry=args.split == "carry",
             require_units_carry_chain=args.split == "carry-chain",
+            require_carry_dependency_chain=args.split == "carry-dependency-chain",
             min_operand=args.min_operand,
             max_operand=args.max_operand,
         )

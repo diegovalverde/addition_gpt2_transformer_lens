@@ -127,13 +127,13 @@ accuracy before reading its carry-chain score. This separates a genuine
 sample-complexity threshold from the unstable training dynamics seen in the
 earlier 3,000-step run.
 
-#### Preliminary stabilized zero-exposure result
+#### Stabilized zero-exposure replications
 
-The first replication used exposure 0, seed 1, CPU, batch size 256, and a
-3,000-step cosine schedule at learning rate `3e-4`. The process was interrupted
-after its step-1,500 checkpoint, so this is an interim result rather than the
-planned completed three-seed curve. Of the available checkpoints, step 1,500
-was selected using only the independent IID stream (seed 41).
+All three replications used exposure 0, CPU, batch size 256, a 3,000-step
+cosine schedule, learning rate `3e-4`, and checkpoints every 500 steps. IID
+evaluation used a fresh 10,000-example stream with seed 41; checkpoint
+selection used only greedy IID exact accuracy. Carry-chain evaluation used a
+separate fresh 10,000-example stream with seed 42.
 
 | Checkpoint | IID greedy exact accuracy | Carry-chain greedy exact accuracy |
 | ---: | ---: | ---: |
@@ -143,12 +143,56 @@ was selected using only the independent IID stream (seed 41).
 | 2,000 | 99.97% | 99.41% |
 | 3,000 | 99.99% | 99.91% |
 
-Despite seeing no training examples of this carry-chain pattern, the selected
-step-3,000 checkpoint reaches 99.91% exact accuracy on a fresh 10,000-example
-chain stream (seed 42). This is far above the earlier structured-holdout results
-and shows that the previous apparent omission failure was strongly sensitive to
-training dynamics. Do not infer a robust zero-shot algorithm yet: complete the
-scheduled replications before comparing mechanisms.
+For seed 1, the final step-3,000 checkpoint was IID-selected and achieved
+99.91% greedy exact on the carry-chain stream. Seeds 2 and 3 completed the same
+protocol. When multiple checkpoints tied on IID score, the earliest tied
+checkpoint was selected before reading the carry-chain score.
+
+| Seed | IID-selected checkpoint | IID greedy exact accuracy | Carry-chain greedy exact accuracy |
+| ---: | ---: | ---: | ---: |
+| 1 | 3,000 | 99.99% | 99.91% |
+| 2 | 1,500 | 100.00% | 100.00% |
+| 3 | 2,500 | 99.99% | 99.85% |
+
+Despite seeing no training examples of this carry-chain pattern, all three
+IID-selected models score at least 99.85% greedy exact on it. The earlier
+structured-holdout failure was therefore strongly sensitive to optimization;
+this narrow holdout is not sufficient to distinguish literal lookup from a
+broader compositional carry computation. Per the preregistered decision rule,
+the next experiment should be a broader compositional holdout that removes all
+examples where an incoming carry is necessary for the following column to carry,
+while retaining each local operation separately. Do not run the fractional
+exposure curve or compare mechanisms until that broader success/failure contrast
+exists.
+
+### Broader carry-dependency holdout
+
+The units-to-tens chain is too narrow: all zero-exposure replications solved
+it. The broader split instead marks an addition whenever an incoming carry is
+necessary for a later column to carry. At a given column this means the incoming
+carry is one and the raw digits sum to nine. For three-digit additions the split
+therefore includes both units-to-tens and tens-to-hundreds dependencies, while
+still allowing each raw local digit operation in other contexts. It occurs in
+exactly 9.0% of uniform operand pairs: 4.5% are units-to-tens dependencies,
+4.95% are tens-to-hundreds dependencies, and 0.45% satisfy both.
+
+The first seed-1 zero-exposure run used the same CPU, batch size 256, 3,000-step
+cosine schedule, learning rate `3e-4`, and checkpoint cadence as the stabilized
+study. A matched random-drop control conditionally resampled 9% of candidates
+uniformly. Each condition selected its earliest IID-tied-best checkpoint using
+the independent 10,000-example IID stream (seed 41), then received one
+10,000-example carry-dependency evaluation (seed 42).
+
+| Condition, seed 1 | IID-selected checkpoint | IID greedy exact accuracy | Carry-dependency greedy exact accuracy |
+| --- | ---: | ---: | ---: |
+| Dependency excluded | 1,000 | 90.55% | 0.00% |
+| 9% random-drop control | 500 | 100.00% | 100.00% |
+
+This is the intended success/failure contrast: the broad structural omission,
+rather than uniform resampling at the same rate, prevents both strong IID
+performance and zero-shot success on the omitted dependencies. It is only one
+seed, so replicate both conditions for seeds 2 and 3 without tuning before
+making mechanistic claims or selecting an intervention target.
 
 ## Mixed-width CPU baseline
 
