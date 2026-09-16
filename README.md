@@ -95,4 +95,9 @@ uv run python evaluate.py --checkpoint checkpoints/carry-chain-holdout/widths-3-
 uv run python train.py --width 3 --steps 1000 --batch-size 256 \
   --drop-probability 0.045 --device cpu \
   --checkpoint-dir checkpoints/carry-chain-random-control
+
+# Use a coherent longer learning-rate schedule for a duration curve.
+uv run python train.py --width 3 --steps 3000 --schedule-steps 3000 \
+  --batch-size 256 --exclude-units-carry-chain --checkpoint-every 1000 \
+  --device cpu --checkpoint-dir checkpoints/carry-chain-holdout-3k
 ```

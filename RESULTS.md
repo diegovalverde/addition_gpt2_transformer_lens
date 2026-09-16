@@ -91,6 +91,27 @@ local rules causes a 63-point accuracy collapse, while discarding an equal
 amount of random data does not. Repeat the three conditions with additional
 seeds before treating the effect size as final.
 
+### Replication and additional-training check
+
+Two additional carry-chain-excluded seeds reproduce the qualitative gap, though
+its size varies. The two random-drop controls tested (seeds 1 and 2) remain at
+100% exact accuracy on both IID and carry-chain streams.
+
+| Carry-chain-excluded seed, 1,000 steps | IID exact accuracy | Carry-chain exact accuracy | Gap |
+| --- | ---: | ---: | ---: |
+| 1 | 97.22% | 36.86% | 60.36 points |
+| 2 | 99.40% | 87.41% | 11.99 points |
+| 3 | 99.08% | 79.64% | 19.44 points |
+| Mean | 98.57% | 67.97% | 30.60 points |
+
+More training did not reliably repair the omission in a fresh seed-1,
+three-thousand-step run with its learning-rate schedule set for 3,000 steps:
+carry-chain exact accuracy was 52.32% at step 1,000, then 0.02% at steps 2,000
+and 3,000. IID exact accuracy at step 3,000 remained 95.46%. This non-monotonic
+result means extra examples under the current optimization setup are not a
+reliable fix; it warrants a more stable multi-seed learning-curve study before
+spending compute on 5,000- or 10,000-step runs.
+
 ## Mixed-width CPU baseline
 
 This matched the prior baseline's model, batch size, seed, CPU device, and
