@@ -163,16 +163,10 @@ class AdditionBatchGenerator:
                 dtype=torch.bool,
             )
             chains = has_units_carry_chain(left, right)
-            random_drop = (
-                torch.rand(batch_size, generator=self.generator) < drop_probability
-                if drop_probability
-                else torch.zeros(batch_size, dtype=torch.bool)
-            )
             invalid = (
                 (require_carry & ~carries)
                 | (exclude_units_carry_chain & chains)
                 | (require_units_carry_chain & ~chains)
-                | random_drop
             )
         rows = [encode_addition(int(a), int(b), self.width) for a, b in zip(left, right)]
         return AdditionBatch(torch.tensor(rows, dtype=torch.long), left, right, carries)
