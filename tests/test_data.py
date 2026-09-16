@@ -11,6 +11,7 @@ from addition_gpt.data import (
     reverse_digits,
 )
 from evaluate import greedy_answers
+from patch_carries import matched_units_carry_pairs
 
 
 class PlannedAnswerModel(torch.nn.Module):
@@ -75,3 +76,8 @@ def test_greedy_answers_does_not_read_teacher_forced_answer_tokens() -> None:
     expected = tokens[:, equals + 1 :]
     model = PlannedAnswerModel(equals + 1, expected)
     assert torch.equal(greedy_answers(model, tokens, width=3), expected)
+
+
+def test_matched_pairs_toggle_only_units_carry_and_shift_answer_by_ten() -> None:
+    _, _, target_sums, source_sums = matched_units_carry_pairs(width=3, examples=32, seed=9)
+    assert torch.equal(source_sums, target_sums + 10)

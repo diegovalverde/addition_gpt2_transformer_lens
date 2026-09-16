@@ -168,6 +168,29 @@ not produce the intended counterfactual answer. The appropriate follow-up is
 activation patching between matched source and target prompts, rather than
 assuming a discriminative probe direction is generative.
 
+## Matched carry activation patching
+
+To test causal use without assuming a linear probe is a control direction, we
+constructed 1,000 source/target pairs. Each pair has identical higher digits and
+the same output units digit. Target units sum to 0--8 (no carry); source units
+sum to 10--18 (carry), so the source answer is exactly `target + 10`.
+
+We replaced the target model's layer-0 residual at `=` with a blend of its own
+residual and the matched source residual, then greedily decoded the target.
+
+| Source-residual blend | Target answer retained | Exact source (`target + 10`) answer | Answers changed | Mean answer shift |
+| ---: | ---: | ---: | ---: | ---: |
+| 0.00 | 100.0% | 0.0% | 0.0% | 0.00 |
+| 0.50 | 59.9% | 40.0% | 40.1% | 4.10 |
+| 0.75 | 1.6% | 98.4% | 98.4% | 9.84 |
+| 1.00 | 0.5% | 99.2% | 99.5% | 10.04 |
+
+This is strong causal evidence that the early residual state at `=` contains
+information the model uses to propagate the units carry. It also explains the
+earlier probe-direction null result: the relevant computation is causally
+distributed in the matched activation state, while a discriminative linear
+direction alone is not a sufficient control vector.
+
 ## Commands
 
 ```bash

@@ -65,3 +65,16 @@ uv run python intervene_carries.py \
   --probe-model fixed3 --width 3 --layer 2 --carry-column 1 \
   --examples 200 --amplitudes 0,0.1,0.2,0.4,0.8,1.6 --device cpu
 ```
+
+## Matched activation patching
+
+This stronger causal test replaces the layer-0 `=` residual of a target prompt
+with the matching residual from a source prompt. The source and target have the
+same higher digits and output units digit, but differ in whether units addition
+creates a carry; their correct answers differ by exactly 10.
+
+```bash
+uv run python patch_carries.py \
+  --checkpoint checkpoints/widths-3-seed-1-step-1000.pt \
+  --width 3 --layer 0 --examples 1000 --blends 0,0.5,0.75,1 --device cpu
+```
