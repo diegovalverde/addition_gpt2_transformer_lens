@@ -4,6 +4,7 @@ from addition_gpt.data import (
     AdditionBatchGenerator,
     EQUALS_ID,
     answer_target_mask,
+    carry_targets,
     contains_carry,
     decode_answer,
     encode_addition,
@@ -49,6 +50,11 @@ def test_answer_mask_starts_at_equals_logit() -> None:
 def test_carry_detection() -> None:
     assert contains_carry(7, 5, 2)
     assert not contains_carry(12, 34, 2)
+
+
+def test_carry_targets_follow_each_decimal_column() -> None:
+    targets = carry_targets(torch.tensor([7, 99]), torch.tensor([5, 1]), width=2)
+    assert torch.equal(targets, torch.tensor([[1.0, 0.0], [1.0, 1.0]]))
 
 
 def test_seeded_generators_match() -> None:

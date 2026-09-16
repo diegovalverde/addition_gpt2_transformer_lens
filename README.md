@@ -37,3 +37,17 @@ uv run python evaluate.py --checkpoint checkpoints/widths-1-2-3-seed-1.pt --widt
 uv run python train.py --width 3 --max-operand 100 --steps 20_000 --batch-size 256 --device mps
 uv run python evaluate.py --checkpoint checkpoints/widths-3-seed-1.pt --width 3 --split range --min-operand 900 --max-operand 1000 --device cpu
 ```
+
+## Carry probes
+
+Probe pre-answer residual activations: every prompt ends at `=`, so the probe
+cannot read teacher-forced answer digits. The command below writes held-out
+layer-by-carry accuracies to ignored files under `artifacts/`.
+
+```bash
+uv run python probe_carries.py \
+  --model fixed3 checkpoints/widths-3-seed-1-step-1000.pt 3 \
+  --model mixed3 checkpoints/widths-1-2-3-seed-1.pt 3 \
+  --model direct4 checkpoints/widths-4-seed-1-step-1000.pt 4 \
+  --train-examples 10000 --test-examples 5000 --device cpu
+```

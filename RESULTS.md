@@ -116,6 +116,36 @@ The architecture therefore has ample capacity for four-digit addition. The
 mixed-width model's zero exact accuracy on width 4 is a genuine
 length-generalization failure, not underfitting of the task.
 
+## Linear carry probes before answer generation
+
+For each model, fresh prompts were truncated immediately after `=`. A separate
+linear classifier was fitted for every layer to predict the carry-out bit of
+each decimal column. The probe training set has 10,000 examples and the held-out
+test set has 5,000; all computation used CPU. Since the majority-class baseline
+for these carry labels is 50.1--56.0%, values substantially above that range
+show decodable carry information.
+
+| Model / carry-out column | Layer 0 | Layer 1 | Layer 2 | Layer 3 |
+| --- | ---: | ---: | ---: | ---: |
+| Fixed width 3: carry 1 | 100.00% | 100.00% | 100.00% | 100.00% |
+| Fixed width 3: carry 2 | 54.94% | 72.14% | 73.06% | 75.64% |
+| Fixed width 3: carry 3 | 51.16% | 62.44% | 68.18% | 70.50% |
+| Mixed widths 1--3: carry 1 | 100.00% | 100.00% | 100.00% | 100.00% |
+| Mixed widths 1--3: carry 2 | 54.80% | 68.02% | 67.48% | 64.60% |
+| Mixed widths 1--3: carry 3 | 50.92% | 62.52% | 66.02% | 50.90% |
+| Direct width 4: carry 1 | 100.00% | 100.00% | 100.00% | 100.00% |
+| Direct width 4: carry 2 | 54.52% | 66.60% | 71.54% | 67.84% |
+| Direct width 4: carry 3 | 53.78% | 64.00% | 65.68% | 64.44% |
+| Direct width 4: carry 4 | 64.44% | 67.82% | 67.92% | 65.54% |
+
+The models expose the first carry linearly from the first layer, while later
+carries become more decodable through middle and late layers. The fixed-width
+model has the strongest late-layer carry-2 and carry-3 decodability; the
+mixed-width model's final-layer carry-3 accuracy falls back to baseline. These
+are **decodability** results, not evidence that a probe direction is causally
+used. The next experiment should intervene on a held-out carry direction and
+measure the change in generated answer digits.
+
 ## Commands
 
 ```bash

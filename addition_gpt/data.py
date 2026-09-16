@@ -57,6 +57,21 @@ def contains_carry(left: int, right: int, width: int) -> bool:
     return False
 
 
+def carry_targets(left: torch.Tensor, right: torch.Tensor, width: int) -> torch.Tensor:
+    """Return the carry-out bit for every least-significant-first column."""
+    if left.shape != right.shape or left.ndim != 1:
+        raise ValueError("left and right must be matching one-dimensional tensors")
+    targets = torch.zeros((left.shape[0], width), dtype=torch.float32)
+    carry = torch.zeros_like(left)
+    for column in range(width):
+        place = 10**column
+        left_digit = (left // place) % 10
+        right_digit = (right // place) % 10
+        carry = (left_digit + right_digit + carry >= 10).long()
+        targets[:, column] = carry
+    return targets
+
+
 def answer_target_mask(tokens: torch.Tensor) -> torch.Tensor:
     """Mask shifted next-token labels to answer digits plus EOS only."""
     if tokens.ndim != 2:
