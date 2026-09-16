@@ -1,0 +1,71 @@
+import torch
+
+from addition_gpt.data import (
+    AdditionBatchGenerator,
+    EQUALS_ID,
+    answer_target_mask,
+    contains_carry,
+    decode_answer,
+    encode_addition,
+    reverse_digits,
+)
+from evaluate import greedy_answers
+
+
+class PlannedAnswerModel(torch.nn.Module):
+    """Minimal model that emits a known answer sequence for greedy-decoding tests."""
+
+    def __init__(self, prompt_length: int, planned_tokens: torch.Tensor) -> None:
+        super().__init__()
+        self.prompt_length = prompt_length
+        self.planned_tokens = planned_tokens
+
+    def forward(self, tokens: torch.Tensor) -> torch.Tensor:
+        step = tokens.shape[1] - self.prompt_length
+        logits = torch.full((*tokens.shape, 15), -float("inf"))
+        logits[:, -1].scatter_(1, self.planned_tokens[:, step].unsqueeze(1), 0.0)
+        return logits
+
+
+def test_reverse_digits_preserves_fixed_width() -> None:
+    assert reverse_digits(7, 3) == [7, 0, 0]
+    assert reverse_digits(420, 3) == [0, 2, 4]
+
+
+def test_encoding_handles_overflow() -> None:
+    tokens = torch.tensor(encode_addition(99, 99, 2))
+    equals = int((tokens == EQUALS_ID).nonzero()[0])
+    assert decode_answer(tokens[equals + 1 :], 2) == 198
+
+
+def test_answer_mask_starts_at_equals_logit() -> None:
+    tokens = torch.tensor([encode_addition(7, 35, 3)])
+    mask = answer_target_mask(tokens)
+    equals = int((tokens[0] == EQUALS_ID).nonzero()[0])
+    assert not bool(mask[0, :equals].any())
+    assert bool(mask[0, equals:].all())
+
+
+def test_carry_detection() -> None:
+    assert contains_carry(7, 5, 2)
+    assert not contains_carry(12, 34, 2)
+
+
+def test_seeded_generators_match() -> None:
+    first = AdditionBatchGenerator(width=3, seed=42).batch(8)
+    second = AdditionBatchGenerator(width=3, seed=42).batch(8)
+    assert torch.equal(first.tokens, second.tokens)
+
+
+def test_generator_respects_operand_range() -> None:
+    batch = AdditionBatchGenerator(width=3, seed=7).batch(64, min_operand=100, max_operand=200)
+    assert bool((batch.left >= 100).all() and (batch.left < 200).all())
+    assert bool((batch.right >= 100).all() and (batch.right < 200).all())
+
+
+def test_greedy_answers_does_not_read_teacher_forced_answer_tokens() -> None:
+    tokens = torch.tensor([encode_addition(7, 35, 3), encode_addition(99, 9, 3)])
+    equals = int((tokens[0] == EQUALS_ID).nonzero()[0])
+    expected = tokens[:, equals + 1 :]
+    model = PlannedAnswerModel(equals + 1, expected)
+    assert torch.equal(greedy_answers(model, tokens, width=3), expected)
