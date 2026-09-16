@@ -141,13 +141,14 @@ was selected using only the independent IID stream (seed 41).
 | 1,000 | 99.74% | not evaluated |
 | 1,500 | 99.86% | 97.14% |
 | 2,000 | 99.97% | 99.41% |
+| 3,000 | 99.99% | 99.91% |
 
 Despite seeing no training examples of this carry-chain pattern, the selected
-step-2,000 checkpoint reaches 99.41% exact accuracy on a fresh 10,000-example
+step-3,000 checkpoint reaches 99.91% exact accuracy on a fresh 10,000-example
 chain stream (seed 42). This is far above the earlier structured-holdout results
 and shows that the previous apparent omission failure was strongly sensitive to
 training dynamics. Do not infer a robust zero-shot algorithm yet: complete the
-scheduled replications and fractional-exposure curve before comparing mechanisms.
+scheduled replications before comparing mechanisms.
 
 ## Mixed-width CPU baseline
 
