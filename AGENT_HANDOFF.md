@@ -24,7 +24,7 @@ digits: `<bos> a_ones ... + b_ones ... = sum_ones ... <eos>`.
 
 See `RESULTS.md` for all established numbers and methods.
 
-## Carry-chain holdout: revised conclusion
+## Carry-chain holdout: resolved conclusion
 
 The held-out pattern is: units digits create a carry and raw tens digits sum to
 9, so the incoming units carry causes the tens column to carry. It occurs in
@@ -43,46 +43,45 @@ cosine schedule length 3,000, and learning rate `3e-4`.
 | 2,000 | 99.97% | 99.41% |
 | 3,000 | 99.99% | 99.91% |
 
-IID uses evaluation seed 41 and the chain stream uses seed 42. The final result
-is promising zero-shot composition evidence, but it is **one seed**, so do not
-claim robustness yet.
+IID uses evaluation seed 41 and the chain stream uses seed 42. Seeds 2 and 3
+completed the same protocol: their IID-selected checkpoints scored 100.00% and
+99.85%, respectively, on the chain stream. The narrow holdout is therefore
+solved robustly and is not diagnostic of a literal lookup mechanism.
 
 ## Recent commits
 
 - `5006066` — records the seed-1 trajectory through step 2,000.
 - `59fb93c` — adds fractional `--units-carry-chain-exposure` and its tests.
 - `08b4ca2` — prior holdout replications and their documentation.
+- `4bc1ddb` — adds the broader carry-dependency holdout, control, and tests.
 
-## Immediate next experiment: replication, not probing
+## Broader carry-dependency holdout: replicated result
 
-Run the exact zero-exposure protocol for seeds 2 and 3. Do not tune based on
-carry-chain accuracy. Evaluate every saved checkpoint on IID first, choose the
-best IID checkpoint per seed, then evaluate that one checkpoint on carry-chain.
+The broader holdout excludes every example where an incoming carry is necessary
+for a following column to carry: the incoming carry is one and the following raw
+digit pair sums to nine. It contains both units-to-tens and tens-to-hundreds
+dependencies and occurs in exactly 9% of uniform three-digit pairs.
 
-```bash
-for seed in 2 3; do
-  uv run python -u train.py --width 3 --steps 3000 --schedule-steps 3000 \
-    --batch-size 256 --learning-rate 0.0003 --seed "$seed" \
-    --units-carry-chain-exposure 0 --checkpoint-every 500 --device cpu \
-    --checkpoint-dir "checkpoints/carry-chain-exposure-0-seed-$seed"
-done
-```
+All excluded models (seeds 1--3) selected their step-1,000 checkpoint by IID
+greedy exact accuracy: 90.55% IID and 0.00% carry-dependency exact. Matched 9%
+random-resampling controls selected IID-optimal checkpoints of 500, 1,500, and
+1,500 for seeds 1--3, respectively; all three score 100.00% IID and 100.00%
+carry-dependency exact. Evaluation streams contain 10,000 examples with seeds
+41 (IID) and 42 (holdout).
 
-Use `evaluate.py` with `--examples 10000 --batch-size 256 --seed 41` for IID,
-and the same arguments with `--split carry-chain --seed 42` for holdout. Record
-greedy exact-answer accuracy in `RESULTS.md`.
+## Immediate next experiment: predicate-conditioned causal test
 
-## Decision rule after replication
+IID carry probes were nearly indistinguishable between excluded and control
+models, and legacy units-carry activation patches were seed-variable. They do
+not isolate the broader holdout because their source/target pairs do not control
+the later carry-dependency predicate.
 
-- If seeds 2 and 3 also score high on the unseen chain: do **not** spend compute
-  on the fractional exposure curve. The narrow holdout is not hard enough.
-  Build a broader compositional holdout, such as excluding all examples where
-  an incoming carry is necessary for the following column to carry, while
-  retaining each local operation separately.
-- If one or more seeds fail substantially: run exposures `0.001`, `0.01`, and
-  `0.05` with the same protocol, then estimate the threshold with three seeds.
-- Only after a reproducible success/failure contrast exists should agents run
-  probes or activation patching to compare mechanisms between conditions.
+Build matched source/target pairs that differ only in whether one selected
+incoming carry causes the following column to carry, while fixing all other
+columns and answer digits where possible. Pre-specify the layer/position grid,
+run the same grid over all seeds, and compare excluded models with their
+same-seed controls. Treat whole-residual replacement as a localization screen;
+only then test more targeted components or directions.
 
 ## Implementation notes
 

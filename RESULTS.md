@@ -176,23 +176,47 @@ still allowing each raw local digit operation in other contexts. It occurs in
 exactly 9.0% of uniform operand pairs: 4.5% are units-to-tens dependencies,
 4.95% are tens-to-hundreds dependencies, and 0.45% satisfy both.
 
-The first seed-1 zero-exposure run used the same CPU, batch size 256, 3,000-step
-cosine schedule, learning rate `3e-4`, and checkpoint cadence as the stabilized
-study. A matched random-drop control conditionally resampled 9% of candidates
-uniformly. Each condition selected its earliest IID-tied-best checkpoint using
-the independent 10,000-example IID stream (seed 41), then received one
-10,000-example carry-dependency evaluation (seed 42).
+All three seeds used the same CPU, batch size 256, 3,000-step cosine schedule,
+learning rate `3e-4`, and checkpoint cadence as the stabilized study. A matched
+random-drop control conditionally resampled 9% of candidates uniformly. Each
+condition selected its earliest IID-tied-best checkpoint using the independent
+10,000-example IID stream (seed 41), then received one 10,000-example
+carry-dependency evaluation (seed 42).
 
-| Condition, seed 1 | IID-selected checkpoint | IID greedy exact accuracy | Carry-dependency greedy exact accuracy |
-| --- | ---: | ---: | ---: |
-| Dependency excluded | 1,000 | 90.55% | 0.00% |
-| 9% random-drop control | 500 | 100.00% | 100.00% |
+| Condition | Seed | IID-selected checkpoint | IID greedy exact accuracy | Carry-dependency greedy exact accuracy |
+| --- | ---: | ---: | ---: | ---: |
+| Dependency excluded | 1 | 1,000 | 90.55% | 0.00% |
+| Dependency excluded | 2 | 1,000 | 90.55% | 0.00% |
+| Dependency excluded | 3 | 1,000 | 90.55% | 0.00% |
+| 9% random-drop control | 1 | 500 | 100.00% | 100.00% |
+| 9% random-drop control | 2 | 1,500 | 100.00% | 100.00% |
+| 9% random-drop control | 3 | 1,500 | 100.00% | 100.00% |
 
-This is the intended success/failure contrast: the broad structural omission,
+This is a reproducible success/failure contrast: the broad structural omission,
 rather than uniform resampling at the same rate, prevents both strong IID
-performance and zero-shot success on the omitted dependencies. It is only one
-seed, so replicate both conditions for seeds 2 and 3 without tuning before
-making mechanistic claims or selecting an intervention target.
+performance and zero-shot success on the omitted dependencies. Mechanistic
+comparisons between matched excluded and control models are now justified, but
+their goal is to explain this behavioral contrast—not to treat probe
+decodability as causal evidence.
+
+#### Initial mechanistic comparison
+
+Linear probes at the `=` residual position were fit on 10,000 IID additions and
+tested on 5,000 fresh IID additions for every IID-selected model. Units-carry
+decoding was 100% at every layer in every model. At layer 2, mean decoding
+accuracy across seeds was 81.45% (excluded) versus 81.95% (control) for the
+tens carry, and 68.61% versus 70.39% for the hundreds carry. Thus this probe
+does not provide a clean explanation of the behavioral contrast.
+
+We also patched the entire `=` residual from matched no-units-carry prompts to
+matched units-carry prompts, at every layer, on 200 fixed pairs per model. Full
+layer-0 replacement switched to the source sum in 86.5%, 86.5%, and 42.5% of
+excluded-model pairs (seeds 1--3) and 100.0%, 100.0%, and 13.5% of control
+pairs. This is strongly seed-dependent rather than a consistent condition
+effect. Moreover, these legacy pairs are matched only on the units carry, not
+on the broader carry-dependency predicate, so they cannot identify the cause of
+the broad-holdout failure. The next causal test should construct pairs that
+toggle a specific carry dependency while holding the remaining columns fixed.
 
 ## Mixed-width CPU baseline
 
