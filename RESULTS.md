@@ -237,6 +237,15 @@ The third control's weaker 22.0% effect means its magnitude is not yet robust;
 the next step is targeted component or direction patching within layer 0, with
 the same fixed pairs and all three seeds.
 
+Replacing only the layer-0 attention output reproduced the full-residual rates
+(98.5%, 100.0%, and 22.0% in controls; 0.0% in excluded models). Replacing only
+the MLP output was weaker (85.0%, 80.5%, and 3.5% in controls), and replacing
+the layer-0 pre-residual was null. A complete four-head grid found no individual
+attention head sufficient: its maximum source-counterfactual rate was 3.5%.
+Thus the attention effect is distributed across heads or depends on a head
+combination; the next targeted test should patch every pre-specified nonempty
+head subset rather than nominate a single head from this screen.
+
 ## Mixed-width CPU baseline
 
 This matched the prior baseline's model, batch size, seed, CPU device, and

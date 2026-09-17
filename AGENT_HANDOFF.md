@@ -83,10 +83,15 @@ replacement did not switch either condition.
 
 ## Immediate next experiment: targeted layer-0 patching
 
-Use the same predicate-conditioned pairs and all three seed pairs to patch
-individual layer-0 components or a pre-specified set of directions, rather than
-the whole residual stream. Keep the complete component/direction grid and report
-all seeds; do not select a component based only on the strongest control seed.
+The layer-0 attention-output patch reproduces the full-residual effect, MLP-only
+patching is weaker, and no individual attention head is sufficient (at most 3.5%
+source-counterfactual success). The relevant attention computation is therefore
+distributed across heads or interaction-dependent.
+
+Patch all 15 nonempty subsets of the four layer-0 heads, using the same
+predicate-conditioned pairs and all seed pairs. Keep the full subset grid and
+report all seeds. This tests whether a small head set is sufficient without
+choosing heads based on the current screen.
 
 ## Implementation notes
 

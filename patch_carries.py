@@ -32,6 +32,17 @@ def parse_args() -> argparse.Namespace:
         default="units-carry",
         help="Matched intervention pair construction.",
     )
+    parser.add_argument(
+        "--component",
+        choices=("resid-pre", "attn-out", "attn-z", "mlp-out", "resid-post"),
+        default="resid-post",
+        help="Layer component to replace at the equals position.",
+    )
+    parser.add_argument(
+        "--head",
+        type=int,
+        help="Attention head to replace; requires --component attn-z.",
+    )
     parser.add_argument("--blends", default="0,0.25,0.5,0.75,1")
     parser.add_argument("--device", choices=("auto", "cpu", "mps", "cuda"), default="cpu")
     parser.add_argument("--output-dir", type=Path, default=Path("artifacts/carry_patching"))
@@ -133,8 +144,14 @@ def matched_carry_dependency_pairs(
 
 
 @torch.no_grad()
-def equals_residual(model: torch.nn.Module, prompts: torch.Tensor, layer: int) -> torch.Tensor:
-    name = f"blocks.{layer}.hook_resid_post"
+def equals_component(
+    model: torch.nn.Module, prompts: torch.Tensor, layer: int, component: str
+) -> torch.Tensor:
+    name = (
+        f"blocks.{layer}.attn.hook_z"
+        if component == "attn-z"
+        else f"blocks.{layer}.hook_{component.replace('-', '_')}"
+    )
     _, cache = model.run_with_cache(prompts, names_filter=lambda hook_name: hook_name == name)
     return cache[name][:, -1].clone()
 
@@ -147,20 +164,30 @@ def generate_patched(
     source_residual: torch.Tensor,
     width: int,
     layer: int,
+    component: str,
+    head: int | None,
     blend: float,
 ) -> torch.Tensor:
-    """Greedily decode target prompts while replacing ``=`` residuals by a source blend."""
+    """Greedily decode target prompts while replacing one ``=`` component."""
     equals_position = int((target_prompts[0] == EQUALS_ID).nonzero()[0])
     replacement = (1 - blend) * target_residual + blend * source_residual
     generated = target_prompts
     for _ in range(width + 2):
         def patch(activation: torch.Tensor, hook: object) -> torch.Tensor:
-            activation[:, equals_position] = replacement
+            if head is None:
+                activation[:, equals_position] = replacement
+            else:
+                activation[:, equals_position, head] = replacement
             return activation
 
+        hook_name = (
+            f"blocks.{layer}.attn.hook_z"
+            if component == "attn-z"
+            else f"blocks.{layer}.hook_{component.replace('-', '_')}"
+        )
         logits = model.run_with_hooks(
             generated,
-            fwd_hooks=[(f"blocks.{layer}.hook_resid_post", patch)],
+            fwd_hooks=[(hook_name, patch)],
         )
         generated = torch.cat((generated, logits[:, -1].argmax(dim=-1, keepdim=True)), dim=1)
     return generated[:, -width - 2 :]
@@ -172,6 +199,8 @@ def decode_answers(tokens: torch.Tensor, width: int) -> torch.Tensor:
 
 def main() -> None:
     args = parse_args()
+    if args.head is not None and args.component != "attn-z":
+        raise ValueError("--head requires --component attn-z")
     device = resolve_device(args.device)
     loaded = torch.load(args.checkpoint, map_location=device, weights_only=False)
     model = build_model(ModelConfig(**loaded["model_config"]), device)
@@ -188,8 +217,15 @@ def main() -> None:
     prompt_length = 2 * args.width + 3
     target_prompts = target_tokens[:, :prompt_length].to(device)
     source_prompts = source_tokens[:, :prompt_length].to(device)
-    target_residual = equals_residual(model, target_prompts, args.layer)
-    source_residual = equals_residual(model, source_prompts, args.layer)
+    target_residual = equals_component(model, target_prompts, args.layer, args.component)
+    source_residual = equals_component(model, source_prompts, args.layer, args.component)
+    if args.component == "attn-z":
+        if args.head is None:
+            raise ValueError("--component attn-z requires --head")
+        if not 0 <= args.head < target_residual.shape[1]:
+            raise ValueError(f"--head must be in [0, {target_residual.shape[1]})")
+        target_residual = target_residual[:, args.head]
+        source_residual = source_residual[:, args.head]
     rows = []
     for blend in (float(value) for value in args.blends.split(",")):
         answers = decode_answers(
@@ -200,6 +236,8 @@ def main() -> None:
                 source_residual,
                 args.width,
                 args.layer,
+                args.component,
+                args.head,
                 blend,
             ),
             args.width,
@@ -207,6 +245,8 @@ def main() -> None:
         rows.append(
             {
                 "pair_type": args.pair_type,
+                "component": args.component,
+                "head": args.head,
                 "blend": blend,
                 "target_exact_fraction": float((answers == target_sums).float().mean()),
                 "source_counterfactual_fraction": float((answers == source_sums).float().mean()),
