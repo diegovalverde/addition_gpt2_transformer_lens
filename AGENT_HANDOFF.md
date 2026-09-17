@@ -76,12 +76,17 @@ models, and legacy units-carry activation patches were seed-variable. They do
 not isolate the broader holdout because their source/target pairs do not control
 the later carry-dependency predicate.
 
-Build matched source/target pairs that differ only in whether one selected
-incoming carry causes the following column to carry, while fixing all other
-columns and answer digits where possible. Pre-specify the layer/position grid,
-run the same grid over all seeds, and compare excluded models with their
-same-seed controls. Treat whole-residual replacement as a localization screen;
-only then test more targeted components or directions.
+Predicate-conditioned full-residual patching has now localized the effect to
+layer 0 at `=`: source-to-target replacement switched 98.5%, 100.0%, and 22.0%
+of control pairs (seeds 1--3), versus 0.0% for all excluded models. Later-layer
+replacement did not switch either condition.
+
+## Immediate next experiment: targeted layer-0 patching
+
+Use the same predicate-conditioned pairs and all three seed pairs to patch
+individual layer-0 components or a pre-specified set of directions, rather than
+the whole residual stream. Keep the complete component/direction grid and report
+all seeds; do not select a component based only on the strongest control seed.
 
 ## Implementation notes
 

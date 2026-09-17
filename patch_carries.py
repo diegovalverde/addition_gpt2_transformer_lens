@@ -9,7 +9,12 @@ from pathlib import Path
 
 import torch
 
-from addition_gpt.data import EQUALS_ID, decode_answer, encode_addition
+from addition_gpt.data import (
+    EQUALS_ID,
+    decode_answer,
+    encode_addition,
+    has_carry_dependency_chain,
+)
 from addition_gpt.model import ModelConfig, build_model
 from train import resolve_device
 
@@ -21,6 +26,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--layer", type=int, required=True)
     parser.add_argument("--examples", type=int, default=200)
     parser.add_argument("--seed", type=int, default=300)
+    parser.add_argument(
+        "--pair-type",
+        choices=("units-carry", "carry-dependency"),
+        default="units-carry",
+        help="Matched intervention pair construction.",
+    )
     parser.add_argument("--blends", default="0,0.25,0.5,0.75,1")
     parser.add_argument("--device", choices=("auto", "cpu", "mps", "cuda"), default="cpu")
     parser.add_argument("--output-dir", type=Path, default=Path("artifacts/carry_patching"))
@@ -60,6 +71,64 @@ def matched_units_carry_pairs(
     source_tokens = torch.tensor(
         [encode_addition(int(left), int(right), width) for left, right in zip(source_left, source_right)]
     )
+    return target_tokens, source_tokens, target_left + target_right, source_left + source_right
+
+
+def matched_carry_dependency_pairs(
+    width: int, examples: int, seed: int
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    """Toggle only a units carry that triggers a tens carry in the source.
+
+    Both prompts have identical tens and higher input digits. Their raw tens
+    digits sum to nine, so the source's added units carry is necessary for a
+    tens carry. Higher raw columns are sampled to sum to at most eight, avoiding
+    a second dependency and isolating the units-to-tens transition.
+    """
+    if width < 2:
+        raise ValueError("carry-dependency pairs require width at least two")
+    generator = torch.Generator().manual_seed(seed)
+    target_units_sum = torch.randint(9, (examples,), generator=generator)
+    target_left_units = torch.stack(
+        [torch.randint(int(total) + 1, (1,), generator=generator)[0] for total in target_units_sum]
+    )
+    target_right_units = target_units_sum - target_left_units
+    source_units_sum = target_units_sum + 10
+    source_left_units = torch.stack(
+        [
+            torch.randint(int(total) - 9, 10, (1,), generator=generator)[0]
+            for total in source_units_sum
+        ]
+    )
+    source_right_units = source_units_sum - source_left_units
+
+    tens_left = torch.randint(10, (examples,), generator=generator)
+    tens_right = 9 - tens_left
+    target_left = target_left_units + 10 * tens_left
+    target_right = target_right_units + 10 * tens_right
+    source_left = source_left_units + 10 * tens_left
+    source_right = source_right_units + 10 * tens_right
+    for column in range(2, width):
+        place = 10**column
+        raw_sum = torch.randint(9, (examples,), generator=generator)
+        left_digit = torch.stack(
+            [torch.randint(int(total) + 1, (1,), generator=generator)[0] for total in raw_sum]
+        )
+        right_digit = raw_sum - left_digit
+        target_left += place * left_digit
+        target_right += place * right_digit
+        source_left += place * left_digit
+        source_right += place * right_digit
+
+    target_tokens = torch.tensor(
+        [encode_addition(int(left), int(right), width) for left, right in zip(target_left, target_right)]
+    )
+    source_tokens = torch.tensor(
+        [encode_addition(int(left), int(right), width) for left, right in zip(source_left, source_right)]
+    )
+    if bool(has_carry_dependency_chain(target_left, target_right, width).any()):
+        raise AssertionError("target pairs must not contain a carry dependency")
+    if not bool(has_carry_dependency_chain(source_left, source_right, width).all()):
+        raise AssertionError("source pairs must contain the toggled carry dependency")
     return target_tokens, source_tokens, target_left + target_right, source_left + source_right
 
 
@@ -108,7 +177,12 @@ def main() -> None:
     model = build_model(ModelConfig(**loaded["model_config"]), device)
     model.load_state_dict(loaded["model_state_dict"])
     model.eval()
-    target_tokens, source_tokens, target_sums, source_sums = matched_units_carry_pairs(
+    pair_builder = (
+        matched_units_carry_pairs
+        if args.pair_type == "units-carry"
+        else matched_carry_dependency_pairs
+    )
+    target_tokens, source_tokens, target_sums, source_sums = pair_builder(
         args.width, args.examples, args.seed
     )
     prompt_length = 2 * args.width + 3
@@ -132,6 +206,7 @@ def main() -> None:
         )
         rows.append(
             {
+                "pair_type": args.pair_type,
                 "blend": blend,
                 "target_exact_fraction": float((answers == target_sums).float().mean()),
                 "source_counterfactual_fraction": float((answers == source_sums).float().mean()),

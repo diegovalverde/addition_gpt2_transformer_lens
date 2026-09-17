@@ -13,7 +13,7 @@ from addition_gpt.data import (
     has_units_carry_chain,
 )
 from evaluate import greedy_answers
-from patch_carries import matched_units_carry_pairs
+from patch_carries import matched_carry_dependency_pairs, matched_units_carry_pairs
 
 
 class PlannedAnswerModel(torch.nn.Module):
@@ -132,4 +132,15 @@ def test_greedy_answers_does_not_read_teacher_forced_answer_tokens() -> None:
 
 def test_matched_pairs_toggle_only_units_carry_and_shift_answer_by_ten() -> None:
     _, _, target_sums, source_sums = matched_units_carry_pairs(width=3, examples=32, seed=9)
+    assert torch.equal(source_sums, target_sums + 10)
+
+
+def test_matched_dependency_pairs_toggle_only_the_units_digits() -> None:
+    target, source, target_sums, source_sums = matched_carry_dependency_pairs(
+        width=3, examples=32, seed=9
+    )
+    # Operand digits above units are held fixed, and only the source has a
+    # carry dependency; matching units output keeps the answer change at ten.
+    assert torch.equal(target[:, 2:4], source[:, 2:4])
+    assert torch.equal(target[:, 6:8], source[:, 6:8])
     assert torch.equal(source_sums, target_sums + 10)

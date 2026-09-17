@@ -218,6 +218,25 @@ on the broader carry-dependency predicate, so they cannot identify the cause of
 the broad-holdout failure. The next causal test should construct pairs that
 toggle a specific carry dependency while holding the remaining columns fixed.
 
+#### Predicate-conditioned activation patching
+
+We then constructed pairs that hold all tens and higher input digits fixed,
+make the raw tens sum nine, and toggle only the units carry. Consequently, the
+source—but not the target—has exactly one units-to-tens carry dependency; higher
+raw digit sums are at most eight to prevent a second dependency. On the same
+200 fixed pairs, replacing the full layer-0 `=` residual with the source
+residual produced the source counterfactual in 98.5%, 100.0%, and 22.0% of
+control-model pairs for seeds 1--3, respectively, but 0.0% for every excluded
+model. No later-layer full-residual replacement produced source counterfactuals
+in either condition.
+
+This is causal localization evidence: in the controls, the layer-0 `=` residual
+can carry the specific dependency information needed to change the answer,
+whereas excluded models do not use that state to produce the omitted transition.
+The third control's weaker 22.0% effect means its magnitude is not yet robust;
+the next step is targeted component or direction patching within layer 0, with
+the same fixed pairs and all three seeds.
+
 ## Mixed-width CPU baseline
 
 This matched the prior baseline's model, batch size, seed, CPU device, and
