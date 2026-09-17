@@ -1,0 +1,230 @@
+[
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "excluded-1",
+    "raw_tens_sum": 8,
+    "mean_delta_s": 23.78888511657715,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "excluded-1",
+    "raw_tens_sum": 8,
+    "mlp_transport_projection": 1.1720914840698242,
+    "score_jvp": 0.5285382270812988,
+    "mlp_jvp_norm": 1.405799388885498
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "mean_delta_s": 0.8499391674995422,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 1.1899778842926025,
+    "score_jvp": -1.13356351852417,
+    "mlp_jvp_norm": 1.4106812477111816
+  },
+  {
+    "phase": "raw9_minus_raw8_mlp_jvp",
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 0.01788640022277832,
+    "score_jvp": -1.6621017456054688,
+    "mlp_jvp_norm": 0.004881858825683594
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "control-1",
+    "raw_tens_sum": 8,
+    "mean_delta_s": 15.68243408203125,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "control-1",
+    "raw_tens_sum": 8,
+    "mlp_transport_projection": 1.0174952745437622,
+    "score_jvp": 0.785675048828125,
+    "mlp_jvp_norm": 1.3285858631134033
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "mean_delta_s": 15.43575668334961,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 1.1001511812210083,
+    "score_jvp": 0.3205680847167969,
+    "mlp_jvp_norm": 1.353914737701416
+  },
+  {
+    "phase": "raw9_minus_raw8_mlp_jvp",
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 0.0826559066772461,
+    "score_jvp": -0.4651069641113281,
+    "mlp_jvp_norm": 0.025328874588012695
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "excluded-2",
+    "raw_tens_sum": 8,
+    "mean_delta_s": 25.229846954345703,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "excluded-2",
+    "raw_tens_sum": 8,
+    "mlp_transport_projection": 1.0802134275436401,
+    "score_jvp": 0.7746624946594238,
+    "mlp_jvp_norm": 1.3923684358596802
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "mean_delta_s": 2.8877270221710205,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 1.1317330598831177,
+    "score_jvp": -0.5368590354919434,
+    "mlp_jvp_norm": 1.3763136863708496
+  },
+  {
+    "phase": "raw9_minus_raw8_mlp_jvp",
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 0.05151963233947754,
+    "score_jvp": -1.3115215301513672,
+    "mlp_jvp_norm": -0.016054749488830566
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "control-2",
+    "raw_tens_sum": 8,
+    "mean_delta_s": 37.44931411743164,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "control-2",
+    "raw_tens_sum": 8,
+    "mlp_transport_projection": 1.185935378074646,
+    "score_jvp": 0.8434342741966248,
+    "mlp_jvp_norm": 1.563893437385559
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "mean_delta_s": 37.43122100830078,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 1.2112895250320435,
+    "score_jvp": 0.855069100856781,
+    "mlp_jvp_norm": 1.4957973957061768
+  },
+  {
+    "phase": "raw9_minus_raw8_mlp_jvp",
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 0.02535414695739746,
+    "score_jvp": 0.01163482666015625,
+    "mlp_jvp_norm": -0.06809604167938232
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "excluded-3",
+    "raw_tens_sum": 8,
+    "mean_delta_s": 31.388559341430664,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "excluded-3",
+    "raw_tens_sum": 8,
+    "mlp_transport_projection": 1.1344600915908813,
+    "score_jvp": 1.0934782028198242,
+    "mlp_jvp_norm": 1.3500393629074097
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "mean_delta_s": 0.09256734699010849,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 1.1932989358901978,
+    "score_jvp": -1.1368942260742188,
+    "mlp_jvp_norm": 1.3804725408554077
+  },
+  {
+    "phase": "raw9_minus_raw8_mlp_jvp",
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 0.058838844299316406,
+    "score_jvp": -2.230372428894043,
+    "mlp_jvp_norm": 0.030433177947998047
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "control-3",
+    "raw_tens_sum": 8,
+    "mean_delta_s": 35.310333251953125,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "control-3",
+    "raw_tens_sum": 8,
+    "mlp_transport_projection": 0.876711905002594,
+    "score_jvp": 1.0341644287109375,
+    "mlp_jvp_norm": 1.1562224626541138
+  },
+  {
+    "phase": "resid_mid_source_patch",
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "mean_delta_s": 37.18115234375,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "phase": "mlp_jvp",
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 0.988239049911499,
+    "score_jvp": 0.836784839630127,
+    "mlp_jvp_norm": 1.2440816164016724
+  },
+  {
+    "phase": "raw9_minus_raw8_mlp_jvp",
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "mlp_transport_projection": 0.11152714490890503,
+    "score_jvp": -0.19737958908081055,
+    "mlp_jvp_norm": 0.0878591537475586
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "model": "excluded-1",
+    "site": "l1_post_units",
+    "mean_gradient_gain": -0.5878502130508423,
+    "mean_finite_difference_gain": -0.5878355503082275,
+    "jvp_fd_correlation": 0.9999997019767761,
+    "mean_delta_s_at_positive_scale": 0.6060085296630859,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 15.816357612609863
+  },
+  {
+    "model": "excluded-1",
+    "site": "l2_post_units",
+    "mean_gradient_gain": -0.4190519452095032,
+    "mean_finite_difference_gain": -0.4190482199192047,
+    "jvp_fd_correlation": 0.9999997019767761,
+    "mean_delta_s_at_positive_scale": 0.9122607707977295,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 21.953876495361328
+  },
+  {
+    "model": "excluded-1",
+    "site": "l3_post_units",
+    "mean_gradient_gain": -0.16628128290176392,
+    "mean_finite_difference_gain": -0.166279137134552,
+    "jvp_fd_correlation": 0.9999984502792358,
+    "mean_delta_s_at_positive_scale": 0.432327002286911,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 17.39313316345215
+  },
+  {
+    "model": "control-1",
+    "site": "l1_post_units",
+    "mean_gradient_gain": 0.21716231107711792,
+    "mean_finite_difference_gain": 0.21717716753482819,
+    "jvp_fd_correlation": 0.9999998807907104,
+    "mean_delta_s_at_positive_scale": 14.543004035949707,
+    "source_tens_argmax_fraction": 0.9900000095367432,
+    "scale": 10.283085823059082
+  },
+  {
+    "model": "control-1",
+    "site": "l2_post_units",
+    "mean_gradient_gain": 0.3272625207901001,
+    "mean_finite_difference_gain": 0.3272579312324524,
+    "jvp_fd_correlation": 0.9999999403953552,
+    "mean_delta_s_at_positive_scale": 15.4318208694458,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 14.507920265197754
+  },
+  {
+    "model": "control-1",
+    "site": "l3_post_units",
+    "mean_gradient_gain": 0.42835140228271484,
+    "mean_finite_difference_gain": 0.42835450172424316,
+    "jvp_fd_correlation": 0.9999998807907104,
+    "mean_delta_s_at_positive_scale": 15.801342964172363,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 20.904314041137695
+  },
+  {
+    "model": "excluded-2",
+    "site": "l1_post_units",
+    "mean_gradient_gain": -0.23945878446102142,
+    "mean_finite_difference_gain": -0.23945565521717072,
+    "jvp_fd_correlation": 0.9999998211860657,
+    "mean_delta_s_at_positive_scale": 2.537423610687256,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 14.84277629852295
+  },
+  {
+    "model": "excluded-2",
+    "site": "l2_post_units",
+    "mean_gradient_gain": -0.16056877374649048,
+    "mean_finite_difference_gain": -0.16058588027954102,
+    "jvp_fd_correlation": 0.999999463558197,
+    "mean_delta_s_at_positive_scale": 2.707996129989624,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 18.41152572631836
+  },
+  {
+    "model": "excluded-2",
+    "site": "l3_post_units",
+    "mean_gradient_gain": -0.019963538274168968,
+    "mean_finite_difference_gain": -0.01996791921555996,
+    "jvp_fd_correlation": 0.9999968409538269,
+    "mean_delta_s_at_positive_scale": 2.7823967933654785,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 16.76996421813965
+  },
+  {
+    "model": "control-2",
+    "site": "l1_post_units",
+    "mean_gradient_gain": 0.49857571721076965,
+    "mean_finite_difference_gain": 0.4985957443714142,
+    "jvp_fd_correlation": 0.9999995827674866,
+    "mean_delta_s_at_positive_scale": 37.06483459472656,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 13.681909561157227
+  },
+  {
+    "model": "control-2",
+    "site": "l2_post_units",
+    "mean_gradient_gain": 0.6393847465515137,
+    "mean_finite_difference_gain": 0.6393715739250183,
+    "jvp_fd_correlation": 0.999999463558197,
+    "mean_delta_s_at_positive_scale": 37.44105529785156,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 18.31343650817871
+  },
+  {
+    "model": "control-2",
+    "site": "l3_post_units",
+    "mean_gradient_gain": 0.42961156368255615,
+    "mean_finite_difference_gain": 0.4296126067638397,
+    "jvp_fd_correlation": 0.9999985694885254,
+    "mean_delta_s_at_positive_scale": 37.80364990234375,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 44.62627410888672
+  },
+  {
+    "model": "excluded-3",
+    "site": "l1_post_units",
+    "mean_gradient_gain": -0.7368972301483154,
+    "mean_finite_difference_gain": -0.7368836402893066,
+    "jvp_fd_correlation": 0.9999995827674866,
+    "mean_delta_s_at_positive_scale": -0.45338571071624756,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 8.349203109741211
+  },
+  {
+    "model": "excluded-3",
+    "site": "l2_post_units",
+    "mean_gradient_gain": -0.41142311692237854,
+    "mean_finite_difference_gain": -0.41142013669013977,
+    "jvp_fd_correlation": 0.9999987483024597,
+    "mean_delta_s_at_positive_scale": -0.1879754215478897,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 11.002856254577637
+  },
+  {
+    "model": "excluded-3",
+    "site": "l3_post_units",
+    "mean_gradient_gain": -0.17697452008724213,
+    "mean_finite_difference_gain": -0.1769844889640808,
+    "jvp_fd_correlation": 0.999992847442627,
+    "mean_delta_s_at_positive_scale": -0.10823410004377365,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 13.495513916015625
+  },
+  {
+    "model": "control-3",
+    "site": "l1_post_units",
+    "mean_gradient_gain": 0.41634461283683777,
+    "mean_finite_difference_gain": 0.4163460433483124,
+    "jvp_fd_correlation": 0.9999997019767761,
+    "mean_delta_s_at_positive_scale": 33.8641471862793,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 13.240090370178223
+  },
+  {
+    "model": "control-3",
+    "site": "l2_post_units",
+    "mean_gradient_gain": 0.5825487375259399,
+    "mean_finite_difference_gain": 0.5825356841087341,
+    "jvp_fd_correlation": 0.9999995827674866,
+    "mean_delta_s_at_positive_scale": 35.926143646240234,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 17.932676315307617
+  },
+  {
+    "model": "control-3",
+    "site": "l3_post_units",
+    "mean_gradient_gain": 0.4066348969936371,
+    "mean_finite_difference_gain": 0.4066278338432312,
+    "jvp_fd_correlation": 0.999999463558197,
+    "mean_delta_s_at_positive_scale": 36.34067153930664,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 46.8747673034668
+  }
+]

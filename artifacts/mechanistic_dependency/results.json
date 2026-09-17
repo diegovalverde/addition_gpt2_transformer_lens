@@ -1,0 +1,5996 @@
+[
+  {
+    "phase": "probe",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "held_out_accuracy": 0.5,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.00012603760114870965,
+    "ci95_halfwidth": 9.523686458123848e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0003799915430136025,
+    "ci95_halfwidth": 0.0002857715298887342,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0012886046897619963,
+    "ci95_halfwidth": 0.0009516730206087232,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.004064812790602446,
+    "ci95_halfwidth": 0.0028479795437306166,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "epsilon": 0.001,
+    "correlation": 0.9999940395355225,
+    "sign_agreement": 1.0,
+    "relative_error": 0.0034958980977535248
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -6.206512625794858e-05,
+    "ci95_halfwidth": 0.00012119736493332312,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.00018814564100466669,
+    "ci95_halfwidth": 0.0003635743341874331,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.000641136197373271,
+    "ci95_halfwidth": 0.0012121361214667559,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.002049140864983201,
+    "ci95_halfwidth": 0.0036373913753777742,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00046003819443285465,
+    "ci95_halfwidth": 0.00012478179996833205,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0013821125030517578,
+    "ci95_halfwidth": 0.0003742662665899843,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.004622444976121187,
+    "ci95_halfwidth": 0.0012469504727050662,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.013994765467941761,
+    "ci95_halfwidth": 0.0037340065464377403,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": -8.423805411439389e-05,
+    "ci95_halfwidth": 0.00010535584442550316,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.00025530814309604466,
+    "ci95_halfwidth": 0.00031604443211108446,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0008788347477093339,
+    "ci95_halfwidth": 0.0010549083817750216,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0028650332242250443,
+    "ci95_halfwidth": 0.003177097998559475,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "held_out_accuracy": 0.6850000023841858,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.0009311533067375422,
+    "ci95_halfwidth": 7.968334830366075e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0027942799497395754,
+    "ci95_halfwidth": 0.00023920756939332932,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00932108424603939,
+    "ci95_halfwidth": 0.0007975182379595935,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.028012942522764206,
+    "ci95_halfwidth": 0.002394620794802904,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "epsilon": 0.001,
+    "correlation": 0.9999945163726807,
+    "sign_agreement": 1.0,
+    "relative_error": 0.001597608090378344
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00017252445104531944,
+    "ci95_halfwidth": 2.4088896680041216e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0005175113910809159,
+    "ci95_halfwidth": 7.221072883112356e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0017230940284207463,
+    "ci95_halfwidth": 0.00024077447596937418,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.005142364650964737,
+    "ci95_halfwidth": 0.0007225308218039572,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 6.2646868173033e-05,
+    "ci95_halfwidth": 2.301938548043836e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00018663406081032008,
+    "ci95_halfwidth": 6.903962639626116e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0006167936371639371,
+    "ci95_halfwidth": 0.00023013271857053041,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0018093347316607833,
+    "ci95_halfwidth": 0.0006901186425238848,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.00012619495100807399,
+    "ci95_halfwidth": 2.6386405806988478e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.00037923813215456903,
+    "ci95_halfwidth": 7.910806743893772e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0012686157133430243,
+    "ci95_halfwidth": 0.00026406924007460475,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.003842744743451476,
+    "ci95_halfwidth": 0.0007935097091831267,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "held_out_accuracy": 0.6899999976158142,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.0002759838243946433,
+    "ci95_halfwidth": 2.175356166844722e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0008273935527540743,
+    "ci95_halfwidth": 6.525722710648552e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0027593516279011965,
+    "ci95_halfwidth": 0.00021743583783973008,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.008288374170660973,
+    "ci95_halfwidth": 0.0006519959424622357,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "epsilon": 0.001,
+    "correlation": 0.9999347925186157,
+    "sign_agreement": 1.0,
+    "relative_error": 0.005138959735631943
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -1.4715194993186742e-05,
+    "ci95_halfwidth": 1.537738717161119e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -4.4617652747547254e-05,
+    "ci95_halfwidth": 4.607627488439903e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00015130519750528038,
+    "ci95_halfwidth": 0.00015351800539065152,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.00046448232023976743,
+    "ci95_halfwidth": 0.0004608605813700706,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 7.971286686370149e-05,
+    "ci95_halfwidth": 1.0394936907687224e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00023872852034401149,
+    "ci95_halfwidth": 3.115498839179054e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0007945060497149825,
+    "ci95_halfwidth": 0.00010381464380770922,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0023712588008493185,
+    "ci95_halfwidth": 0.00031137734185904264,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00016589164442848414,
+    "ci95_halfwidth": 1.1824310604424682e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0004980277735739946,
+    "ci95_halfwidth": 3.553576971171424e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0016573667526245117,
+    "ci95_halfwidth": 0.00011842123785754666,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.004962058272212744,
+    "ci95_halfwidth": 0.00035531941102817655,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-1",
+    "hook": "z",
+    "held_out_accuracy": 0.6899999976158142,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.0008882188703864813,
+    "ci95_halfwidth": 9.077156573766842e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.002666158601641655,
+    "ci95_halfwidth": 0.0002723795478232205,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00889713317155838,
+    "ci95_halfwidth": 0.0009087228681892157,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.026779823005199432,
+    "ci95_halfwidth": 0.0027325034607201815,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-1",
+    "hook": "z",
+    "epsilon": 0.001,
+    "correlation": 0.9999952912330627,
+    "sign_agreement": 1.0,
+    "relative_error": 0.0017692421097308397
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.0002613496908452362,
+    "ci95_halfwidth": 2.8205979106132872e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.000784592644777149,
+    "ci95_halfwidth": 8.457995136268437e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0026103972923010588,
+    "ci95_halfwidth": 0.0002819339861162007,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.007807803340256214,
+    "ci95_halfwidth": 0.0008453683112747967,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": -7.294654642464593e-05,
+    "ci95_halfwidth": 1.5699382856837474e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.00021929264767095447,
+    "ci95_halfwidth": 4.715121031040326e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0007318210555240512,
+    "ci95_halfwidth": 0.00015721299860160798,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0022103404626250267,
+    "ci95_halfwidth": 0.00047196142259053886,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 7.395744432869833e-06,
+    "ci95_halfwidth": 2.618119469843805e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 2.2130012439447455e-05,
+    "ci95_halfwidth": 7.863129576435313e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 7.27748847566545e-05,
+    "ci95_halfwidth": 0.0002621132298372686,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0002037811209447682,
+    "ci95_halfwidth": 0.0007870400440879166,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "heads": "0",
+    "head_count": 1,
+    "mean_delta_s": -1.6369028091430664,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "1",
+    "head_count": 1,
+    "mean_delta_s": -0.7434313297271729,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "2",
+    "head_count": 1,
+    "mean_delta_s": -1.1094356775283813,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "3",
+    "head_count": 1,
+    "mean_delta_s": -1.5494980812072754,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1",
+    "head_count": 2,
+    "mean_delta_s": -1.8700168132781982,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2",
+    "head_count": 2,
+    "mean_delta_s": -1.5009840726852417,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+3",
+    "head_count": 2,
+    "mean_delta_s": -1.1028814315795898,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2",
+    "head_count": 2,
+    "mean_delta_s": -1.534120798110962,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "1+3",
+    "head_count": 2,
+    "mean_delta_s": -1.6246792078018188,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "2+3",
+    "head_count": 2,
+    "mean_delta_s": -1.2911114692687988,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2",
+    "head_count": 3,
+    "mean_delta_s": -0.9278724193572998,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+3",
+    "head_count": 3,
+    "mean_delta_s": -0.2432199865579605,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2+3",
+    "head_count": 3,
+    "mean_delta_s": -0.0638715997338295,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2+3",
+    "head_count": 3,
+    "mean_delta_s": -0.7482935190200806,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2+3",
+    "head_count": 4,
+    "mean_delta_s": 0.47011488676071167,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-1",
+    "hook": "z"
+  },
+  {
+    "phase": "probe",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "held_out_accuracy": 0.5,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.00047652958892285824,
+    "ci95_halfwidth": 9.929671068675816e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0014250993262976408,
+    "ci95_halfwidth": 0.0002973940863739699,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.004686260130256414,
+    "ci95_halfwidth": 0.000986587954685092,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.013522467575967312,
+    "ci95_halfwidth": 0.002921576611697674,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "epsilon": 0.001,
+    "correlation": 0.9999940991401672,
+    "sign_agreement": 0.9950000047683716,
+    "relative_error": 0.002955605275928974
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.0003249859728384763,
+    "ci95_halfwidth": 8.061464905040339e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0009709548903629184,
+    "ci95_halfwidth": 0.0002413966867607087,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0031791424844413996,
+    "ci95_halfwidth": 0.000802858208771795,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.00905827060341835,
+    "ci95_halfwidth": 0.002395157003775239,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00011100291885668412,
+    "ci95_halfwidth": 9.833514195634052e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00033671141136437654,
+    "ci95_halfwidth": 0.0002950103662442416,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0011659860610961914,
+    "ci95_halfwidth": 0.0009831736097112298,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.003860495053231716,
+    "ci95_halfwidth": 0.002947936300188303,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 6.544351344928145e-05,
+    "ci95_halfwidth": 0.00011799504864029586,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0002001166285481304,
+    "ci95_halfwidth": 0.00035391998244449496,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0007153225014917552,
+    "ci95_halfwidth": 0.0011819192441180348,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0025747751351445913,
+    "ci95_halfwidth": 0.003565818304196,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "control-1",
+    "hook": "attn_out",
+    "held_out_accuracy": 0.7950000166893005,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00013682604185305536,
+    "ci95_halfwidth": 6.395395757863298e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00041190863703377545,
+    "ci95_halfwidth": 0.0001920908980537206,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.001390831428579986,
+    "ci95_halfwidth": 0.0006425829487852752,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.004327044356614351,
+    "ci95_halfwidth": 0.0019463844364508986,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-1",
+    "hook": "attn_out",
+    "epsilon": 0.001,
+    "correlation": 0.9999912977218628,
+    "sign_agreement": 1.0,
+    "relative_error": 0.004407722502946854
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 4.789113881997764e-05,
+    "ci95_halfwidth": 4.417153832037002e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0001451277785236016,
+    "ci95_halfwidth": 0.0001327876525465399,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0004909324925392866,
+    "ci95_halfwidth": 0.00044331312528811395,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.001540708588436246,
+    "ci95_halfwidth": 0.0013352824607864022,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.0002882027765735984,
+    "ci95_halfwidth": 2.7621525077847764e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0008654022240079939,
+    "ci95_halfwidth": 8.298877946799621e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.002890279283747077,
+    "ci95_halfwidth": 0.00027658758335746825,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.008714339695870876,
+    "ci95_halfwidth": 0.0008303913637064397,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.00017512797785457224,
+    "ci95_halfwidth": 3.6250574339646846e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0005248379893600941,
+    "ci95_halfwidth": 0.00010885374649660662,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0017407035920768976,
+    "ci95_halfwidth": 0.0003633718006312847,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.005153529811650515,
+    "ci95_halfwidth": 0.001095077721402049,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "control-1",
+    "hook": "resid_post",
+    "held_out_accuracy": 0.8349999785423279,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.0001750755327520892,
+    "ci95_halfwidth": 2.548710472183302e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0005256629083305597,
+    "ci95_halfwidth": 7.652698695892468e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.001753249205648899,
+    "ci95_halfwidth": 0.00025556233595125377,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.005290563218295574,
+    "ci95_halfwidth": 0.0007690876955166459,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-1",
+    "hook": "resid_post",
+    "epsilon": 0.001,
+    "correlation": 0.9999534487724304,
+    "sign_agreement": 1.0,
+    "relative_error": 0.007296693976968527
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -4.736423579743132e-05,
+    "ci95_halfwidth": 1.2940199667355046e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.00014124631707090884,
+    "ci95_halfwidth": 3.89186643587891e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0004707598709501326,
+    "ci95_halfwidth": 0.00012989688548259437,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.00140708452090621,
+    "ci95_halfwidth": 0.00038994892383925617,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00020492792828008533,
+    "ci95_halfwidth": 1.8138473024009727e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0006151890847831964,
+    "ci95_halfwidth": 5.4394029575632885e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.002050805138424039,
+    "ci95_halfwidth": 0.00018162632477469742,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.006159462966024876,
+    "ci95_halfwidth": 0.0005457805236801505,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 8.083581633400172e-05,
+    "ci95_halfwidth": 1.8578964954940602e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0002421331446385011,
+    "ci95_halfwidth": 5.576105832005851e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0008070635958574712,
+    "ci95_halfwidth": 0.00018566045037005097,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0024265742395073175,
+    "ci95_halfwidth": 0.0005563710583373904,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "control-1",
+    "hook": "z",
+    "held_out_accuracy": 0.7900000214576721,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00022045374498702586,
+    "ci95_halfwidth": 6.628404662478715e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0006625056266784668,
+    "ci95_halfwidth": 0.00019912936841137707,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0022288155741989613,
+    "ci95_halfwidth": 0.0006666866829618812,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0068682716228067875,
+    "ci95_halfwidth": 0.002026086440309882,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-1",
+    "hook": "z",
+    "epsilon": 0.001,
+    "correlation": 0.9999934434890747,
+    "sign_agreement": 1.0,
+    "relative_error": 0.0038687775377184153
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00016114235040731728,
+    "ci95_halfwidth": 2.9727012588409707e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00048377751954831183,
+    "ci95_halfwidth": 8.940379484556615e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0016178250079974532,
+    "ci95_halfwidth": 0.00029813116998411715,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.004889557138085365,
+    "ci95_halfwidth": 0.0008954830118454993,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00014677763101644814,
+    "ci95_halfwidth": 2.6195044483756647e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0004412031266838312,
+    "ci95_halfwidth": 7.871206616982818e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.00147340539842844,
+    "ci95_halfwidth": 0.000262360495980829,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.004456451162695885,
+    "ci95_halfwidth": 0.0007886684616096318,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00013902425416745245,
+    "ci95_halfwidth": 3.242253660573624e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0004165220307186246,
+    "ci95_halfwidth": 9.726328426040709e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0013913011644035578,
+    "ci95_halfwidth": 0.00032453396124765277,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-1",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.004193546716123819,
+    "ci95_halfwidth": 0.000975428381934762,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "heads": "0",
+    "head_count": 1,
+    "mean_delta_s": 3.849961280822754,
+    "source_tens_argmax_fraction": 0.13500000536441803,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "1",
+    "head_count": 1,
+    "mean_delta_s": 0.2885119318962097,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "2",
+    "head_count": 1,
+    "mean_delta_s": 1.9987887144088745,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "3",
+    "head_count": 1,
+    "mean_delta_s": 2.011643171310425,
+    "source_tens_argmax_fraction": 0.009999999776482582,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1",
+    "head_count": 2,
+    "mean_delta_s": 5.656800746917725,
+    "source_tens_argmax_fraction": 0.25,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2",
+    "head_count": 2,
+    "mean_delta_s": 10.000237464904785,
+    "source_tens_argmax_fraction": 0.6050000190734863,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+3",
+    "head_count": 2,
+    "mean_delta_s": 9.308743476867676,
+    "source_tens_argmax_fraction": 0.47999998927116394,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2",
+    "head_count": 2,
+    "mean_delta_s": 3.7064201831817627,
+    "source_tens_argmax_fraction": 0.019999999552965164,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "1+3",
+    "head_count": 2,
+    "mean_delta_s": 3.5038199424743652,
+    "source_tens_argmax_fraction": 0.03999999910593033,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "2+3",
+    "head_count": 2,
+    "mean_delta_s": 7.539857864379883,
+    "source_tens_argmax_fraction": 0.36000001430511475,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2",
+    "head_count": 3,
+    "mean_delta_s": 12.218456268310547,
+    "source_tens_argmax_fraction": 0.75,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+3",
+    "head_count": 3,
+    "mean_delta_s": 11.516828536987305,
+    "source_tens_argmax_fraction": 0.7200000286102295,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2+3",
+    "head_count": 3,
+    "mean_delta_s": 14.270742416381836,
+    "source_tens_argmax_fraction": 0.9800000190734863,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2+3",
+    "head_count": 3,
+    "mean_delta_s": 9.868831634521484,
+    "source_tens_argmax_fraction": 0.5950000286102295,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2+3",
+    "head_count": 4,
+    "mean_delta_s": 15.013141632080078,
+    "source_tens_argmax_fraction": 0.9900000095367432,
+    "phase": "head_subset_patch",
+    "model": "control-1",
+    "hook": "z"
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "held_out_accuracy": 0.5,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.00013857841258868575,
+    "ci95_halfwidth": 8.948970207711682e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.000414028181694448,
+    "ci95_halfwidth": 0.0002685145300347358,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0013644695281982422,
+    "ci95_halfwidth": 0.0008953033247962594,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.003962907940149307,
+    "ci95_halfwidth": 0.0026870188303291798,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "epsilon": 0.001,
+    "correlation": 0.9999945759773254,
+    "sign_agreement": 0.9950000047683716,
+    "relative_error": 0.003588808234781027
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -6.236076296772808e-05,
+    "ci95_halfwidth": 5.7610759540693834e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.000184125907253474,
+    "ci95_halfwidth": 0.00017297023441642523,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0005925464793108404,
+    "ci95_halfwidth": 0.0005761582287959754,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.001589388819411397,
+    "ci95_halfwidth": 0.001725846785120666,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.0002004814159590751,
+    "ci95_halfwidth": 9.699779184302315e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0005987358163110912,
+    "ci95_halfwidth": 0.00029083353001624346,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0019735193345695734,
+    "ci95_halfwidth": 0.0009683314710855484,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.005742845591157675,
+    "ci95_halfwidth": 0.002896131481975317,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": -5.854129631188698e-05,
+    "ci95_halfwidth": 5.2234012400731444e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0001741790765663609,
+    "ci95_halfwidth": 0.00015642262587789446,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0005778026534244418,
+    "ci95_halfwidth": 0.0005207220674492419,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0017059374367818236,
+    "ci95_halfwidth": 0.0015547005459666252,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "held_out_accuracy": 0.949999988079071,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -1.895427703857422e-05,
+    "ci95_halfwidth": 1.546523708384484e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -5.8407782489666715e-05,
+    "ci95_halfwidth": 4.642048952518962e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00019456386507954448,
+    "ci95_halfwidth": 0.0001547358260722831,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0005894183996133506,
+    "ci95_halfwidth": 0.0004639665421564132,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "epsilon": 0.001,
+    "correlation": 0.9998573660850525,
+    "sign_agreement": 0.9950000047683716,
+    "relative_error": 0.018885161727666855
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00035288810613565147,
+    "ci95_halfwidth": 3.6695870221592486e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0010586119024083018,
+    "ci95_halfwidth": 0.00011023494880646467,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.003528375644236803,
+    "ci95_halfwidth": 0.00036755946348421276,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.010585665702819824,
+    "ci95_halfwidth": 0.0011033805785700679,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.0003165006637573242,
+    "ci95_halfwidth": 3.848848427878693e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0009504556655883789,
+    "ci95_halfwidth": 0.00011557148536667228,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0031672001350671053,
+    "ci95_halfwidth": 0.00038532400503754616,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.00950187724083662,
+    "ci95_halfwidth": 0.001156188198365271,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 6.970405229367316e-05,
+    "ci95_halfwidth": 1.4005375305714551e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0002083206200040877,
+    "ci95_halfwidth": 4.196962618152611e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0006935548735782504,
+    "ci95_halfwidth": 0.0001398976455675438,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0020622252486646175,
+    "ci95_halfwidth": 0.00041895470349118114,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "held_out_accuracy": 0.9524999856948853,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -3.903389006154612e-05,
+    "ci95_halfwidth": 5.56059239897877e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.00011743545474018902,
+    "ci95_halfwidth": 1.6461415725643747e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0003915595880243927,
+    "ci95_halfwidth": 5.489176692208275e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0011753463186323643,
+    "ci95_halfwidth": 0.00016478460747748613,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "epsilon": 0.001,
+    "correlation": 0.9990066289901733,
+    "sign_agreement": 0.9850000143051147,
+    "relative_error": 0.030937138944864273
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 9.343147394247353e-05,
+    "ci95_halfwidth": 9.671934094512835e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00028065204969607294,
+    "ci95_halfwidth": 2.9041835659882054e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0009353637578897178,
+    "ci95_halfwidth": 9.674501052359119e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0028071689885109663,
+    "ci95_halfwidth": 0.0002902161795645952,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 9.580135520081967e-05,
+    "ci95_halfwidth": 1.5325860658776946e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0002875375794246793,
+    "ci95_halfwidth": 4.5919488911749795e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.000958561897277832,
+    "ci95_halfwidth": 0.00015311388415284455,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0028745890595018864,
+    "ci95_halfwidth": 0.00045928574400022626,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 3.7498473830055445e-05,
+    "ci95_halfwidth": 1.0342593668610789e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00011289119720458984,
+    "ci95_halfwidth": 3.095760985161178e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0003769493196159601,
+    "ci95_halfwidth": 0.00010314818791812286,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0011308907996863127,
+    "ci95_halfwidth": 0.0003091978724114597,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-2",
+    "hook": "z",
+    "held_out_accuracy": 0.9700000286102295,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -3.2901763916015625e-05,
+    "ci95_halfwidth": 1.577276452735532e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -9.892940579447895e-05,
+    "ci95_halfwidth": 4.725548569695093e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0003292846668045968,
+    "ci95_halfwidth": 0.00015751087630633265,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0009916353737935424,
+    "ci95_halfwidth": 0.0004727035411633551,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-2",
+    "hook": "z",
+    "epsilon": 0.001,
+    "correlation": 0.9998732805252075,
+    "sign_agreement": 0.9900000095367432,
+    "relative_error": 0.01750476285815239
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00018717766215559095,
+    "ci95_halfwidth": 2.0737146769533865e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0005616950802505016,
+    "ci95_halfwidth": 6.227327685337514e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0018726539565250278,
+    "ci95_halfwidth": 0.00020759158360306174,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.005624127574265003,
+    "ci95_halfwidth": 0.0006236453191377223,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00029588222969323397,
+    "ci95_halfwidth": 3.54567491740454e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0008871650788933039,
+    "ci95_halfwidth": 0.00010649520118022338,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0029567908495664597,
+    "ci95_halfwidth": 0.00035500767990015447,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.00887327641248703,
+    "ci95_halfwidth": 0.0010659778490662575,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 3.1514166039414704e-05,
+    "ci95_halfwidth": 9.168095857603475e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 9.45520368986763e-05,
+    "ci95_halfwidth": 2.746373684203718e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0003137779131066054,
+    "ci95_halfwidth": 9.154199506156147e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0009318876545876265,
+    "ci95_halfwidth": 0.00027460535056889057,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "heads": "0",
+    "head_count": 1,
+    "mean_delta_s": -0.0007760715670883656,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "1",
+    "head_count": 1,
+    "mean_delta_s": 0.05516264587640762,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "2",
+    "head_count": 1,
+    "mean_delta_s": -0.35322806239128113,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "3",
+    "head_count": 1,
+    "mean_delta_s": -0.3491552770137787,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1",
+    "head_count": 2,
+    "mean_delta_s": 0.36810606718063354,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2",
+    "head_count": 2,
+    "mean_delta_s": 0.876341700553894,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+3",
+    "head_count": 2,
+    "mean_delta_s": 0.6829229593276978,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2",
+    "head_count": 2,
+    "mean_delta_s": -0.3464144170284271,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "1+3",
+    "head_count": 2,
+    "mean_delta_s": -0.2870851159095764,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "2+3",
+    "head_count": 2,
+    "mean_delta_s": -0.4443237781524658,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2",
+    "head_count": 3,
+    "mean_delta_s": 1.3405914306640625,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+3",
+    "head_count": 3,
+    "mean_delta_s": 1.1441038846969604,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2+3",
+    "head_count": 3,
+    "mean_delta_s": 1.7369489669799805,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2+3",
+    "head_count": 3,
+    "mean_delta_s": -0.3811219036579132,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2+3",
+    "head_count": 4,
+    "mean_delta_s": 2.117648124694824,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-2",
+    "hook": "z"
+  },
+  {
+    "phase": "probe",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "held_out_accuracy": 0.5,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.0003121948102489114,
+    "ci95_halfwidth": 8.475640061078593e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0009373474167659879,
+    "ci95_halfwidth": 0.0002541631693020463,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00312150944955647,
+    "ci95_halfwidth": 0.0008462884579785168,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.00933353416621685,
+    "ci95_halfwidth": 0.002528608310967684,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "epsilon": 0.001,
+    "correlation": 0.9999887943267822,
+    "sign_agreement": 1.0,
+    "relative_error": 0.004287704359740019
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00020276069699320942,
+    "ci95_halfwidth": 0.00011430409358581528,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0006074524135328829,
+    "ci95_halfwidth": 0.0003429132921155542,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0020266533829271793,
+    "ci95_halfwidth": 0.0011439723894000053,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0060982611030340195,
+    "ci95_halfwidth": 0.0034369330387562513,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": -2.332687290618196e-05,
+    "ci95_halfwidth": 0.00012724888802040368,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": -6.513595872092992e-05,
+    "ci95_halfwidth": 0.0003816259268205613,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00017893791664391756,
+    "ci95_halfwidth": 0.001271293731406331,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.00022134781465865672,
+    "ci95_halfwidth": 0.0038073554169386625,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": -9.246826084563509e-05,
+    "ci95_halfwidth": 9.712869359645993e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0002790832659229636,
+    "ci95_halfwidth": 0.00029107549926266074,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0009526920039206743,
+    "ci95_halfwidth": 0.0009674125467427075,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.003035430796444416,
+    "ci95_halfwidth": 0.002876944374293089,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "control-2",
+    "hook": "attn_out",
+    "held_out_accuracy": 0.8475000262260437,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.0004776000860147178,
+    "ci95_halfwidth": 4.903386070509441e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0014338111504912376,
+    "ci95_halfwidth": 0.00014731651754118502,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.004803008865565062,
+    "ci95_halfwidth": 0.0004926629480905831,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.014613084495067596,
+    "ci95_halfwidth": 0.0014930376783013344,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-2",
+    "hook": "attn_out",
+    "epsilon": 0.001,
+    "correlation": 0.9999761581420898,
+    "sign_agreement": 1.0,
+    "relative_error": 0.004020715598016977
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.00011059761163778603,
+    "ci95_halfwidth": 1.965746923815459e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0003306579601485282,
+    "ci95_halfwidth": 5.9166966821067035e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.001097717322409153,
+    "ci95_halfwidth": 0.00019695448281709105,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.00324904453009367,
+    "ci95_halfwidth": 0.0005890528555028141,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00011737823660951108,
+    "ci95_halfwidth": 2.626202149258461e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0003522300685290247,
+    "ci95_halfwidth": 7.866422674851492e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0011806010734289885,
+    "ci95_halfwidth": 0.0002617913705762476,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0035953044425696135,
+    "ci95_halfwidth": 0.0007830578833818436,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.00013650894106831402,
+    "ci95_halfwidth": 2.7425905500422232e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0004091548908036202,
+    "ci95_halfwidth": 8.229270315496251e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0013557815691456199,
+    "ci95_halfwidth": 0.000273758516414091,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.003997545223683119,
+    "ci95_halfwidth": 0.0008178777061402798,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "control-2",
+    "hook": "resid_post",
+    "held_out_accuracy": 0.8899999856948853,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 7.486343383789062e-05,
+    "ci95_halfwidth": 1.4369803466252051e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00022421836911235005,
+    "ci95_halfwidth": 4.31520638812799e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0007515716715715826,
+    "ci95_halfwidth": 0.00014394416939467192,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.002275438280776143,
+    "ci95_halfwidth": 0.00043330984772183,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-2",
+    "hook": "resid_post",
+    "epsilon": 0.001,
+    "correlation": 0.9997438192367554,
+    "sign_agreement": 0.9900000095367432,
+    "relative_error": 0.01984892040491104
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -1.698493906587828e-05,
+    "ci95_halfwidth": 1.1576517863431945e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -5.107879769639112e-05,
+    "ci95_halfwidth": 3.46922388416715e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00016842842160258442,
+    "ci95_halfwidth": 0.00011602394079091027,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0004969692090526223,
+    "ci95_halfwidth": 0.0003481174062471837,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.0001031970969052054,
+    "ci95_halfwidth": 1.130509735958185e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0003100871981587261,
+    "ci95_halfwidth": 3.3890577469719574e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.001033296575769782,
+    "ci95_halfwidth": 0.00011303086648695171,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0030920791905373335,
+    "ci95_halfwidth": 0.00033885170705616474,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": -1.9330978830112144e-05,
+    "ci95_halfwidth": 7.886779712862335e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": -5.873680129298009e-05,
+    "ci95_halfwidth": 2.3515687644248828e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00019372940005268902,
+    "ci95_halfwidth": 7.838334568077698e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0005708694225177169,
+    "ci95_halfwidth": 0.00023502700787503272,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "control-2",
+    "hook": "z",
+    "held_out_accuracy": 0.8799999952316284,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.0004353713884484023,
+    "ci95_halfwidth": 4.3755466322181746e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0013076972682029009,
+    "ci95_halfwidth": 0.00013127035344950855,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.004376850090920925,
+    "ci95_halfwidth": 0.00043880630983039737,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.013274574652314186,
+    "ci95_halfwidth": 0.0013269700575619936,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-2",
+    "hook": "z",
+    "epsilon": 0.001,
+    "correlation": 0.9999710917472839,
+    "sign_agreement": 1.0,
+    "relative_error": 0.00437783170491457
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.00013940810458734632,
+    "ci95_halfwidth": 1.742901440593414e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0004193115164525807,
+    "ci95_halfwidth": 5.228086592978798e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0013932323781773448,
+    "ci95_halfwidth": 0.00017429505533073097,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.004148588050156832,
+    "ci95_halfwidth": 0.0005222975159995258,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00013084411330055445,
+    "ci95_halfwidth": 1.7251681128982455e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0003933906555175781,
+    "ci95_halfwidth": 5.152289304533042e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0013180827954784036,
+    "ci95_halfwidth": 0.0001714428362902254,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.003998985514044762,
+    "ci95_halfwidth": 0.0005132554215379059,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00017230033699888736,
+    "ci95_halfwidth": 1.730998519633431e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0005183410830795765,
+    "ci95_halfwidth": 5.18764354637824e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.001728916191495955,
+    "ci95_halfwidth": 0.00017282093176618218,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-2",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.005208196584135294,
+    "ci95_halfwidth": 0.0005185725167393684,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "heads": "0",
+    "head_count": 1,
+    "mean_delta_s": 7.521627902984619,
+    "source_tens_argmax_fraction": 0.07500000298023224,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "1",
+    "head_count": 1,
+    "mean_delta_s": 1.4648001194000244,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "2",
+    "head_count": 1,
+    "mean_delta_s": 1.1571425199508667,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "3",
+    "head_count": 1,
+    "mean_delta_s": 1.4257947206497192,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1",
+    "head_count": 2,
+    "mean_delta_s": 18.634050369262695,
+    "source_tens_argmax_fraction": 0.4350000023841858,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2",
+    "head_count": 2,
+    "mean_delta_s": 18.253379821777344,
+    "source_tens_argmax_fraction": 0.45500001311302185,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+3",
+    "head_count": 2,
+    "mean_delta_s": 16.082103729248047,
+    "source_tens_argmax_fraction": 0.3050000071525574,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2",
+    "head_count": 2,
+    "mean_delta_s": 6.0595479011535645,
+    "source_tens_argmax_fraction": 0.009999999776482582,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "1+3",
+    "head_count": 2,
+    "mean_delta_s": 6.401607513427734,
+    "source_tens_argmax_fraction": 0.029999999329447746,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "2+3",
+    "head_count": 2,
+    "mean_delta_s": 5.579392910003662,
+    "source_tens_argmax_fraction": 0.029999999329447746,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2",
+    "head_count": 3,
+    "mean_delta_s": 31.572641372680664,
+    "source_tens_argmax_fraction": 0.9850000143051147,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+3",
+    "head_count": 3,
+    "mean_delta_s": 29.673311233520508,
+    "source_tens_argmax_fraction": 0.9300000071525574,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2+3",
+    "head_count": 3,
+    "mean_delta_s": 28.708921432495117,
+    "source_tens_argmax_fraction": 0.9549999833106995,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2+3",
+    "head_count": 3,
+    "mean_delta_s": 16.963428497314453,
+    "source_tens_argmax_fraction": 0.38499999046325684,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2+3",
+    "head_count": 4,
+    "mean_delta_s": 36.265750885009766,
+    "source_tens_argmax_fraction": 1.0,
+    "phase": "head_subset_patch",
+    "model": "control-2",
+    "hook": "z"
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "held_out_accuracy": 0.5,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.0016257667448371649,
+    "ci95_halfwidth": 0.00017147544713225216,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.004897790029644966,
+    "ci95_halfwidth": 0.0005160802975296974,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.01656029187142849,
+    "ci95_halfwidth": 0.0017359916819259524,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.05172296613454819,
+    "ci95_halfwidth": 0.005347057245671749,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "epsilon": 0.001,
+    "correlation": 0.9999968409538269,
+    "sign_agreement": 1.0,
+    "relative_error": 0.001491067698225379
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.0002515506639610976,
+    "ci95_halfwidth": 0.0001745224726619199,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0007746696355752647,
+    "ci95_halfwidth": 0.0005233778501860797,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.002789883641526103,
+    "ci95_halfwidth": 0.00173896923661232,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.01011877041310072,
+    "ci95_halfwidth": 0.005170902237296104,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.0020018911454826593,
+    "ci95_halfwidth": 0.00022566858388017863,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0059812734834849834,
+    "ci95_halfwidth": 0.0006750591564923525,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0196869894862175,
+    "ci95_halfwidth": 0.002230348763987422,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0568976104259491,
+    "ci95_halfwidth": 0.006520478520542383,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.002725787227973342,
+    "ci95_halfwidth": 0.00028528727125376463,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.008154172450304031,
+    "ci95_halfwidth": 0.000853937875945121,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.026904216036200523,
+    "ci95_halfwidth": 0.00282293395139277,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0783551037311554,
+    "ci95_halfwidth": 0.008269963786005974,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "held_out_accuracy": 0.9975000023841858,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 1.821994737838395e-05,
+    "ci95_halfwidth": 1.4757413737243041e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 5.392074672272429e-05,
+    "ci95_halfwidth": 4.41947668150533e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0001778936421032995,
+    "ci95_halfwidth": 0.00014745394582860172,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.000522074697073549,
+    "ci95_halfwidth": 0.00044330625678412616,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "epsilon": 0.001,
+    "correlation": 0.9997645616531372,
+    "sign_agreement": 0.9850000143051147,
+    "relative_error": 0.02246815524995327
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.00016018867609091103,
+    "ci95_halfwidth": 2.6042023819172755e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0004806614015251398,
+    "ci95_halfwidth": 7.809757516952232e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0016048336401581764,
+    "ci95_halfwidth": 0.0002606925554573536,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.004835024010390043,
+    "ci95_halfwidth": 0.000783876923378557,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 4.1456223698332906e-05,
+    "ci95_halfwidth": 1.23295130833867e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00012398719263728708,
+    "ci95_halfwidth": 3.710007149493322e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.00041223049629479647,
+    "ci95_halfwidth": 0.0001236952666658908,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0012144375359639525,
+    "ci95_halfwidth": 0.0003714173217304051,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 4.1065217374125496e-05,
+    "ci95_halfwidth": 2.3193830202217214e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00012204170343466103,
+    "ci95_halfwidth": 6.931264215381816e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.00040454388363286853,
+    "ci95_halfwidth": 0.00023066162248142064,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.001195936230942607,
+    "ci95_halfwidth": 0.0006897624698467553,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "held_out_accuracy": 1.0,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 8.460044773528352e-05,
+    "ci95_halfwidth": 6.238479727471713e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00025404454208910465,
+    "ci95_halfwidth": 1.8647562683327124e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0008456945652142167,
+    "ci95_halfwidth": 6.213128654053435e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.002536993008106947,
+    "ci95_halfwidth": 0.00018603703938424587,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "epsilon": 0.001,
+    "correlation": 0.9987549185752869,
+    "sign_agreement": 1.0,
+    "relative_error": 0.021022601053118706
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -4.371643080958165e-05,
+    "ci95_halfwidth": 9.224551831721328e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.00013044834486208856,
+    "ci95_halfwidth": 2.763953489193227e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00043642520904541016,
+    "ci95_halfwidth": 9.246126865036786e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0013122463133186102,
+    "ci95_halfwidth": 0.00027792161563411355,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 7.019520126050338e-05,
+    "ci95_halfwidth": 6.328166364255594e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00021027088223490864,
+    "ci95_halfwidth": 1.8763945263344795e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0007009744876995683,
+    "ci95_halfwidth": 6.238215428311378e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.002099371049553156,
+    "ci95_halfwidth": 0.00018674283637665212,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 2.253532329632435e-05,
+    "ci95_halfwidth": 6.346623194986023e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 6.661892257397994e-05,
+    "ci95_halfwidth": 1.8944236217066646e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.00022291183995548636,
+    "ci95_halfwidth": 6.314425263553858e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0006670856382697821,
+    "ci95_halfwidth": 0.00018956697022076696,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "excluded-3",
+    "hook": "z",
+    "held_out_accuracy": 1.0,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -4.831791011383757e-05,
+    "ci95_halfwidth": 1.4987567737989593e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.00014482498227152973,
+    "ci95_halfwidth": 4.4889107812196016e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0004847955715376884,
+    "ci95_halfwidth": 0.00015004911983851343,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0014683675253763795,
+    "ci95_halfwidth": 0.00045050884364172816,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "excluded-3",
+    "hook": "z",
+    "epsilon": 0.001,
+    "correlation": 0.9998122453689575,
+    "sign_agreement": 0.9950000047683716,
+    "relative_error": 0.017721500247716904
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -9.982108895201236e-05,
+    "ci95_halfwidth": 1.2903854440082796e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.00029955862555652857,
+    "ci95_halfwidth": 3.8819227484054863e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.0009988450910896063,
+    "ci95_halfwidth": 0.00012960852473042905,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.003005347214639187,
+    "ci95_halfwidth": 0.0003894978726748377,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 3.1676292564952746e-05,
+    "ci95_halfwidth": 1.3471616512106266e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 9.510516974842176e-05,
+    "ci95_halfwidth": 4.052948861499317e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0003165864909533411,
+    "ci95_halfwidth": 0.00013511972792912275,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0009365415317006409,
+    "ci95_halfwidth": 0.0004062569350935519,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": -1.0514258974581026e-05,
+    "ci95_halfwidth": 1.7880545783555135e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": -3.123283386230469e-05,
+    "ci95_halfwidth": 5.374224201659672e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00010613918129820377,
+    "ci95_halfwidth": 0.00017920108803082258,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "excluded-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.00033585549681447446,
+    "ci95_halfwidth": 0.0005382669623941183,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "heads": "0",
+    "head_count": 1,
+    "mean_delta_s": -0.8242698907852173,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "1",
+    "head_count": 1,
+    "mean_delta_s": -0.05655312165617943,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "2",
+    "head_count": 1,
+    "mean_delta_s": -0.8192296028137207,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "3",
+    "head_count": 1,
+    "mean_delta_s": -0.34218859672546387,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1",
+    "head_count": 2,
+    "mean_delta_s": -0.8830388784408569,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2",
+    "head_count": 2,
+    "mean_delta_s": -1.1979272365570068,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+3",
+    "head_count": 2,
+    "mean_delta_s": -0.9452105164527893,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2",
+    "head_count": 2,
+    "mean_delta_s": -0.8246318101882935,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "1+3",
+    "head_count": 2,
+    "mean_delta_s": -0.4194830358028412,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "2+3",
+    "head_count": 2,
+    "mean_delta_s": -0.9174671769142151,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2",
+    "head_count": 3,
+    "mean_delta_s": -1.1454654932022095,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+3",
+    "head_count": 3,
+    "mean_delta_s": -1.002986192703247,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2+3",
+    "head_count": 3,
+    "mean_delta_s": -1.1374207735061646,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2+3",
+    "head_count": 3,
+    "mean_delta_s": -0.9244926571846008,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2+3",
+    "head_count": 4,
+    "mean_delta_s": -1.0982686281204224,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "excluded-3",
+    "hook": "z"
+  },
+  {
+    "phase": "probe",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "held_out_accuracy": 0.5,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -0.001088905381038785,
+    "ci95_halfwidth": 0.0002231910330010578,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0032704926561564207,
+    "ci95_halfwidth": 0.0006700337980873883,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.010952339507639408,
+    "ci95_halfwidth": 0.002243192633613944,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.03323793783783913,
+    "ci95_halfwidth": 0.0068071032874286175,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "epsilon": 0.001,
+    "correlation": 0.9999985694885254,
+    "sign_agreement": 1.0,
+    "relative_error": 0.0014702377375215292
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.0012609243858605623,
+    "ci95_halfwidth": 0.0001649672631174326,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0037730741314589977,
+    "ci95_halfwidth": 0.0004946248373016715,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.01246223971247673,
+    "ci95_halfwidth": 0.0016457075253129005,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.036359429359436035,
+    "ci95_halfwidth": 0.004902426153421402,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.001679649343714118,
+    "ci95_halfwidth": 0.00021980420569889247,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.005039372481405735,
+    "ci95_halfwidth": 0.0006591643905267119,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.016749614849686623,
+    "ci95_halfwidth": 0.0021880464628338814,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.04975387454032898,
+    "ci95_halfwidth": 0.006478460039943457,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00026367188547737896,
+    "ci95_halfwidth": 0.00013548402057494968,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.000784807198215276,
+    "ci95_halfwidth": 0.00040629273280501366,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0025414132978767157,
+    "ci95_halfwidth": 0.0013548096176236868,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_pre",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.006931500509381294,
+    "ci95_halfwidth": 0.004065545275807381,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "control-3",
+    "hook": "attn_out",
+    "held_out_accuracy": 1.0,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 2.822876012942288e-05,
+    "ci95_halfwidth": 1.2284618605917785e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 8.424758561886847e-05,
+    "ci95_halfwidth": 3.680402005556971e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0002822971437126398,
+    "ci95_halfwidth": 0.00012288802827242762,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0008587265037931502,
+    "ci95_halfwidth": 0.0003694698098115623,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-3",
+    "hook": "attn_out",
+    "epsilon": 0.001,
+    "correlation": 0.9996626377105713,
+    "sign_agreement": 0.9800000190734863,
+    "relative_error": 0.025843294337391853
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -2.0914078049827367e-05,
+    "ci95_halfwidth": 2.332832445972599e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -6.275653868215159e-05,
+    "ci95_halfwidth": 6.998234312050045e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00020515441428869963,
+    "ci95_halfwidth": 0.00023355172015726566,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.000582036969717592,
+    "ci95_halfwidth": 0.0007014976581558585,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 3.3826829167082906e-05,
+    "ci95_halfwidth": 1.1118688235001173e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00010295867832610384,
+    "ci95_halfwidth": 3.3219494071090594e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0003455638943705708,
+    "ci95_halfwidth": 0.00011092367640230805,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0010547590209171176,
+    "ci95_halfwidth": 0.0003334643261041492,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 7.4100494202866685e-06,
+    "ci95_halfwidth": 1.9116920157102868e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 2.2611617168877274e-05,
+    "ci95_halfwidth": 5.7341327192261815e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 7.73000720073469e-05,
+    "ci95_halfwidth": 0.00019114461611025035,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "attn_out",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0002523183939047158,
+    "ci95_halfwidth": 0.000574107572901994,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "control-3",
+    "hook": "resid_post",
+    "held_out_accuracy": 1.0,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": 4.9552916607353836e-05,
+    "ci95_halfwidth": 7.380529041256523e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00014835834736004472,
+    "ci95_halfwidth": 2.20153815462254e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.0004956722259521484,
+    "ci95_halfwidth": 7.326818013098091e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0014916897052899003,
+    "ci95_halfwidth": 0.00021977459255140275,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-3",
+    "hook": "resid_post",
+    "epsilon": 0.001,
+    "correlation": 0.9988977313041687,
+    "sign_agreement": 1.0,
+    "relative_error": 0.032491374760866165
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": -1.0814666893566027e-05,
+    "ci95_halfwidth": 5.251889433566248e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": -3.288745938334614e-05,
+    "ci95_halfwidth": 1.559996417199727e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00010967254638671875,
+    "ci95_halfwidth": 5.2252085879445076e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0003246307314839214,
+    "ci95_halfwidth": 0.00015695250476710498,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": 9.870529538602568e-06,
+    "ci95_halfwidth": 6.867320280434797e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": 2.9706954592256807e-05,
+    "ci95_halfwidth": 2.0531100744847208e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.00010002613271353766,
+    "ci95_halfwidth": 6.835531530668959e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.00030402184347622097,
+    "ci95_halfwidth": 0.00020514400966931134,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 0.00010627746814861894,
+    "ci95_halfwidth": 8.282208000309765e-06,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.0003191137220710516,
+    "ci95_halfwidth": 2.4677727196831256e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.00106344697996974,
+    "ci95_halfwidth": 8.19762353785336e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "resid_post",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.00319392210803926,
+    "ci95_halfwidth": 0.0002462339762132615,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "probe",
+    "model": "control-3",
+    "hook": "z",
+    "held_out_accuracy": 1.0,
+    "majority_baseline": 0.5
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.001,
+    "mean_delta_s": -1.3208389646024443e-05,
+    "ci95_halfwidth": 1.8699194697546773e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.003,
+    "mean_delta_s": -4.0092469134833664e-05,
+    "ci95_halfwidth": 5.631488238577731e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00013274670345708728,
+    "ci95_halfwidth": 0.00018770356837194413,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "dependency",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.00038975238567218184,
+    "ci95_halfwidth": 0.000563948240596801,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "jvp_validation",
+    "model": "control-3",
+    "hook": "z",
+    "epsilon": 0.001,
+    "correlation": 0.9998342394828796,
+    "sign_agreement": 1.0,
+    "relative_error": 0.01989784464240074
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.001,
+    "mean_delta_s": 1.985549897653982e-05,
+    "ci95_halfwidth": 1.478891590522835e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.003,
+    "mean_delta_s": 5.910396430408582e-05,
+    "ci95_halfwidth": 4.440033808350563e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.000200057023903355,
+    "ci95_halfwidth": 0.00014808980631642044,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "shuffled",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0006233406020328403,
+    "ci95_halfwidth": 0.00044563435949385166,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.001,
+    "mean_delta_s": -3.687381831696257e-05,
+    "ci95_halfwidth": 1.4400538020709064e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.003,
+    "mean_delta_s": -0.0001099252694984898,
+    "ci95_halfwidth": 4.3206298869336024e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.01,
+    "mean_delta_s": -0.00036636830191127956,
+    "ci95_halfwidth": 0.00014417128113564104,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "ordinary_units_carry",
+    "amplitude": 0.03,
+    "mean_delta_s": -0.0010953235905617476,
+    "ci95_halfwidth": 0.0004325371119193733,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.0,
+    "mean_delta_s": 0.0,
+    "ci95_halfwidth": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.001,
+    "mean_delta_s": 3.9381979149766266e-05,
+    "ci95_halfwidth": 1.0439033758302685e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.003,
+    "mean_delta_s": 0.00011813640594482422,
+    "ci95_halfwidth": 3.131559060420841e-05,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.01,
+    "mean_delta_s": 0.00039356708293780684,
+    "ci95_halfwidth": 0.0001044866003212519,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "phase": "intervention",
+    "model": "control-3",
+    "hook": "z",
+    "direction": "random",
+    "amplitude": 0.03,
+    "mean_delta_s": 0.0011799954809248447,
+    "ci95_halfwidth": 0.0003135299775749445,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "heads": "0",
+    "head_count": 1,
+    "mean_delta_s": 1.025997519493103,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "1",
+    "head_count": 1,
+    "mean_delta_s": 0.17016814649105072,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "2",
+    "head_count": 1,
+    "mean_delta_s": 1.2653610706329346,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "3",
+    "head_count": 1,
+    "mean_delta_s": 0.45327627658843994,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1",
+    "head_count": 2,
+    "mean_delta_s": 2.088890314102173,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2",
+    "head_count": 2,
+    "mean_delta_s": 5.839581489562988,
+    "source_tens_argmax_fraction": 0.02500000037252903,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+3",
+    "head_count": 2,
+    "mean_delta_s": 2.4657373428344727,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2",
+    "head_count": 2,
+    "mean_delta_s": 2.510988235473633,
+    "source_tens_argmax_fraction": 0.004999999888241291,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "1+3",
+    "head_count": 2,
+    "mean_delta_s": 0.8455456495285034,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "2+3",
+    "head_count": 2,
+    "mean_delta_s": 2.976926565170288,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2",
+    "head_count": 3,
+    "mean_delta_s": 9.559520721435547,
+    "source_tens_argmax_fraction": 0.1899999976158142,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+3",
+    "head_count": 3,
+    "mean_delta_s": 4.476216793060303,
+    "source_tens_argmax_fraction": 0.0,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+2+3",
+    "head_count": 3,
+    "mean_delta_s": 7.6212005615234375,
+    "source_tens_argmax_fraction": 0.06499999761581421,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "1+2+3",
+    "head_count": 3,
+    "mean_delta_s": 5.025111675262451,
+    "source_tens_argmax_fraction": 0.019999999552965164,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  },
+  {
+    "heads": "0+1+2+3",
+    "head_count": 4,
+    "mean_delta_s": 11.459136962890625,
+    "source_tens_argmax_fraction": 0.2199999988079071,
+    "phase": "head_subset_patch",
+    "model": "control-3",
+    "hook": "z"
+  }
+]

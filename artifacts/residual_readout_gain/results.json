@@ -1,0 +1,290 @@
+[
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-1",
+    "amplitude_in_matched_scales": -1.0,
+    "mean_delta_s": 10.728821754455566,
+    "source_tens_argmax_fraction": 0.0949999988079071,
+    "scale": 15.816357612609863
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-1",
+    "amplitude_in_matched_scales": -0.5,
+    "mean_delta_s": 5.203998565673828,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 15.816357612609863
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-1",
+    "amplitude_in_matched_scales": 0.0,
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 15.816357612609863
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-1",
+    "amplitude_in_matched_scales": 0.5,
+    "mean_delta_s": -1.9647778272628784,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 15.816357612609863
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-1",
+    "amplitude_in_matched_scales": 1.0,
+    "mean_delta_s": 0.6060085296630859,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 15.816357612609863
+  },
+  {
+    "phase": "readout_gain",
+    "model": "excluded-1",
+    "mean_gradient_gain": -0.5878502130508423,
+    "mean_finite_difference_gain": -0.5878355503082275,
+    "jvp_fd_correlation": 0.9999997019767761,
+    "sign_agreement": 1.0
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-1",
+    "amplitude_in_matched_scales": -1.0,
+    "mean_delta_s": 3.0797417163848877,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 10.283085823059082
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-1",
+    "amplitude_in_matched_scales": -0.5,
+    "mean_delta_s": 0.678662896156311,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 10.283085823059082
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-1",
+    "amplitude_in_matched_scales": 0.0,
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 10.283085823059082
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-1",
+    "amplitude_in_matched_scales": 0.5,
+    "mean_delta_s": 6.57106876373291,
+    "source_tens_argmax_fraction": 0.27000001072883606,
+    "scale": 10.283085823059082
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-1",
+    "amplitude_in_matched_scales": 1.0,
+    "mean_delta_s": 14.543004035949707,
+    "source_tens_argmax_fraction": 0.9900000095367432,
+    "scale": 10.283085823059082
+  },
+  {
+    "phase": "readout_gain",
+    "model": "control-1",
+    "mean_gradient_gain": 0.21716231107711792,
+    "mean_finite_difference_gain": 0.21717716753482819,
+    "jvp_fd_correlation": 0.9999998807907104,
+    "sign_agreement": 1.0
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-2",
+    "amplitude_in_matched_scales": -1.0,
+    "mean_delta_s": 8.675378799438477,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 14.84277629852295
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-2",
+    "amplitude_in_matched_scales": -0.5,
+    "mean_delta_s": 3.339627742767334,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 14.84277629852295
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-2",
+    "amplitude_in_matched_scales": 0.0,
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 14.84277629852295
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-2",
+    "amplitude_in_matched_scales": 0.5,
+    "mean_delta_s": 0.03296242281794548,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 14.84277629852295
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-2",
+    "amplitude_in_matched_scales": 1.0,
+    "mean_delta_s": 2.537423610687256,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 14.84277629852295
+  },
+  {
+    "phase": "readout_gain",
+    "model": "excluded-2",
+    "mean_gradient_gain": -0.23945878446102142,
+    "mean_finite_difference_gain": -0.23945565521717072,
+    "jvp_fd_correlation": 0.9999998211860657,
+    "sign_agreement": 1.0
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-2",
+    "amplitude_in_matched_scales": -1.0,
+    "mean_delta_s": 1.4650012254714966,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 13.681909561157227
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-2",
+    "amplitude_in_matched_scales": -0.5,
+    "mean_delta_s": -0.4373147487640381,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 13.681909561157227
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-2",
+    "amplitude_in_matched_scales": 0.0,
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 13.681909561157227
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-2",
+    "amplitude_in_matched_scales": 0.5,
+    "mean_delta_s": 16.358787536621094,
+    "source_tens_argmax_fraction": 0.2849999964237213,
+    "scale": 13.681909561157227
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-2",
+    "amplitude_in_matched_scales": 1.0,
+    "mean_delta_s": 37.06483459472656,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 13.681909561157227
+  },
+  {
+    "phase": "readout_gain",
+    "model": "control-2",
+    "mean_gradient_gain": 0.49857571721076965,
+    "mean_finite_difference_gain": 0.4985957443714142,
+    "jvp_fd_correlation": 0.9999995827674866,
+    "sign_agreement": 1.0
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-3",
+    "amplitude_in_matched_scales": -1.0,
+    "mean_delta_s": 10.383441925048828,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 8.349203109741211
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-3",
+    "amplitude_in_matched_scales": -0.5,
+    "mean_delta_s": 4.622110843658447,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 8.349203109741211
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-3",
+    "amplitude_in_matched_scales": 0.0,
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 8.349203109741211
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-3",
+    "amplitude_in_matched_scales": 0.5,
+    "mean_delta_s": -1.2754439115524292,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 8.349203109741211
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "excluded-3",
+    "amplitude_in_matched_scales": 1.0,
+    "mean_delta_s": -0.45338571071624756,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 8.349203109741211
+  },
+  {
+    "phase": "readout_gain",
+    "model": "excluded-3",
+    "mean_gradient_gain": -0.7368972301483154,
+    "mean_finite_difference_gain": -0.7368836402893066,
+    "jvp_fd_correlation": 0.9999995827674866,
+    "sign_agreement": 1.0
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-3",
+    "amplitude_in_matched_scales": -1.0,
+    "mean_delta_s": 1.7219038009643555,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 13.240090370178223
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-3",
+    "amplitude_in_matched_scales": -0.5,
+    "mean_delta_s": -0.4998187720775604,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 13.240090370178223
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-3",
+    "amplitude_in_matched_scales": 0.0,
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0,
+    "scale": 13.240090370178223
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-3",
+    "amplitude_in_matched_scales": 0.5,
+    "mean_delta_s": 13.5474271774292,
+    "source_tens_argmax_fraction": 0.2800000011920929,
+    "scale": 13.240090370178223
+  },
+  {
+    "phase": "signed_intervention",
+    "model": "control-3",
+    "amplitude_in_matched_scales": 1.0,
+    "mean_delta_s": 33.8641471862793,
+    "source_tens_argmax_fraction": 1.0,
+    "scale": 13.240090370178223
+  },
+  {
+    "phase": "readout_gain",
+    "model": "control-3",
+    "mean_gradient_gain": 0.41634461283683777,
+    "mean_finite_difference_gain": 0.4163460433483124,
+    "jvp_fd_correlation": 0.9999997019767761,
+    "sign_agreement": 1.0
+  }
+]

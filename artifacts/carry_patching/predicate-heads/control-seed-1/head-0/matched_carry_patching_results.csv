@@ -1,0 +1,6 @@
+pair_type,component,head,blend,target_exact_fraction,source_counterfactual_fraction,answer_changed_fraction,mean_answer_shift
+carry-dependency,attn-z,0,0.0,1.0,0.0,0.0,0.0
+carry-dependency,attn-z,0,0.25,1.0,0.0,0.0,0.0
+carry-dependency,attn-z,0,0.5,0.9399999976158142,0.004999999888241291,0.05999999865889549,0.06499999761581421
+carry-dependency,attn-z,0,0.75,0.6050000190734863,0.019999999552965164,0.39500001072883606,1.440000057220459
+carry-dependency,attn-z,0,1.0,0.38499999046325684,0.03500000014901161,0.6150000095367432,2.0450000762939453

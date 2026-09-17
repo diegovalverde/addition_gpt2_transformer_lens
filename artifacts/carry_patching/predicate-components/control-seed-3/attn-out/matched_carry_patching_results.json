@@ -1,0 +1,47 @@
+[
+  {
+    "pair_type": "carry-dependency",
+    "component": "attn-out",
+    "blend": 0.0,
+    "target_exact_fraction": 1.0,
+    "source_counterfactual_fraction": 0.0,
+    "answer_changed_fraction": 0.0,
+    "mean_answer_shift": 0.0
+  },
+  {
+    "pair_type": "carry-dependency",
+    "component": "attn-out",
+    "blend": 0.25,
+    "target_exact_fraction": 0.9649999737739563,
+    "source_counterfactual_fraction": 0.0,
+    "answer_changed_fraction": 0.03500000014901161,
+    "mean_answer_shift": 0.14000000059604645
+  },
+  {
+    "pair_type": "carry-dependency",
+    "component": "attn-out",
+    "blend": 0.5,
+    "target_exact_fraction": 0.36500000953674316,
+    "source_counterfactual_fraction": 0.0,
+    "answer_changed_fraction": 0.6349999904632568,
+    "mean_answer_shift": 2.390000104904175
+  },
+  {
+    "pair_type": "carry-dependency",
+    "component": "attn-out",
+    "blend": 0.75,
+    "target_exact_fraction": 0.6700000166893005,
+    "source_counterfactual_fraction": 0.10999999940395355,
+    "answer_changed_fraction": 0.33000001311302185,
+    "mean_answer_shift": 2.1600000858306885
+  },
+  {
+    "pair_type": "carry-dependency",
+    "component": "attn-out",
+    "blend": 1.0,
+    "target_exact_fraction": 0.7799999713897705,
+    "source_counterfactual_fraction": 0.2199999988079071,
+    "answer_changed_fraction": 0.2199999988079071,
+    "mean_answer_shift": 2.200000047683716
+  }
+]

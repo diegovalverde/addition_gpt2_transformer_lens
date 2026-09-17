@@ -378,6 +378,469 @@ direction alone is not a sufficient control vector.
 
 ## Commands
 
+## Carry-dependency causal geometry and layer-0 head subsets
+
+`mechanistic_dependency.py` implements the dependency-conditioned experiment
+from `MECHANISTIC_PLAN.md`.  It uses the fixed 200 paired examples (seed 300),
+teacher-forces their shared units answer digit, and scores the source tens-digit
+logit minus the target tens-digit logit.  Checkpoints are the IID-selected ones
+documented in `AGENT_HANDOFF.md`.  Probe training/testing used 400 matched
+pairs (held-out by pair/template), 100 optimization epochs, and CPU.
+
+The exact dependency is decodable at layer 0's attention output in both
+families, so this observation does **not** explain the behavioral difference:
+
+| Model | Excluded/control | Held-out dependency-probe accuracy |
+| --- | --- | ---: |
+| seed 1 | excluded | 68.5% |
+| seed 1 | control | 79.5% |
+| seed 2 | excluded | 95.0% |
+| seed 2 | control | 84.8% |
+| seed 3 | excluded | 99.8% |
+| seed 3 | control | 100.0% |
+
+Small normalized dependency-direction edits at the attention output were
+locally differentiable: JVP versus central finite differences had correlation
+at least 0.9997, 98.0--100.0% sign agreement, and 0.2--2.6% relative error
+across the six models.  However, through amplitude 0.03 no signed probe edit
+made a target's tens-digit argmax become the source digit.  Thus the result is
+local causal geometry, not a usable semantic control direction.
+
+The direct causal account instead remains a distributed layer-0 attention
+write.  Replacing all four layer-0 `hook_z` writes from the matched source gave
+the following source-tens argmax rates (and mean `Delta S`):
+
+| Seed | Excluded | Control |
+| --- | ---: | ---: |
+| 1 | 0.0% (0.47) | 99.0% (15.01) |
+| 2 | 0.0% (2.12) | 100.0% (36.27) |
+| 3 | 0.0% (-1.10) | 22.0% (11.46) |
+
+All 15 nonempty subsets were retained in
+`artifacts/mechanistic_dependency/results.{json,csv}`.  No individual head was
+sufficient; the strongest small subset differs by seed (for example 0+2+3 is
+98.0% in control seed 1, whereas 0+1+2 is 98.5% in control seed 2 and 19.0% in
+control seed 3).  There is therefore no seed-robust small-head circuit to call
+necessary yet.  The supported conclusion is narrower: controls use a
+multi-head layer-0 attention state to transmit the units-to-tens dependency,
+whereas excluded models do not make that matched source state causally drive
+the tens decision.  Necessity, rescue, and later-state mediation remain needed
+before claiming a complete circuit.
+
+## Distributed-state necessity, rescue, and transport
+
+We next tested the complete four-head layer-0 attention write as the candidate
+state, rather than selecting a different small subset per seed.  On the same
+200 pairs, zero-ablation selectively altered the control tens decision, while
+ten same-size random four-head ablations drawn from layers 1--3 retained the
+target tens digit on 100% of pairs for every model.  The effect is variable,
+and should be reported that way:
+
+| Model | Clean mean S | Layer-0 all-head zero-ablation mean S | Source tens argmax after ablation | Matched-source write source-tens argmax |
+| --- | ---: | ---: | ---: | ---: |
+| excluded 1 | -12.87 | -13.09 | 0.0% | 0.0% |
+| control 1 | -9.30 | 0.63 | 61.5% | 99.0% |
+| excluded 2 | -15.22 | -15.62 | 0.0% | 0.0% |
+| control 2 | -19.32 | -12.30 | 5.5% | 100.0% |
+| excluded 3 | -16.65 | -17.24 | 0.0% | 0.0% |
+| control 3 | -18.22 | -14.37 | 0.0% | 22.0% |
+
+Mean ablation was near-null, so the evidence is specifically about removing
+the structured write, not merely replacing it with a typical activation.  The
+matched-source condition is a state restoration/counterfactual patch (not an
+independent post-ablation recovery sequence); it replicates the prior direct
+sufficiency result.  A literal ablate-then-rescue experiment is the next
+stronger test.
+
+That stricter test is now complete.  We zeroed all four layer-0 `hook_z`
+head writes, then restored **only** `blocks.0.hook_attn_out` at `=`.  Restoring
+the clean combined output exactly restored each model's baseline score and
+target tens digit.  Restoring its matched-source output instead yielded source
+tens argmax rates of 99.0%, 100.0%, and 22.0% in control seeds 1--3, versus
+0.0% in all excluded seeds.  This identifies the combined layer-0 attention
+output as the mediating state for the observed patch effect.  It still does not
+separate the individual head contributions, which remain distributed and
+seed-variable.
+
+Central finite differences also show that the normalized dependency direction
+at layer-0 attention output propagates to layer-1 residual states and the
+final residual (mean transported norms were nonzero in all seeds).  These
+transport values establish that a local perturbation reaches downstream state,
+but do not yet distinguish the model families; they are not circuit evidence
+on their own.
+
+The script and complete, per-seed random-control results are in
+`test_dependency_circuit.py` and `artifacts/dependency_circuit/`.
+
+## Residual-stream transport and readout
+
+We then followed the Othello-style residual-stream analysis directly, using
+only residual hooks for the representation and causal patches.  At each site,
+a logistic dependency probe was trained/tested on disjoint paired templates
+(400 pairs, 100 epochs).  Every model, excluded and control, reached
+99.5--100.0% held-out accuracy at all tested sites.  This is strong
+decodability but, again, does not explain behavior.
+
+The causal patches do.  Source residuals were copied to the target at each
+site; `Delta S` is the matched source-versus-target tens-logit contrast.
+
+| Site | Controls: mean Delta S / source-tens rate | Excluded: mean Delta S / source-tens rate |
+| --- | --- | --- |
+| layer-0 residual post at `=` | 15.01, 36.27, 11.46 / 99%, 100%, 22% | 0.47, 2.12, -1.10 / 0%, 0%, 0% |
+| layer-1 residual pre at `=` | identical to layer 0 post | identical to layer 0 post |
+| layer-1 residual post at `=` | 0.13, 0.01, 0.13 / 0%, 0%, 0% | -0.37, -0.27, -0.37 / 0%, 0%, 0% |
+| layer-2 residual post at `=` | -0.05, 0.02, 0.18 / 0%, 0%, 0% | -0.15, -0.02, 0.02 / 0%, 0%, 0% |
+| final (layer-3) residual post at units token | 15.84, 37.79, 36.31 / 100%, 100%, 100% | 0.84, 3.02, 0.12 / 0%, 0%, 0% |
+
+Layer-0 residual post and layer-1 residual pre are the same architectural
+boundary, explaining their identical result.  The decisive source state is
+not directly usable at `=` after the layer-1 update, but a causally effective
+counterpart appears at the final residual position that predicts the tens
+digit.  This gives a residual-path account of the contrast:
+
+`layer-0 residual at =` → `later residual processing` → `layer-3 residual at
+the units token` → `tens-digit logits`.
+
+Per-context central finite differences confirm nonzero transport of the
+layer-0 residual probe direction to every tested residual site.  Gradient
+alignment at the final units position is positive in controls (0.19, 0.17,
+0.21), supporting local readout alignment, though it is not by itself enough
+to identify the intervening computation.  Full machine-readable results are
+in `artifacts/residual_dependency/`; the runner is `residual_dependency.py`.
+
+## Residual causal trace at the units token
+
+To identify the first causal readout state, we swept source-to-target residual
+patches across every units-token residual boundary, and then performed the
+complementary mediation test: apply the causal source patch at layer-0 `=`,
+but restore one units-token residual to its clean target value.
+
+The first sufficient site is **layer-1 residual post at the units token**.
+Patching that residual produced source tens-digit argmax in 100% of all three
+control seeds, and 0% of all excluded seeds.  The preceding layer-0 residual
+post / layer-1 residual pre units state was insufficient (0%, 0%, and 24.5%
+in the controls; 0% in excluded models).  Later units-token residual sites
+remain sufficient, as expected once the state has been written.
+
+The reverse intervention establishes mediation.  With the source layer-0 `=`
+residual patch active, restoring the clean layer-1 residual post at units
+returns every control to 0% source-tens argmax and removes its score effect
+(`Delta S`: -14.90, -36.26, -11.40).  Restoring the earlier layer-0-post /
+layer-1-pre units residual leaves the source effect intact (99%, 100%, 22%).
+The same operations are null in excluded models.
+
+This refines the residual pathway without making an attention-head claim:
+
+`layer-0 residual post at =` → `layer-1 transformation` →
+`layer-1 residual post at units` → `later residual stream` → `tens logits`.
+
+The complete trace is in `artifacts/residual_causal_trace/`, generated by
+`residual_causal_trace.py`.
+
+## Held-out low-dimensional residual subspace
+
+At layer-1 residual post at the units token, the matched source-minus-target
+state is effectively one-dimensional for this task.  We learned an uncentered
+SVD basis from 400 disjoint paired templates and evaluated its projections on
+the fixed 200 pairs.  The leading direction alone is sufficient for source
+tens-digit argmax on 100% of every control seed and 0% of every excluded seed.
+Control mean `Delta S` is 14.69, 37.02, and 34.00; excluded values are 0.60,
+2.50, and -0.45.
+
+Removing that same one-dimensional component from the full source residual
+eliminates the source-tens effect in every control.  Ten independently sampled
+random subspaces provide the matched control: at dimension 8, their mean
+`Delta S` is only 0.66, 1.21, and 0.83 in controls and they produce 0% source
+tens argmax.  This is held-out causal evidence for a one-dimensional residual
+state at the first causal units-token readout site, not merely a high-accuracy
+probe.  See `residual_subspace.py` and `artifacts/residual_subspace/`.
+
+## Structural replication: tens-to-hundreds dependency
+
+We repeated the one-dimensional test on isolated tens-to-hundreds dependency
+pairs: units never carry, source and target differ only in the tens carry,
+raw hundreds digits sum to nine, and the common units and tens answer digits
+are teacher-forced before scoring the hundreds digit.  A separately trained
+one-dimensional layer-1-post residual subspace is sufficient for source
+hundreds-digit argmax in 99.5%, 100%, and 100% of the control seeds, versus
+0% for every excluded seed.  Its mean `Delta S` is 13.89, 36.21, and 33.49 in
+controls; randomly sampled 1D subspaces are null (mean `Delta S` 0.03, 0.18,
+0.06; 0% source argmax).  Removing the learned component from the full source
+residual returns all controls to 0% source-hundreds argmax.
+
+This confirms the low-dimensional residual result on a structurally different
+dependency transition.  It does not yet show that the two learned directions
+are the same representation; `hundreds_dependency_subspace.py` and
+`artifacts/hundreds_dependency_subspace/` contain the full results.
+
+## Cross-position direction comparison
+
+The independently fitted one-dimensional residual directions are nearly
+identical within each model.  Absolute cosines for units-to-tens versus
+tens-to-hundreds are 0.978, 0.985, and 0.978 in controls (0.985, 0.986, and
+0.966 in excluded models).  Cross-task interventions confirm that this is a
+shared causal direction in controls: a hundreds-trained direction gives 100%,
+100%, and 100% source-tens argmax on units pairs, while a units-trained
+direction gives 98.0%, 100%, and 100% source-hundreds argmax on hundreds
+pairs.  Excluded models remain 0% in all cross-task tests.
+
+The supported interpretation is a position-general carry-dependency residual
+direction at layer-1 post, with a family difference in whether that direction
+is causally routed into the next-digit decision.  See
+`compare_dependency_directions.py` and
+`artifacts/compare_dependency_directions/`.
+
+## Layer-0 residual-direction transport
+
+An independently learned leading source-minus-target direction at layer-0
+residual post at `=` is itself causally useful: its held-out one-dimensional
+projection yields source-tens argmax of 100%, 96.5%, and 16.5% in controls and
+0% in excluded models.  Removing that component from the full source layer-0
+state eliminates the source effect in all controls.  The layer-0 and layer-1
+directions occupy different coordinates (absolute cosine 0.01--0.09 in five
+models), but central finite-difference transport from the former to the latter
+has mean alignment 0.86 and 0.81 in control seeds 1 and 2.
+
+The same local alignment is also present in excluded seeds 1 and 2, so it
+cannot be the family-level explanation.  This is a useful negative result:
+local residual transport is not equivalent to causally using the state for the
+next-digit decision.  See `residual_direction_transport.py` and
+`artifacts/residual_direction_transport/`.
+
+## Signed layer-1 residual readout gain
+
+We injected the independently learned layer-1-post units direction alone,
+oriented positive by held-out source-minus-target differences and scaled by
+the mean matched projection.  A positive one-scale intervention produces
+source-tens argmax at 99%, 100%, and 100% in controls and 0% in excluded
+models.  More directly, the local derivative of the tens score along this
+direction is +0.22, +0.50, and +0.42 in controls, versus -0.59, -0.24, and
+-0.74 in excluded models.  Autodiff JVP and central finite differences have
+correlations above 0.999999 in every model and complete sign agreement.
+
+On the raw-sum-nine dependency contexts, this separates representation/transport
+from readout: excluded models encode the direction but give it the wrong local
+signed effect on the dependent tens decision.  Complete curves and validation are in `residual_readout_gain.py`
+and `artifacts/residual_readout_gain/`.
+
+## Residual gain profile
+
+The signed causal distinction persists at each later units-token residual site.
+For layer 1, layer 2, and layer 3 respectively, control derivative gains are
+positive in every seed: (0.22, 0.33, 0.43), (0.50, 0.64, 0.43), and
+(0.42, 0.58, 0.41).  Excluded gains are negative throughout: (-0.59, -0.42,
+-0.17), (-0.24, -0.16, -0.02), and (-0.74, -0.41, -0.18).  Positive
+matched-scale injections at layers 2 and 3 yield 100% source-tens argmax in
+all controls and 0% in all excluded models.  Every local gradient was
+validated against a central finite difference (correlation above 0.99999).
+
+On the dependency contexts, the family difference is therefore established at
+the first causal layer-1 units residual write and retained by the later residual
+computation, rather than being introduced by a later sign flip.  See `residual_gain_profile.py`
+and `artifacts/residual_gain_profile/`.
+
+## Compositional two-dependency carry chain
+
+We generated answers for prompts where the units carry triggers a tens carry
+and the tens carry triggers a hundreds carry (both downstream raw sums are
+nine).  The same learned layer-1 residual direction was injected after the
+units answer, the tens answer, or both.  In controls, a tens-only injection
+causes the independent hundreds-carry counterfactual (mean answer shift +95,
++100, +100); units-only produces the full source answer in 94.5%, 100%, and
+100%; and both positions yield 99.5%, 100%, and 100% full-source exactness.
+All excluded models retain the target answer exactly under every intervention.
+
+The direction therefore composes along two successive dependent carries during
+greedy decoding, rather than only controlling an isolated local contrast.  See
+`compositional_dependency.py` and `artifacts/compositional_dependency/`.
+
+## Raw-tens-sum generality sweep
+
+The learned direction is not a generic malformed digit-shift perturbation.
+We swept raw tens sums 0--9 while holding the units-carry source/target
+contrast fixed, injecting the direction after the units answer and greedily
+decoding the full result.  For raw sums 0--8, excluded seeds 1 and 2 produce
+the exact source (`+10`) answer at 99--100%; seed 3 is also mostly successful
+(88--100%).  At the dependency boundary, raw sum 9, all excluded models remain
+at the target answer (0% source exact, 100% target exact).  Controls produce
+the source answer at the boundary in 95%, 100%, and 100% of cases.
+
+The mechanistic failure is therefore conditional: excluded models can use the
+direction as an incoming carry to increment ordinary digits, but do not invoke
+the modulo-10 wrap and outgoing-carry branch when the receiving raw digit sum
+is nine.  This refines—not overturns—the negative local-gain result, which is
+specific to the dependency boundary.  See `carry_direction_generality.py` and
+`artifacts/carry_direction_generality/`.
+
+## Direct downstream-carry injection
+
+To distinguish a missing carry readout from a missing carry-state write, we
+teacher-forced target units and tens digits and injected the direction directly
+at the tens-token residual while predicting hundreds.  At raw tens sum nine,
+this produces the source hundreds digit in 98%, 100%, and 88% of excluded
+models (85%, 100%, and 73% of controls).  This bypasses the earlier failure:
+excluded models can use an explicitly written carry state at the next token.
+
+The same edit changes hundreds predictions for raw sums below nine too, as it
+directly asserts an incoming carry irrespective of the forced tens context;
+that is expected and makes this a bypass experiment rather than a selectivity
+test.  The result localizes the missing operation to the conditional write of
+the next carry state from incoming carry plus raw sum nine, not to the later
+readout of a supplied carry state.  See `outgoing_carry_gate.py` and
+`artifacts/outgoing_carry_gate/`.
+
+## Factorial conditional-write interaction
+
+We formed matched layer-1-post residual states for the 2×2 factorial of
+incoming carry (0/1) and raw tens sum (8/9), then used the
+difference-in-differences as a candidate conditional-write interaction.  It is
+not a complete minimal mechanism.  Removing it from source raw-nine control
+states reduces `S` by 3.99, 6.91, and 9.30, but source tens argmax remains
+84.5%, 100%, and 99.5%; adding it to target raw-nine states is not sufficient
+(at most 4.5% source argmax).  Excluded models remain null.
+
+Thus the raw-nine conditional state is distributed within the layer-1 residual
+transformation or depends on its surrounding state, rather than residing in a
+single factorial residual vector.  See `conditional_write_interaction.py` and
+`artifacts/conditional_write_interaction/`.
+
+## Low-rank conditional-interaction subspace
+
+SVD on interaction vectors from 400 disjoint templates yields a selectively
+necessary but insufficient subspace.  Removing the learned 16D subspace from
+source raw-nine states reduces control `S` by 3.88, 6.68, and 9.12, compared
+with 0.55, 0.61, and 1.02 for matched random 16D subspaces.  Yet source tens
+argmax remains 89.5%, 100%, and 98.5%, and adding the learned subspace to raw-
+nine targets produces at most 3.5% source argmax.  Excluded models remain
+null.  The conditional state is low-rank enough to be selectively necessary,
+but requires its residual context to be causally expressed.  See
+`conditional_interaction_subspace.py` and
+`artifacts/conditional_interaction_subspace/`.
+
+## Carry-plus-interaction synergy
+
+We tested whether the gate could be reconstructed additively by combining the
+one-dimensional incoming-carry component with the learned 16D interaction
+subspace.  It cannot: carry-only, interaction-only, carry-plus-interaction,
+and carry-plus-random-subspace edits all give 0% source exact in every excluded
+model.  Controls are already driven to the source answer by carry-only edits
+(97%, 100%, and 100%), and the interaction term does not add a rescue effect.
+The conditional rule therefore requires the native context-dependent residual
+update rather than additive assembly of its observed residual components.  See
+`carry_interaction_synergy.py` and
+`artifacts/carry_interaction_synergy/`.
+
+## Context-dependent Jacobian gate
+
+We injected the same small layer-0 carry direction into matched raw-tens-8
+and raw-tens-9 contexts, measured its finite-difference transport to layer-1
+post at units, and measured the tens-score JVP.  In excluded models, transport
+along the layer-1 carry direction is still positive and nearly unchanged at
+raw 9 (0.90 → 0.78, 0.45 → 0.45, 0.21 → 0.21).  The score JVP, however, flips
+from positive at raw 8 (+0.25, +0.24, +0.20) to negative at raw 9 (-0.54,
+-0.21, -0.18).  Control score JVPs remain positive in both contexts.
+
+This localizes the missing behavior to a context-dependent nonlinear gate in
+the layer-1 residual transformation: raw sum nine does not prevent carry-state
+transport, but changes how that state affects the next-digit decision.  See
+`conditional_jacobian_gate.py` and `artifacts/conditional_jacobian_gate/`.
+
+## Direct context-gain profile
+
+Directly differentiating the score with respect to each units-token residual
+site confirms the ordering of the raw-nine error.  At layer-1 post, excluded
+models have positive raw-eight gain (+0.16, +0.12, +0.42) and negative raw-nine
+gain (-0.59, -0.23, -0.72); controls remain positive in both contexts.  Later
+residual sites retain the raw-nine negative effect rather than repairing it.
+The first causal sign error is therefore at the layer-1-post units boundary.
+See `context_gain_profile.py` and `artifacts/context_gain_profile/`.
+
+## Layer-1 component write localization
+
+As an implementation-level follow-up to the residual localization, we copied
+source layer-1 attention-output or MLP-output writes at the units token into
+raw-nine targets.  In controls, attention-write patches yield source tens
+argmax of 100%, 100%, and 65%; MLP-write patches yield 98%, 96%, and 100%.
+Both are null in excluded models.  At raw eight, the same source component
+patches work in both families.  Thus the failed boundary computation is
+reflected in both layer-1 component writes, but these sufficiency patches do
+not identify a unique minimal component circuit; zero ablations are broad.
+See `layer1_component_gate.py` and `artifacts/layer1_component_gate/`.
+
+## Layer-1 attention-to-MLP path mediation
+
+The source attention-output patch at raw nine is mediated by the MLP write.
+It produces source tens argmax in controls at 100%, 100%, and 70.5%, but adding
+a clean target MLP-output restore cancels the effect (0% source argmax in every
+control).  Conversely, source MLP-output patches alone yield 97%, 98.5%, and
+100% source argmax.  Both source component writes recover the full source
+effect.  This establishes the causal path
+`layer-1 attention output → layer-1 MLP output → downstream residual readout`
+for the boundary computation, while remaining agnostic about which internal
+attention features drive the MLP.  See `layer1_path_mediation.py` and
+`artifacts/layer1_path_mediation/`.
+
+## Pre-MLP residual boundary test
+
+Copying the full layer-1 units residual after attention and before the MLP
+(`blocks.1.hook_resid_mid`) makes the boundary localization sharper.  At raw
+tens sum eight, the matched source-to-target copy yields the source tens answer
+in every model.  At raw sum nine it yields the source answer in 100% of cases
+for each control, but 0% for each excluded model; mean score changes are
+15.4--37.4 logits in controls and only 0.09--2.89 in excluded models.
+
+The family difference is thus already causally expressed in the state the MLP
+receives, not wholly created by the MLP from a common pre-MLP residual.  This
+remains compatible with the path mediation result: attention supplies causal
+context, and the native MLP update remains required to express it downstream.
+
+For a small source-oriented pre-MLP residual perturbation, the local MLP map
+transports into its learned output direction comparably in excluded raw-eight
+and raw-nine contexts (positive projection 1.08--1.19).  But the downstream
+score JVP flips from positive at raw eight (+0.53, +0.77, +1.09) to negative
+at raw nine (-1.13, -0.54, -1.14).  Controls stay positive in both contexts.
+The result supports a context-sensitive residual computation/readout at the
+raw-nine branch rather than loss of carry-direction transport.  See
+`layer1_mlp_residual_gate.py` and `artifacts/layer1_mlp_residual_gate/`.
+
+## Threshold neighborhood sweep
+
+To test whether the defect is truly specific to the dependency boundary, we
+repeated the full-answer intervention at raw tens sums 7, 8, 9, 10, and 11.
+Excluded models produce the source answer at 91--100% for 7 and 8 and 100% for
+10 and 11, but all three give 0% source exact and 100% target exact at exactly
+9.  Controls are highly successful throughout the neighborhood.  Thus excluded
+models possess both neighboring behaviors—ordinary increment below the
+threshold and raw carry above it—but miss the singleton transition
+`9 + incoming carry`.  The threshold runner reuses
+`carry_direction_generality.py`; results are in
+`artifacts/carry_direction_threshold/`.
+
+## Ordinary raw-carry branch rescue
+
+We attempted a within-model residual rescue using the layer-1-post offset from
+matched `raw 10, no incoming carry` minus `raw 9, no incoming carry` contexts,
+added to failing `raw 9, incoming carry` states.  It restores 0% source exact
+in every excluded model and disrupts correct controls; norm-matched random
+offsets are also null in excluded models.  The ordinary raw-carry branch is
+therefore not a portable additive correction for the dependency hole.  The
+missing behavior requires the raw-nine context-sensitive transformation.
+See `raw_carry_branch_rescue.py` and
+`artifacts/raw_carry_branch_rescue/`.
+
+Run the complete replication with:
+
+```bash
+uv run python mechanistic_dependency.py \
+  --model excluded-1 checkpoints/carry-dependency-exposure-0-seed-1/widths-3-seed-1-step-1000.pt 3 \
+  --model control-1 checkpoints/carry-dependency-random-control-seed-1/widths-3-seed-1-step-500.pt 3 \
+  --model excluded-2 checkpoints/carry-dependency-exposure-0-seed-2/widths-3-seed-2-step-1000.pt 3 \
+  --model control-2 checkpoints/carry-dependency-random-control-seed-2/widths-3-seed-2-step-1500.pt 3 \
+  --model excluded-3 checkpoints/carry-dependency-exposure-0-seed-3/widths-3-seed-3-step-1000.pt 3 \
+  --model control-3 checkpoints/carry-dependency-random-control-seed-3/widths-3-seed-3-step-1500.pt 3 \
+  --probe-examples 400 --probe-epochs 100
+```
+
 ```bash
 uv run python -u train.py --width 2 --steps 1000 --batch-size 256 --seed 1 --device mps
 uv run python evaluate.py --checkpoint checkpoints/widths-2-seed-1.pt --width 2 --split iid --examples 10000 --batch-size 256 --seed 2 --device cpu

@@ -1,0 +1,242 @@
+[
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 7,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.9900000095367432,
+    "edited_target_exact_fraction": 0.009999999776482582,
+    "mean_answer_shift": 9.899999618530273
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 8,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.9350000023841858,
+    "edited_target_exact_fraction": 0.06499999761581421,
+    "mean_answer_shift": 9.350000381469727
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.0,
+    "edited_target_exact_fraction": 1.0,
+    "mean_answer_shift": 0.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 10,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 11,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 7,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.9900000095367432,
+    "edited_target_exact_fraction": 0.009999999776482582,
+    "mean_answer_shift": 9.899999618530273
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 8,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.9700000286102295,
+    "edited_target_exact_fraction": 0.029999999329447746,
+    "mean_answer_shift": 9.699999809265137
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.949999988079071,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 5.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 10,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.9800000190734863,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 8.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 11,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.9049999713897705,
+    "edited_target_exact_fraction": 0.0949999988079071,
+    "mean_answer_shift": 9.050000190734863
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 7,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 8,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.0,
+    "edited_target_exact_fraction": 1.0,
+    "mean_answer_shift": 0.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 10,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 11,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 7,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 8,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 10,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 11,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 7,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.9100000262260437,
+    "edited_target_exact_fraction": 0.09000000357627869,
+    "mean_answer_shift": 9.100000381469727
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 8,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.9100000262260437,
+    "edited_target_exact_fraction": 0.09000000357627869,
+    "mean_answer_shift": 9.100000381469727
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.0,
+    "edited_target_exact_fraction": 1.0,
+    "mean_answer_shift": 0.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 10,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 11,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 7,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.7599999904632568,
+    "edited_target_exact_fraction": 0.23999999463558197,
+    "mean_answer_shift": 7.599999904632568
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 8,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.9350000023841858,
+    "edited_target_exact_fraction": 0.06499999761581421,
+    "mean_answer_shift": 9.350000381469727
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 10,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 1.0,
+    "edited_target_exact_fraction": 0.0,
+    "mean_answer_shift": 10.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 11,
+    "baseline_target_exact_fraction": 1.0,
+    "edited_source_exact_fraction": 0.7049999833106995,
+    "edited_target_exact_fraction": 0.29499998688697815,
+    "mean_answer_shift": 7.050000190734863
+  }
+]

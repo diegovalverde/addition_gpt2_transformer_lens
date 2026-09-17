@@ -1,0 +1,578 @@
+[
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 23.838579177856445,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 14.249372482299805,
+    "source_tens_argmax_fraction": 0.5799999833106995
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 18.058534622192383,
+    "source_tens_argmax_fraction": 0.8349999785423279
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 6.230175018310547,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 0.8024405837059021,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": -2.3752288818359375,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 1.6381372213363647,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 5.6192803382873535,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-1",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 15.451284408569336,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 6.3388590812683105,
+    "source_tens_argmax_fraction": 0.1599999964237213
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 12.608238220214844,
+    "source_tens_argmax_fraction": 0.9649999737739563
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 6.540938854217529,
+    "source_tens_argmax_fraction": 0.10499999672174454
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 14.947049140930176,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 3.5238473415374756,
+    "source_tens_argmax_fraction": 0.10999999940395355
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 13.816115379333496,
+    "source_tens_argmax_fraction": 0.9750000238418579
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 5.410528182983398,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-1",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 25.025205612182617,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 17.390789031982422,
+    "source_tens_argmax_fraction": 0.675000011920929
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 16.7913761138916,
+    "source_tens_argmax_fraction": 0.8299999833106995
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 6.070069789886475,
+    "source_tens_argmax_fraction": 0.004999999888241291
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 2.3908145427703857,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": -0.06094225496053696,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 2.039348840713501,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 5.5664238929748535,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-2",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 37.23536682128906,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 17.806861877441406,
+    "source_tens_argmax_fraction": 0.4950000047683716
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 29.0935115814209,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 18.349384307861328,
+    "source_tens_argmax_fraction": 0.4749999940395355
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 37.00834655761719,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 9.948881149291992,
+    "source_tens_argmax_fraction": 0.12999999523162842
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 27.516773223876953,
+    "source_tens_argmax_fraction": 0.9599999785423279
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 12.715653419494629,
+    "source_tens_argmax_fraction": 0.13500000536441803
+  },
+  {
+    "model": "control-2",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 23.286396026611328,
+    "source_tens_argmax_fraction": 0.9449999928474426
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 4.4812541007995605,
+    "source_tens_argmax_fraction": 0.019999999552965164
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 14.40131950378418,
+    "source_tens_argmax_fraction": 0.24500000476837158
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 5.398482799530029,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": -0.8514950275421143,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": -0.3784468173980713,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": -0.7242527604103088,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 15.492999076843262,
+    "source_tens_argmax_fraction": 0.0949999988079071
+  },
+  {
+    "model": "excluded-3",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 20.199193954467773,
+    "source_tens_argmax_fraction": 0.6650000214576721
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 7.130294322967529,
+    "source_tens_argmax_fraction": 0.03500000014901161
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 8,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 22.779029846191406,
+    "source_tens_argmax_fraction": 0.8799999952316284
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 9.635017395019531,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 8,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "source_patch",
+    "mean_delta_s": 22.153470993041992,
+    "source_tens_argmax_fraction": 0.6549999713897705
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 4.150705337524414,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "component": "attn_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "source_patch",
+    "mean_delta_s": 29.56424331665039,
+    "source_tens_argmax_fraction": 1.0
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "zero_ablate",
+    "mean_delta_s": 15.400124549865723,
+    "source_tens_argmax_fraction": 0.28999999165534973
+  },
+  {
+    "model": "control-3",
+    "raw_tens_sum": 9,
+    "component": "mlp_out",
+    "phase": "clean_rescue",
+    "mean_delta_s": 0.0,
+    "source_tens_argmax_fraction": 0.0
+  }
+]

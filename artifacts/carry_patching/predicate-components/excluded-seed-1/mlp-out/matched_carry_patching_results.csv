@@ -1,0 +1,6 @@
+pair_type,component,blend,target_exact_fraction,source_counterfactual_fraction,answer_changed_fraction,mean_answer_shift
+carry-dependency,mlp-out,0.0,1.0,0.0,0.0,0.0
+carry-dependency,mlp-out,0.25,1.0,0.0,0.0,0.0
+carry-dependency,mlp-out,0.5,0.8849999904632568,0.0,0.11500000208616257,-0.36000001430511475
+carry-dependency,mlp-out,0.75,0.9100000262260437,0.0,0.09000000357627869,-0.33500000834465027
+carry-dependency,mlp-out,1.0,0.9399999976158142,0.0,0.05999999865889549,-0.27000001072883606

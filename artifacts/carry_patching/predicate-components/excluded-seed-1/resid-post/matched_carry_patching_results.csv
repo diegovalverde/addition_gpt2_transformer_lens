@@ -1,0 +1,6 @@
+pair_type,component,blend,target_exact_fraction,source_counterfactual_fraction,answer_changed_fraction,mean_answer_shift
+carry-dependency,resid-post,0.0,1.0,0.0,0.0,0.0
+carry-dependency,resid-post,0.25,0.9900000095367432,0.0,0.009999999776482582,0.03999999910593033
+carry-dependency,resid-post,0.5,0.9700000286102295,0.0,0.029999999329447746,0.07000000029802322
+carry-dependency,resid-post,0.75,1.0,0.0,0.0,0.0
+carry-dependency,resid-post,1.0,1.0,0.0,0.0,0.0

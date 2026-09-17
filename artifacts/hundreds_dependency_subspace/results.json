@@ -1,0 +1,926 @@
+[
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "learned",
+    "mean_delta_s": -0.12147389352321625,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "learned",
+    "mean_delta_s": 0.35120582580566406,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": -0.08159252256155014,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.4387166500091553,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": -0.0837743952870369,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.03117581643164158,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": -0.2943624258041382,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.6563177704811096,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": -0.010929908603429794,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.36647117137908936,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": -0.3386986255645752,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 1.4259405136108398,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": -0.1436557173728943,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.521660566329956,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.08672259002923965,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.3413586914539337,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.22945910692214966,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.2735537588596344,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": -0.35567352175712585,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": -0.26356810331344604,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": -0.19981765747070312,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-1",
+    "subspace": "random",
+    "mean_delta_s": 0.34177666902542114,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "learned",
+    "mean_delta_s": 13.892457008361816,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "learned",
+    "mean_delta_s": 0.816419243812561,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 0.044395118951797485,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 14.220271110534668,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 0.023352203890681267,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 14.250685691833496,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": -0.331328809261322,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 14.831765174865723,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": -0.01761087030172348,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 14.46826171875,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": -0.16517072916030884,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 14.87382698059082,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 0.5158261656761169,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 13.908239364624023,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 0.016481680795550346,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 14.54110336303711,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 0.24479305744171143,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 14.55797004699707,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": -0.08626988530158997,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 14.401817321777344,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 0.0034089351538568735,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-1",
+    "subspace": "random",
+    "mean_delta_s": 14.470685005187988,
+    "source_hundreds_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "learned",
+    "mean_delta_s": 0.5114932656288147,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "learned",
+    "mean_delta_s": -0.005642743315547705,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.13146306574344635,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.5037024021148682,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.04902996867895126,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.40728211402893066,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.0876818373799324,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.590678870677948,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": -0.3968524634838104,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.4576212763786316,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.35418710112571716,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.45947784185409546,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.06994082778692245,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.989440381526947,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": -0.1721424162387848,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.6007978320121765,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.017176037654280663,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.5778751969337463,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": -0.09560302644968033,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.7376036643981934,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": -0.008031701669096947,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-2",
+    "subspace": "random",
+    "mean_delta_s": 0.5962624549865723,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "learned",
+    "mean_delta_s": 36.20938491821289,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "learned",
+    "mean_delta_s": 0.5417539477348328,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 0.9088494777679443,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 36.16129684448242,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 0.6142603158950806,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 36.54142761230469,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": -0.009463062509894371,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 37.1640510559082,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 0.13247506320476532,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 36.135398864746094,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 0.09689754247665405,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 37.05986404418945,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 0.04345909133553505,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 37.02284240722656,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": -0.025928393006324768,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 36.9855842590332,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 0.11347677558660507,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 36.98344802856445,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": -0.19061921536922455,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 37.04743576049805,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 0.15216198563575745,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-2",
+    "subspace": "random",
+    "mean_delta_s": 36.22907638549805,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "learned",
+    "mean_delta_s": -0.8044199347496033,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "learned",
+    "mean_delta_s": 0.8106680512428284,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": 0.1297941952943802,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.5094519257545471,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": 0.01841844990849495,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.39629554748535156,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": 0.04032830893993378,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.37795108556747437,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": 0.09486369788646698,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.3738340735435486,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.016702938824892044,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.5104769468307495,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.05912412330508232,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.37533995509147644,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": 0.025851579383015633,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.3399180471897125,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": 0.13842642307281494,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.36142241954803467,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.004648413509130478,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.36822640895843506,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": 0.007163209840655327,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "excluded-3",
+    "subspace": "random",
+    "mean_delta_s": -0.37682563066482544,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "learned",
+    "mean_delta_s": 33.4884147644043,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "learned",
+    "mean_delta_s": 2.4112188816070557,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 0.003775477409362793,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 35.68458557128906,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 0.3397265672683716,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 36.143619537353516,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 0.17920857667922974,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 36.0812873840332,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 0.07721599191427231,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 35.90839767456055,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 0.02628994919359684,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 35.93942642211914,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": -0.003868274623528123,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 35.94652557373047,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": -0.006556167732924223,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 36.00318145751953,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 0.043558765202760696,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 35.96368408203125,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": -0.02761054039001465,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 36.050838470458984,
+    "source_hundreds_argmax_fraction": 1.0
+  },
+  {
+    "phase": "projected_sufficiency",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 0.00217297556810081,
+    "source_hundreds_argmax_fraction": 0.0
+  },
+  {
+    "phase": "projected_removal",
+    "model": "control-3",
+    "subspace": "random",
+    "mean_delta_s": 36.05906295776367,
+    "source_hundreds_argmax_fraction": 1.0
+  }
+]

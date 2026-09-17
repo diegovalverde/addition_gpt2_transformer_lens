@@ -1,0 +1,128 @@
+[
+  {
+    "model": "excluded-1",
+    "intervention": "baseline",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": -6.0,
+    "mean_correction_norm": 12.651254653930664
+  },
+  {
+    "model": "excluded-1",
+    "intervention": "raw_carry_branch",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": 8.5,
+    "mean_correction_norm": 12.651254653930664
+  },
+  {
+    "model": "excluded-1",
+    "intervention": "random_norm_matched",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": -4.25,
+    "mean_correction_norm": 12.651254653930664
+  },
+  {
+    "model": "control-1",
+    "intervention": "baseline",
+    "source_exact_fraction": 1.0,
+    "mean_answer_error": 0.0,
+    "mean_correction_norm": 9.288459777832031
+  },
+  {
+    "model": "control-1",
+    "intervention": "raw_carry_branch",
+    "source_exact_fraction": 0.004999999888241291,
+    "mean_answer_error": 9.949999809265137,
+    "mean_correction_norm": 9.288459777832031
+  },
+  {
+    "model": "control-1",
+    "intervention": "random_norm_matched",
+    "source_exact_fraction": 0.7300000190734863,
+    "mean_answer_error": -0.20000000298023224,
+    "mean_correction_norm": 9.288459777832031
+  },
+  {
+    "model": "excluded-2",
+    "intervention": "baseline",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": -10.0,
+    "mean_correction_norm": 13.262190818786621
+  },
+  {
+    "model": "excluded-2",
+    "intervention": "raw_carry_branch",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": 7.5,
+    "mean_correction_norm": 13.262190818786621
+  },
+  {
+    "model": "excluded-2",
+    "intervention": "random_norm_matched",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": -11.449999809265137,
+    "mean_correction_norm": 13.262190818786621
+  },
+  {
+    "model": "control-2",
+    "intervention": "baseline",
+    "source_exact_fraction": 1.0,
+    "mean_answer_error": 0.0,
+    "mean_correction_norm": 12.314401626586914
+  },
+  {
+    "model": "control-2",
+    "intervention": "raw_carry_branch",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": 10.0,
+    "mean_correction_norm": 12.314401626586914
+  },
+  {
+    "model": "control-2",
+    "intervention": "random_norm_matched",
+    "source_exact_fraction": 0.9700000286102295,
+    "mean_answer_error": -0.30000001192092896,
+    "mean_correction_norm": 12.314401626586914
+  },
+  {
+    "model": "excluded-3",
+    "intervention": "baseline",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": -10.0,
+    "mean_correction_norm": 11.613469123840332
+  },
+  {
+    "model": "excluded-3",
+    "intervention": "raw_carry_branch",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": 10.0,
+    "mean_correction_norm": 11.613469123840332
+  },
+  {
+    "model": "excluded-3",
+    "intervention": "random_norm_matched",
+    "source_exact_fraction": 0.0,
+    "mean_answer_error": -9.5,
+    "mean_correction_norm": 11.613469123840332
+  },
+  {
+    "model": "control-3",
+    "intervention": "baseline",
+    "source_exact_fraction": 1.0,
+    "mean_answer_error": 0.0,
+    "mean_correction_norm": 13.326654434204102
+  },
+  {
+    "model": "control-3",
+    "intervention": "raw_carry_branch",
+    "source_exact_fraction": 0.1550000011920929,
+    "mean_answer_error": 8.449999809265137,
+    "mean_correction_norm": 13.326654434204102
+  },
+  {
+    "model": "control-3",
+    "intervention": "random_norm_matched",
+    "source_exact_fraction": 0.9049999713897705,
+    "mean_answer_error": -0.3499999940395355,
+    "mean_correction_norm": 13.326654434204102
+  }
+]

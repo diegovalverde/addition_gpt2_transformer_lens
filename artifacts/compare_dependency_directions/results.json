@@ -1,0 +1,224 @@
+[
+  {
+    "phase": "direction_similarity",
+    "model": "excluded-1",
+    "absolute_cosine": 0.9845815896987915
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-1",
+    "task": "units_to_tens",
+    "basis": "native",
+    "mean_delta_s": 0.602641224861145,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-1",
+    "task": "units_to_tens",
+    "basis": "cross_position",
+    "mean_delta_s": 0.5638672113418579,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-1",
+    "task": "tens_to_hundreds",
+    "basis": "native",
+    "mean_delta_s": -0.12147389352321625,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-1",
+    "task": "tens_to_hundreds",
+    "basis": "cross_position",
+    "mean_delta_s": -0.06813622266054153,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "direction_similarity",
+    "model": "control-1",
+    "absolute_cosine": 0.977921187877655
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-1",
+    "task": "units_to_tens",
+    "basis": "native",
+    "mean_delta_s": 14.687507629394531,
+    "source_argmax_fraction": 1.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-1",
+    "task": "units_to_tens",
+    "basis": "cross_position",
+    "mean_delta_s": 14.546235084533691,
+    "source_argmax_fraction": 1.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-1",
+    "task": "tens_to_hundreds",
+    "basis": "native",
+    "mean_delta_s": 13.892457008361816,
+    "source_argmax_fraction": 0.9950000047683716
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-1",
+    "task": "tens_to_hundreds",
+    "basis": "cross_position",
+    "mean_delta_s": 13.279709815979004,
+    "source_argmax_fraction": 0.9800000190734863
+  },
+  {
+    "phase": "direction_similarity",
+    "model": "excluded-2",
+    "absolute_cosine": 0.9855034351348877
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-2",
+    "task": "units_to_tens",
+    "basis": "native",
+    "mean_delta_s": 2.500354528427124,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-2",
+    "task": "units_to_tens",
+    "basis": "cross_position",
+    "mean_delta_s": 1.6814006567001343,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-2",
+    "task": "tens_to_hundreds",
+    "basis": "native",
+    "mean_delta_s": 0.5114932656288147,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-2",
+    "task": "tens_to_hundreds",
+    "basis": "cross_position",
+    "mean_delta_s": 1.2035516500473022,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "direction_similarity",
+    "model": "control-2",
+    "absolute_cosine": 0.9848541021347046
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-2",
+    "task": "units_to_tens",
+    "basis": "native",
+    "mean_delta_s": 37.02199935913086,
+    "source_argmax_fraction": 1.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-2",
+    "task": "units_to_tens",
+    "basis": "cross_position",
+    "mean_delta_s": 37.08224105834961,
+    "source_argmax_fraction": 1.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-2",
+    "task": "tens_to_hundreds",
+    "basis": "native",
+    "mean_delta_s": 36.20938491821289,
+    "source_argmax_fraction": 1.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-2",
+    "task": "tens_to_hundreds",
+    "basis": "cross_position",
+    "mean_delta_s": 35.27046203613281,
+    "source_argmax_fraction": 1.0
+  },
+  {
+    "phase": "direction_similarity",
+    "model": "excluded-3",
+    "absolute_cosine": 0.9657264947891235
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-3",
+    "task": "units_to_tens",
+    "basis": "native",
+    "mean_delta_s": -0.4485538899898529,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-3",
+    "task": "units_to_tens",
+    "basis": "cross_position",
+    "mean_delta_s": -0.6093702912330627,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-3",
+    "task": "tens_to_hundreds",
+    "basis": "native",
+    "mean_delta_s": -0.8044199347496033,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "excluded-3",
+    "task": "tens_to_hundreds",
+    "basis": "cross_position",
+    "mean_delta_s": -0.7519898414611816,
+    "source_argmax_fraction": 0.0
+  },
+  {
+    "phase": "direction_similarity",
+    "model": "control-3",
+    "absolute_cosine": 0.9781956672668457
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-3",
+    "task": "units_to_tens",
+    "basis": "native",
+    "mean_delta_s": 34.003578186035156,
+    "source_argmax_fraction": 1.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-3",
+    "task": "units_to_tens",
+    "basis": "cross_position",
+    "mean_delta_s": 32.87308883666992,
+    "source_argmax_fraction": 1.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-3",
+    "task": "tens_to_hundreds",
+    "basis": "native",
+    "mean_delta_s": 33.4884147644043,
+    "source_argmax_fraction": 1.0
+  },
+  {
+    "phase": "cross_task_projection",
+    "model": "control-3",
+    "task": "tens_to_hundreds",
+    "basis": "cross_position",
+    "mean_delta_s": 33.513919830322266,
+    "source_argmax_fraction": 1.0
+  }
+]
