@@ -323,6 +323,24 @@ first transformer block, before autoregressive answer generation begins.  This
 is decodability evidence; a direction or component intervention is still needed
 to establish which layer-0 write causally supplies the generated digit.
 
+## Units carry-out probe
+
+The same `probe_first_digit.py` runner also supports the binary
+`--target units-carry-out`: whether the units digits sum to at least ten.  It
+uses the same prompt-only 10,000/5,000 train/test split as the first-digit
+probe.  The test-set carry rate is 44.94%, so the majority-class baseline is
+55.06%.
+
+The baseline model and all six dependency-excluded/control models are at that
+majority baseline on layer-0 residual pre, then reach 100.00% held-out accuracy
+at layer-0 residual post, layer-1 residual pre, and every later tested residual
+site.  Thus layer 0 makes both the units output digit and its carry-out linearly
+available before the first answer token is generated.  The two labels are not
+the same—for example, raw units totals 0 and 10 share output digit 0 but have
+different carry bits—so the carry probe captures information beyond merely
+recovering the output digit.  It nevertheless remains a decoding result, not
+proof that the linear probe direction is the model's causal carry representation.
+
 ## Linear carry probes before answer generation
 
 For each model, fresh prompts were truncated immediately after `=`. A separate

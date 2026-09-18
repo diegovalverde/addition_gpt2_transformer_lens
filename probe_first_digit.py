@@ -1,4 +1,4 @@
-"""Probe the first generated answer digit from residual-stream activations."""
+"""Probe first-column arithmetic targets from residual-stream activations."""
 
 from __future__ import annotations
 
@@ -23,6 +23,7 @@ DEFAULT_SITES = (
     "blocks.2.hook_resid_post",
     "blocks.3.hook_resid_post",
 )
+TARGET_CHOICES = ("first-digit", "units-carry-out")
 
 
 @dataclass(frozen=True)
@@ -43,6 +44,12 @@ def parse_args() -> argparse.Namespace:
         help="Repeat for every model to compare.",
     )
     parser.add_argument("--sites", default=",".join(DEFAULT_SITES))
+    parser.add_argument(
+        "--target",
+        choices=TARGET_CHOICES,
+        default="first-digit",
+        help="First-column arithmetic target to decode.",
+    )
     parser.add_argument("--train-examples", type=int, default=10_000)
     parser.add_argument("--test-examples", type=int, default=5_000)
     parser.add_argument("--batch-size", type=int, default=512)
@@ -64,17 +71,35 @@ def parse_runs(raw_runs: list[list[str]]) -> list[ProbeRun]:
     return runs
 
 
+def target_labels(left: torch.Tensor, right: torch.Tensor, target: str) -> torch.Tensor:
+    """Return the requested first-column arithmetic target."""
+    if target == "first-digit":
+        return ((left + right) % 10).long()
+    if target == "units-carry-out":
+        return ((left % 10 + right % 10) >= 10).long()
+    raise ValueError(f"unknown target {target!r}")
+
+
+def target_classes(target: str) -> int:
+    if target == "first-digit":
+        return 10
+    if target == "units-carry-out":
+        return 2
+    raise ValueError(f"unknown target {target!r}")
+
+
 @torch.no_grad()
 def collect_activations(
     model: torch.nn.Module,
     width: int,
     sites: tuple[str, ...],
+    target: str,
     examples: int,
     batch_size: int,
     seed: int,
     device: str,
 ) -> tuple[dict[str, torch.Tensor], torch.Tensor, float]:
-    """Cache selected residuals at ``=`` and label the first answer digit."""
+    """Cache selected residuals at ``=`` and label one first-column target."""
     generator = AdditionBatchGenerator(width, seed)
     activations = {site: [] for site in sites}
     labels = []
@@ -89,9 +114,10 @@ def collect_activations(
             prompts,
             names_filter=lambda name: name in sites,
         )
-        label = ((batch.left + batch.right) % 10).long()
+        label = target_labels(batch.left, batch.right, target)
         labels.append(label)
-        model_correct += int((logits[:, -1].argmax(dim=-1).cpu() == label).sum())
+        first_digit = ((batch.left + batch.right) % 10).long()
+        model_correct += int((logits[:, -1].argmax(dim=-1).cpu() == first_digit).sum())
         for site in sites:
             if site not in cache:
                 raise ValueError(f"model cache did not contain requested site {site!r}")
@@ -112,10 +138,11 @@ def fit_probe(
     epochs: int,
     learning_rate: float,
     seed: int,
+    classes: int,
 ) -> tuple[float, float, dict[str, torch.Tensor]]:
-    """Fit a ten-way linear classifier and return train/test accuracy."""
+    """Fit a linear classifier and return train/test accuracy."""
     torch.manual_seed(seed)
-    probe = torch.nn.Linear(train_features.shape[1], 10)
+    probe = torch.nn.Linear(train_features.shape[1], classes)
     optimizer = torch.optim.AdamW(probe.parameters(), lr=learning_rate, weight_decay=1e-4)
     for _ in range(epochs):
         optimizer.zero_grad(set_to_none=True)
@@ -153,6 +180,7 @@ def main() -> None:
             model,
             run.width,
             sites,
+            args.target,
             args.train_examples,
             args.batch_size,
             args.seed,
@@ -162,13 +190,15 @@ def main() -> None:
             model,
             run.width,
             sites,
+            args.target,
             args.test_examples,
             args.batch_size,
             args.seed + 1,
             device,
         )
         majority_accuracy = float(
-            torch.bincount(test_labels, minlength=10).max() / test_labels.shape[0]
+            torch.bincount(test_labels, minlength=target_classes(args.target)).max()
+            / test_labels.shape[0]
         )
         for site_index, site in enumerate(sites):
             train_accuracy, test_accuracy, weights = fit_probe(
@@ -179,17 +209,19 @@ def main() -> None:
                 args.epochs,
                 args.learning_rate,
                 args.seed + 100 * run_index + site_index,
+                target_classes(args.target),
             )
             probe_weights.setdefault(run.name, {})[site] = weights
             results.append(
                 {
                     "model": run.name,
                     "width": run.width,
+                    "target": args.target,
                     "site": site,
                     "train_accuracy": train_accuracy,
                     "test_accuracy": test_accuracy,
                     "majority_accuracy": majority_accuracy,
-                    "model_first_digit_accuracy": model_accuracy,
+                    "model_generated_first_digit_accuracy": model_accuracy,
                 }
             )
         first = "blocks.0.hook_resid_post"
@@ -205,7 +237,7 @@ def main() -> None:
                     ),
                 }
             )
-        print(f"completed first-digit probes for {run.name}")
+        print(f"completed {args.target} probes for {run.name}")
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     json_path = args.output_dir / "first_digit_probe_results.json"

@@ -25,6 +25,10 @@ digits: `<bos> a_ones ... + b_ones ... = sum_ones ... <eos>`.
   residual pre and 100% accurate from layer-0 residual post onward, across the
   baseline and all six excluded/control models. Layer-0 post and layer-1 pre
   are exactly the same residual boundary.
+- A binary units carry-out probe has the same profile: 55.06% majority-baseline
+  accuracy at layer-0 pre and 100% from layer-0 post onward in all seven
+  models. It establishes early linear availability of the units carry, not a
+  causal probe direction.
 
 See `RESULTS.md` for all established numbers and methods.
 
