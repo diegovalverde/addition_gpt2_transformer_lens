@@ -35,6 +35,12 @@ digits: `<bos> a_ones ... + b_ones ... = sum_ones ... <eos>`.
   layer-1 post decodes all three at 99.88--99.98%; layer-0 post already
   decodes future tens carry-out at 97.42%, but the completed tens digit only at
   66.14%. This is decodability, not causal evidence.
+- `probe_third_digit.py` is the hundreds-column analogue, teacher-forcing the
+  first two answer digits. On the baseline's natural third-digit state,
+  layer-1 post decodes hundreds digit/carry-in/carry-out at 99.58--100.00%;
+  layer-0 post already decodes the following carry-out at 97.46%, while the
+  completed hundreds digit is 67.96%. The carry-out is the width-three
+  overflow bit; these remain independent decoding probes, not interventions.
 
 See `RESULTS.md` for all established numbers and methods.
 

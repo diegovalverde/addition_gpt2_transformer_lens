@@ -379,6 +379,39 @@ uv run python probe_second_digit.py \
   --device cpu
 ```
 
+## Third-column probes
+
+`probe_third_digit.py` repeats the independent-probe design for the hundreds
+column: the hundreds output digit, the carry into hundreds from the tens
+column, and the hundreds carry-out (the final overflow bit for width-three
+addition).  In its natural `after-second-digit` context it teacher-forces the
+correct units and tens answer digits, then reads the state that predicts the
+hundreds digit.  As with the second-column tool, `equals` can instead test
+precomputation before answer generation.
+
+On the same baseline checkpoint (10,000 training examples, 5,000 disjoint test
+examples, seed 700), the third-step pattern is closely analogous to the tens
+step:
+
+| Target | Majority baseline | Layer-0 pre | Layer-0 post | Layer-1 post | Layer-3 post |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Hundreds output digit | 10.82% | 10.56% | 67.96% | 99.58% | 99.98% |
+| Tens carry-in | 51.22% | 75.68% | 75.40% | 100.00% | 99.94% |
+| Hundreds carry-out | 50.52% | 53.90% | 97.46% | 99.98% | 100.00% |
+
+The model predicts the teacher-forced hundreds digit with 99.92% accuracy on
+this stream.  Thus, after the first two answer tokens supply the generated
+history, layer 1 again forms a state that linearly exposes both adjacent carry
+bits and the completed column digit.  This is a separate decoding measurement
+for each label, not proof that the probes identify causal directions.
+
+```bash
+uv run python probe_third_digit.py \
+  --target carry-in --context after-second-digit \
+  --model baseline checkpoints/widths-3-seed-1-step-1000.pt 3 \
+  --device cpu
+```
+
 ## Linear carry probes before answer generation
 
 For each model, fresh prompts were truncated immediately after `=`. A separate
