@@ -341,6 +341,44 @@ different carry bits—so the carry probe captures information beyond merely
 recovering the output digit.  It nevertheless remains a decoding result, not
 proof that the linear probe direction is the model's causal carry representation.
 
+## Second-column probes
+
+`probe_second_digit.py` independently probes three quantities for the tens
+column: its output digit `(raw_tens_sum + units_carry_in) % 10`, the incoming
+units carry bit, and the tens carry-out bit.  Its natural `after-first-digit`
+context teacher-forces the correct units answer digit and reads the residual at
+that new final position: exactly the state used to predict the tens digit.  An
+optional `equals` context tests precomputation before any answer token is
+provided.
+
+On the standard width-three checkpoint (10,000 training examples, 5,000
+disjoint test examples, seed 600), layer-0 residual pre is effectively chance
+for the completed tens digit and its carry-out, whereas the layer-0 post write
+already exposes partial information.  Layer-1 residual post makes all three
+quantities essentially linearly exact:
+
+| Target | Majority baseline | Layer-0 pre | Layer-0 post | Layer-1 post | Layer-3 post |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Tens output digit | 10.42% | 10.84% | 66.14% | 99.96% | 99.96% |
+| Units carry-in | 53.88% | 75.50% | 75.18% | 99.98% | 99.98% |
+| Tens carry-out | 50.00% | 52.26% | 97.42% | 99.88% | 99.98% |
+
+Layer-0 post and layer-1 pre remain exactly the same residual boundary.  The
+model predicts the teacher-forced tens digit with 99.72% accuracy on this
+stream.  Thus the second step is not represented merely as a copied carry bit:
+the layer-1 computation produces a residual from which the incoming carry, the
+completed digit, and the next carry are separately recoverable.  These are
+independent linear decoding tests, not causal interventions.
+
+Run, for example:
+
+```bash
+uv run python probe_second_digit.py \
+  --target carry-out --context after-first-digit \
+  --model baseline checkpoints/widths-3-seed-1-step-1000.pt 3 \
+  --device cpu
+```
+
 ## Linear carry probes before answer generation
 
 For each model, fresh prompts were truncated immediately after `=`. A separate

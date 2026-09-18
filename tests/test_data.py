@@ -15,6 +15,7 @@ from addition_gpt.data import (
 from evaluate import greedy_answers
 from patch_carries import matched_carry_dependency_pairs, matched_units_carry_pairs
 from probe_first_digit import target_labels
+from probe_second_digit import second_column_labels
 
 
 class PlannedAnswerModel(torch.nn.Module):
@@ -155,4 +156,18 @@ def test_first_column_probe_targets() -> None:
     )
     assert torch.equal(
         target_labels(left, right, "units-carry-out"), torch.tensor([0, 0, 1, 0])
+    )
+
+
+def test_second_column_probe_targets() -> None:
+    left = torch.tensor([0, 9, 99, 29])
+    right = torch.tensor([0, 1, 1, 90])
+    assert torch.equal(
+        second_column_labels(left, right, "second-digit"), torch.tensor([0, 1, 0, 1])
+    )
+    assert torch.equal(
+        second_column_labels(left, right, "carry-in"), torch.tensor([0, 1, 1, 0])
+    )
+    assert torch.equal(
+        second_column_labels(left, right, "carry-out"), torch.tensor([0, 0, 1, 1])
     )

@@ -29,6 +29,12 @@ digits: `<bos> a_ones ... + b_ones ... = sum_ones ... <eos>`.
   accuracy at layer-0 pre and 100% from layer-0 post onward in all seven
   models. It establishes early linear availability of the units carry, not a
   causal probe direction.
+- `probe_second_digit.py` independently decodes the tens output digit, its
+  units carry-in, and its carry-out either at `=` or at the teacher-forced
+  first-answer-digit state. On the baseline's natural second-digit state,
+  layer-1 post decodes all three at 99.88--99.98%; layer-0 post already
+  decodes future tens carry-out at 97.42%, but the completed tens digit only at
+  66.14%. This is decodability, not causal evidence.
 
 See `RESULTS.md` for all established numbers and methods.
 
