@@ -301,6 +301,28 @@ The architecture therefore has ample capacity for four-digit addition. The
 mixed-width model's zero exact accuracy on width 4 is a genuine
 length-generalization failure, not underfitting of the task.
 
+## First generated digit probe
+
+`probe_first_digit.py` fits a ten-way linear classifier to residual activations
+at the `=` position, using prompts that contain no answer tokens.  The label is
+the first reversed answer digit, `(left + right) % 10`.  Probes used 10,000
+training examples and 5,000 disjoint test examples (seed 500), with a 10.52%
+test-set majority baseline.
+
+For the standard fixed-width checkpoint, layer-0 residual pre is at chance
+(10.52%), while layer-0 residual post and layer-1 residual pre both reach
+100.00% held-out accuracy.  Those latter activations are exactly identical
+(maximum absolute difference 0), because they name the same residual boundary.
+Layer-1, layer-2, and layer-3 residual post probes also reach 100.00%, and the
+model itself predicts the first digit with 100.00% accuracy on this stream.
+
+The same result replicates across all three dependency-excluded models and all
+three random-drop controls: chance before layer 0 and 100.00% from layer-0 post
+onward.  Thus the correct first digit becomes linearly available during the
+first transformer block, before autoregressive answer generation begins.  This
+is decodability evidence; a direction or component intervention is still needed
+to establish which layer-0 write causally supplies the generated digit.
+
 ## Linear carry probes before answer generation
 
 For each model, fresh prompts were truncated immediately after `=`. A separate

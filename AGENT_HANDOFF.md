@@ -21,6 +21,10 @@ digits: `<bos> a_ones ... + b_ones ... = sum_ones ... <eos>`.
   increasingly well. Matched activation patching at layer 0, `=` position can
   switch a target answer to its matched `sum + 10` source answer in 99.2% of
   examples. Probe directions themselves were not clean causal controls.
+- A ten-way probe for the first generated digit is at chance on layer-0
+  residual pre and 100% accurate from layer-0 residual post onward, across the
+  baseline and all six excluded/control models. Layer-0 post and layer-1 pre
+  are exactly the same residual boundary.
 
 See `RESULTS.md` for all established numbers and methods.
 
