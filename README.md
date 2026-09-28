@@ -20,6 +20,19 @@ uv run python evaluate.py --checkpoint checkpoints/widths-2-seed-1.pt --width 2 
 Use `--device cpu` if MPS is unavailable. The two-digit run is a smoke test; use
 the three-digit configuration in `DESIGN.md` for the baseline experiment.
 
+## Minimum residual-stream width
+
+The baseline residual stream has `d_model=128`. To identify the smallest width
+that still performs three-digit addition reliably, sweep widths with the MLP
+kept at `4*d_model` and four heads. A candidate must reach 99% greedy exact
+accuracy on both IID and carry-required examples for every seed.
+
+```bash
+uv run python sweep_dimensions.py --device mps
+```
+
+The machine-readable results are written to `artifacts/dimension-sweep/summary.csv`.
+
 ## MPS caveat
 
 The current TransformerLens release warns that PyTorch MPS may silently produce

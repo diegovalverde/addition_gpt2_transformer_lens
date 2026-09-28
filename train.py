@@ -102,6 +102,18 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--drop-probability", type=float, default=0.0)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
+    parser.add_argument(
+        "--d-model",
+        type=int,
+        default=128,
+        help="Residual-stream width. The MLP width is set to four times this value.",
+    )
+    parser.add_argument(
+        "--n-heads",
+        type=int,
+        default=4,
+        help="Number of attention heads; must divide --d-model.",
+    )
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--checkpoint-every", type=int, default=1_000)
     parser.add_argument(
@@ -125,6 +137,10 @@ def parse_args() -> argparse.Namespace:
         parser.error(
             "use either --exclude-units-carry-chain or --units-carry-chain-exposure, not both"
         )
+    if args.d_model < 1:
+        parser.error("--d-model must be positive")
+    if args.n_heads < 1 or args.d_model % args.n_heads:
+        parser.error("--n-heads must be positive and divide --d-model")
     return args
 
 
@@ -167,7 +183,13 @@ def main() -> None:
     generators = {
         width: AdditionBatchGenerator(width, args.seed + width) for width in train_widths
     }
-    model_config = ModelConfig(seed=args.seed)
+    model_config = ModelConfig(
+        d_model=args.d_model,
+        d_head=args.d_model // args.n_heads,
+        d_mlp=4 * args.d_model,
+        n_heads=args.n_heads,
+        seed=args.seed,
+    )
     maximum_sequence_length = max(generator.sequence_length for generator in generators.values())
     if maximum_sequence_length > model_config.n_ctx:
         raise ValueError(
@@ -190,6 +212,7 @@ def main() -> None:
     )
     args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
     width_label = "-".join(str(width) for width in train_widths)
+    model_label = f"d{model_config.d_model}-h{model_config.n_heads}"
     completed_steps = 0
     if args.resume_from is not None:
         loaded = torch.load(args.resume_from, map_location=device, weights_only=False)
@@ -241,7 +264,7 @@ def main() -> None:
                 f"lr={scheduler.get_last_lr()[0]:.2e}"
             )
         if step % args.checkpoint_every == 0 and step != args.steps:
-            checkpoint = args.checkpoint_dir / f"widths-{width_label}-seed-{args.seed}-step-{step}.pt"
+            checkpoint = args.checkpoint_dir / f"widths-{width_label}-{model_label}-seed-{args.seed}-step-{step}.pt"
             save_checkpoint(
                 checkpoint,
                 model,
@@ -256,7 +279,7 @@ def main() -> None:
             )
             print(f"saved intermediate checkpoint to {checkpoint}")
 
-    checkpoint = args.checkpoint_dir / f"widths-{width_label}-seed-{args.seed}.pt"
+    checkpoint = args.checkpoint_dir / f"widths-{width_label}-{model_label}-seed-{args.seed}.pt"
     save_checkpoint(
         checkpoint,
         model,
