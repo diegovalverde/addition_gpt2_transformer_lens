@@ -33,6 +33,12 @@ uv run python sweep_dimensions.py --device mps
 
 The machine-readable results are written to `artifacts/dimension-sweep/summary.csv`.
 
+Once a width is selected, hold it fixed and sweep the number of blocks:
+
+```bash
+uv run python sweep_layers.py --d-model 64 --device cpu
+```
+
 ## MPS caveat
 
 The current TransformerLens release warns that PyTorch MPS may silently produce

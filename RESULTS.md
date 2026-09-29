@@ -1,5 +1,29 @@
 # Experiment results
 
+## Minimum residual-stream width
+
+We trained fixed-width three-digit addition models for 1,000 CPU steps with a
+batch size of 256. Each candidate used four attention heads, four transformer
+blocks, and an MLP width of `4*d_model`. The held-out evaluation contains 10,000
+examples per split and per seed. A width passes only if **every** seed reaches at
+least 99% greedy exact-answer accuracy on both IID and carry-required examples.
+
+| `d_model` | IID greedy exact (seeds 1, 2, 3) | Carry greedy exact (seeds 1, 2, 3) | Passes all seeds? |
+| ---: | --- | --- | :---: |
+| 4 | 0.06%, 0.13%, 0.17% | 0.13%, 0.08%, 0.18% | No |
+| 8 | 0.15%, 0.17%, 0.19% | 0.12%, 0.13%, 0.17% | No |
+| 16 | 6.05%, 7.41%, 1.12% | 6.04%, 7.93%, 1.16% | No |
+| 32 | 11.71%, 100.00%, 99.99% | 10.89%, 100.00%, 99.98% | No |
+| 64 | 100.00%, 100.00%, 100.00% | 100.00%, 100.00%, 100.00% | **Yes** |
+
+The smallest robust width in this experiment is therefore **64**, half the
+128-dimensional baseline. At 32 dimensions the model is near the transition but
+not reliable: two seeds solve addition almost perfectly, while one remains near
+chance-level exact-answer accuracy. These results were run on an Intel macOS
+host with PyTorch 2.2.2 and TransformerLens 2.15.4 because current PyTorch
+releases do not ship Intel macOS wheels. This runtime difference should be kept
+in mind when comparing against the project’s current Torch >=2.6 setup.
+
 ## Two-digit smoke baseline
 
 **Status:** exploratory. The model was trained on MPS, for which TransformerLens
