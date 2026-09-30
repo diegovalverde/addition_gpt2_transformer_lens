@@ -24,6 +24,27 @@ host with PyTorch 2.2.2 and TransformerLens 2.15.4 because current PyTorch
 releases do not ship Intel macOS wheels. This runtime difference should be kept
 in mind when comparing against the project’s current Torch >=2.6 setup.
 
+## Minimum transformer depth at `d_model=64`
+
+Holding the robust 64-dimensional residual stream fixed, we swept the number of
+transformer blocks from one through four. Each condition again trained for 1,000
+CPU steps at batch size 256 and used the same three initialization/data seeds
+and 10,000-example IID and carry-required evaluations. Every tested depth met
+the 99% greedy-exact pass threshold for every seed.
+
+| Transformer blocks | IID greedy exact (seeds 1, 2, 3) | Carry greedy exact (seeds 1, 2, 3) | Passes all seeds? |
+| ---: | --- | --- | :---: |
+| 1 | 100.00%, 100.00%, 100.00% | 100.00%, 100.00%, 100.00% | **Yes** |
+| 2 | 100.00%, 100.00%, 100.00% | 100.00%, 100.00%, 100.00% | **Yes** |
+| 3 | 100.00%, 100.00%, 100.00% | 100.00%, 100.00%, 100.00% | **Yes** |
+| 4 | 100.00%, 100.00%, 100.00% | 100.00%, 100.00%, 100.00% | **Yes** |
+
+Thus the smallest tested model that robustly solves the fixed-width three-digit
+task is **one transformer block with `d_model=64`**. This establishes
+in-distribution addition performance, not yet an algorithmic or
+non-memorization claim. The next test should use structured generalization and
+pre-answer activation probes on this one-layer model.
+
 ## Two-digit smoke baseline
 
 **Status:** exploratory. The model was trained on MPS, for which TransformerLens
