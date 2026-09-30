@@ -39,6 +39,10 @@ Once a width is selected, hold it fixed and sweep the number of blocks:
 uv run python sweep_layers.py --d-model 64 --device cpu
 ```
 
+See [the minimal-model experiment plan](MINIMAL_64D_EXPERIMENTS.md) for a
+behavioral, probing, and causal-intervention program to determine what the
+one-layer 64D model computes.
+
 ## MPS caveat
 
 The current TransformerLens release warns that PyTorch MPS may silently produce
